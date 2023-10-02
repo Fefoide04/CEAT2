@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FB496A4-BC3F-4D62-B3D3-5BEA900AFA4F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interfaces</RootNamespace>
+    <AssemblyName>Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases_Proyecto\variables.cs" />
+    <Compile Include="comandosBD.cs" />
+    <Compile Include="Formularios\Usuarios\frm_administracionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\frm_administracionUsuarios.Designer.cs">
+      <DependentUpon>frm_administracionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\frm_agregarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\frm_agregarUsuarios.Designer.cs">
+      <DependentUpon>frm_agregarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_altaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_altaEstudiantes.Designer.cs">
+      <DependentUpon>frm_altaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_login.designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_observacionEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_observacionEstudiante.Designer.cs">
+      <DependentUpon>frm_observacionEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_perfilEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_perfilEstudiante.Designer.cs">
+      <DependentUpon>frm_perfilEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_relevamientoEspecifico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_relevamientoEspecifico.Designer.cs">
+      <DependentUpon>frm_relevamientoEspecifico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_relevamientoRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_relevamientoRA.Designer.cs">
+      <DependentUpon>frm_relevamientoRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_visualizacionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estudiantes\frm_visualizacionEstudiantes.Designer.cs">
+      <DependentUpon>frm_visualizacionEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frm_principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frm_principal.Designer.cs">
+      <DependentUpon>frm_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_seleccionarTipoReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_seleccionarTipoReporte.Designer.cs">
+      <DependentUpon>frm_seleccionarTipoReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases_Proyecto\metodos.cs" />
+    <Compile Include="Formularios\Usuarios\frm_listaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios\frm_listaUsuarios.Designer.cs">
+      <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_modificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_modificarUsuario.Designer.cs">
+      <DependentUpon>frm_modificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Usuarios\frm_administracionUsuarios.resx">
+      <DependentUpon>frm_administracionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\frm_altaEstudiantes.resx">
+      <DependentUpon>frm_altaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\frm_observacionEstudiante.resx">
+      <DependentUpon>frm_observacionEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\frm_perfilEstudiante.resx">
+      <DependentUpon>frm_perfilEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_relevamientoEspecifico.resx">
+      <DependentUpon>frm_relevamientoEspecifico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_relevamientoRA.resx">
+      <DependentUpon>frm_relevamientoRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Estudiantes\frm_visualizacionEstudiantes.resx">
+      <DependentUpon>frm_visualizacionEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frm_principal.resx">
+      <DependentUpon>frm_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_seleccionarTipoReporte.resx">
+      <DependentUpon>frm_seleccionarTipoReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\frm_agregarUsuarios.resx">
+      <DependentUpon>frm_agregarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuarios\frm_listaUsuarios.resx">
+      <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_modificarUsuario.resx">
+      <DependentUpon>frm_modificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Generales\Loco escuela Placeholder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Login\ClaveIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Login\UsuarioIcono.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,113 @@
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\bin\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\bin\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.pdb
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.exe
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Interfaces\Interfaces\obj\x86\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\bin\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\bin\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.exe
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.pdb
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\bin\Debug\Interfaces.exe
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\bin\Debug\Interfaces.pdb
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+E:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\bin\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\bin\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto CEAT - Grupo 1\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.exe
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.pdb
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.exe
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_login.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+C:\Users\maria\Downloads\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.exe
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.pdb
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_login.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_agregarUsuarios.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_modificarUsuario.resources
+D:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_listaUsuarios.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.exe
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.pdb
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.AssemblyReference.cache
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_login.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_agregarUsuarios.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_listaUsuarios.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_modificarUsuario.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.cache
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.CoreCompileInputs.cache
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.exe
+G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.pdb
