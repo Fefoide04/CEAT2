@@ -111,3 +111,23 @@ G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarr
 G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.CoreCompileInputs.cache
 G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.exe
 G:\Seminario de Programacion\Proyecto CEAT\Soluciones\Proyecto 28 -9\CEAT-desarrollo-master\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.pdb
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.exe
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.pdb
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.exe
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\bin\Debug\Interfaces.pdb
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_administracionUsuarios.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_altaEstudiantes.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_login.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_observacionEstudiante.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_perfilEstudiante.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoEspecifico.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_relevamientoRA.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_visualizacionEstudiantes.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_principal.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_seleccionarTipoReporte.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_agregarUsuarios.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_listaUsuarios.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.frm_modificarUsuario.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.resources
+C:\Proyecto CEAT\CEAT-desarrollo-master\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache

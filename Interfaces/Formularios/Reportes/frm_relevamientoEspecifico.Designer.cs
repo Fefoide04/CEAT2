@@ -49,12 +49,14 @@
             this.cbox_sexoFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbox_sexoFiltro.FormattingEnabled = true;
             this.cbox_sexoFiltro.Items.AddRange(new object[] {
+            "elija genero",
             "Masculino",
             "Femenino"});
             this.cbox_sexoFiltro.Location = new System.Drawing.Point(193, 45);
             this.cbox_sexoFiltro.Name = "cbox_sexoFiltro";
             this.cbox_sexoFiltro.Size = new System.Drawing.Size(143, 28);
             this.cbox_sexoFiltro.TabIndex = 0;
+            this.cbox_sexoFiltro.SelectedIndexChanged += new System.EventHandler(this.cbox_sexoFiltro_SelectedIndexChanged);
             // 
             // dtg_estudiantesFiltro
             // 
@@ -70,14 +72,11 @@
             this.cbox_categoriaFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_categoriaFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbox_categoriaFiltro.FormattingEnabled = true;
-            this.cbox_categoriaFiltro.Items.AddRange(new object[] {
-            "Lactantes",
-            "Deambulantes",
-            "Dos años"});
             this.cbox_categoriaFiltro.Location = new System.Drawing.Point(17, 45);
             this.cbox_categoriaFiltro.Name = "cbox_categoriaFiltro";
             this.cbox_categoriaFiltro.Size = new System.Drawing.Size(143, 28);
             this.cbox_categoriaFiltro.TabIndex = 0;
+            this.cbox_categoriaFiltro.SelectedIndexChanged += new System.EventHandler(this.cbox_categoriaFiltro_SelectedIndexChanged);
             // 
             // cbox_turnoFiltro
             // 
@@ -85,12 +84,14 @@
             this.cbox_turnoFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbox_turnoFiltro.FormattingEnabled = true;
             this.cbox_turnoFiltro.Items.AddRange(new object[] {
+            "elija turno",
             "Mañana",
             "Tarde"});
             this.cbox_turnoFiltro.Location = new System.Drawing.Point(698, 45);
             this.cbox_turnoFiltro.Name = "cbox_turnoFiltro";
             this.cbox_turnoFiltro.Size = new System.Drawing.Size(143, 28);
             this.cbox_turnoFiltro.TabIndex = 0;
+            this.cbox_turnoFiltro.SelectedIndexChanged += new System.EventHandler(this.cbox_turnoFiltro_SelectedIndexChanged);
             // 
             // cbox_caracterizacionFiltro
             // 
@@ -111,6 +112,7 @@
             this.cbox_caracterizacionFiltro.Name = "cbox_caracterizacionFiltro";
             this.cbox_caracterizacionFiltro.Size = new System.Drawing.Size(295, 28);
             this.cbox_caracterizacionFiltro.TabIndex = 0;
+            this.cbox_caracterizacionFiltro.SelectedIndexChanged += new System.EventHandler(this.cbox_caracterizacionFiltro_SelectedIndexChanged);
             // 
             // txt_conteoFiltro
             // 
