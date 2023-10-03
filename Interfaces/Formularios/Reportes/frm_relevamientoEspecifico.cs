@@ -14,10 +14,9 @@ namespace Interfaces
         public frm_relevamientoEspecifico()
         {
             InitializeComponent();
-            //cbox_categoriaFiltro.SelectedIndex = 0;
-            cbox_caracterizacionFiltro.SelectedIndex = 0;
+            //cbox_caracterizacionFiltro.SelectedIndex = 0;
             cbox_sexoFiltro.SelectedIndex = 0;
-            cbox_turnoFiltro.SelectedIndex = 0;
+            //cbox_turnoFiltro.SelectedIndex = 0;
         }
 
         comandosBD claseConexion = new comandosBD();
@@ -25,38 +24,40 @@ namespace Interfaces
         //========================
         // metodos.
         // cargar datos en combobox.
-
-        //===========================
-        // metodos.
         // todo esto de aqui abajo son los metodos para buscar las relaciones de dos tablas.
         /*cargo todos los comboboxs*/
         public void cargarencombobox()
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 switch (i)
                 {
                     case 0:
-                        cargarcomboboxindividual("nombreCaracterizacion", cbox_caracterizacionFiltro, "elija caracterizacion", "", "Caracterizacion");
+                        cargarcomboboxindividual("nombreCaracterizacion", cbox_caracterizacionFiltro, "elija caracterizacion", "", "Caracterizacion", "idCaracterizacion");
                         break;
 
                     case 1:
-                        cargarcomboboxindividual("nombreCategoria", cbox_categoriaFiltro, "elija categoria", "", "Categoria");
+                        cargarcomboboxindividual("nombreCategoria", cbox_categoriaFiltro, "elija categoria", "", "Categoria", "idCategoria");
+                        break;
+                    case 2:
+                        cargarcomboboxindividual("turno", cbox_turnoFiltro, "elija turno", "", "Turno", "idTurno");
                         break;
                 }
             }
         }
 
         /*cargo los combobox de manera individual.*/
-        public void cargarcomboboxindividual(string campo, ComboBox cmb, string mensaje, string distinto, string tabla)
+        public void cargarcomboboxindividual(string campo, ComboBox cmb, string mensaje, string distinto, string tabla, string campoid)
         {
             DataTable dt = new DataTable();
-            dt.Load(claseConexion.consulta("select " + distinto + campo + " from " + tabla));
+            dt.Load(claseConexion.consulta("select " + distinto + "*" + " from " + tabla));
             DataRow fila = dt.NewRow();
-            fila[0] = mensaje;
+            fila[0] = 0;
+            fila[1] = mensaje;
             dt.Rows.InsertAt(fila, 0);
             cmb.DataSource = dt;
             cmb.DisplayMember = campo;
+            cmb.ValueMember = campoid;
             cmb.SelectedIndex = 0;
             claseConexion.desconectar();
         }
@@ -77,35 +78,51 @@ namespace Interfaces
         /*verifico,
          cada false le pertenece a un combobox en orden categoria, sexo, caracterizacion, turno.*/
         public bool[] seguircontador = { false, false, false, false };
+
         /*metodo para seleccionar las condiciones de los combobox.*/
-        public void cmbseleccionarcondicion(int indices, ComboBox cmb, int indicer, string campo, string tabla)
+        public void cmbseleccionarcondicion(int indices, ComboBox cmb, int indicer, string campo, string tabla, int sexo)
         {
             int indice = cmb.SelectedIndex;
             /*compruebo si ya habia elegiodo un indice para no agregar o 
              descontar al contadorcmb.*/
             //bool contardescontar = false;
 
+
             if (indice != 0)
             {
+                string registro = "";
+                /*si se escoge algun sexo tomo el valor texto del cobobox.*/
+                if (sexo == 1)
+                {
+                    registro = "'" + cmb.Text + "'";
+                }
+                else
+                {
+                    /*de lo contrario tomo su valor numerico, que seria el id.*/
+                    registro = cmb.SelectedValue.ToString();
+                }
+
+
                 /*si el combobox estaba en su pocicion 0 sumo uno mas al contadorcmb*/
                 if (seguircontador[indices] == false)
                 {
                     contadorcmb++;
                     seguircontador[indices] = true;
+
                     /*le doy el comando de la condicion para la consulta.*/
-                    condicionselecy.Add(" " + tabla + "." + campo + " = '" + cmb.Text + "'");
+                    condicionselecy.Add("((" + tabla + "." + campo + ") = " + registro+")");
 
                     /*guardo el contenido del combobox actual para luego usarlo
                      en la lista para borrar el dato o cambiarlo.*/
-                    guardarregistros[indicer] = "'" + cmb.Text + "'";
+                    guardarregistros[indicer] = registro;
                 }
                 else
                 {
                     /*si seguircontador ya no es true entonces reemplazo el valor que ya tenia
                      la lista que contenia el valor del DNI con uno nuevo,
                      y de esta manera el contador no incrementa.*/
-                    condicionselecy[condicionselecy.IndexOf(" " + tabla + "." + campo + " = " + guardarregistros[indicer])] = " " + tabla + "." + campo + " = '" + cmb.Text + "'";
-                    guardarregistros[indicer] = "'" + cmb.Text + "'";
+                    condicionselecy[condicionselecy.IndexOf("((" + tabla + "." + campo + ") = " + guardarregistros[indicer]+")")] = "((" + tabla + "." + campo + ") = " + registro+")";
+                    guardarregistros[indicer] = registro;
                 }
 
             }
@@ -116,7 +133,7 @@ namespace Interfaces
                 if (seguircontador[indices] == true)
                 {
                     /*borro el contenido de la lista que contiene este comando en especifico.*/
-                    condicionselecy.RemoveAt(condicionselecy.IndexOf(" " + tabla + "." + campo + " = " + guardarregistros[indicer]));
+                    condicionselecy.RemoveAt(condicionselecy.IndexOf("((" + tabla + "." + campo + ") = " + guardarregistros[indicer]+")"));
                     contadorcmb--;
                     seguircontador[indices] = false;
                 }
@@ -124,18 +141,22 @@ namespace Interfaces
         }
 
         // realizar consulta.
-
         public void consulta_general()
         {
             //string prueba = cbox_categoriaFiltro.Items[cbox_categoriaFiltro.SelectedIndex].ToString();
             if (cbox_categoriaFiltro.SelectedIndex < 1 && cbox_sexoFiltro.SelectedIndex <1 && cbox_caracterizacionFiltro.SelectedIndex <1 && cbox_turnoFiltro.SelectedIndex <1)
             {
-                //DataTable dt = new DataTable();
+                DataTable dt = new DataTable();
                 //// hacer una consulta sin filtros.
-                //MessageBox.Show("elija al menos un campo para hacer la consulta", "elejir campo", MessageBoxButtons.OK);
-                //string comando = "select * from Estudiante inner join Categoria on Estudiante.idCategoria = Categoria.idCategoria inner join Caracterizacion on Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion inner join Turno on Turno.idTurno = Estudiante.idturno";
-                //dt.Load(claseConexion.consulta(comando));
-                //dtg_estudiantesFiltro.DataSource = dt;
+                /*si todos los combobox estan en el indice 0 entonces solo se hara una consulta general sin conteo,
+                 establecer que campos se mostraran en las grillas.*/
+                string comando = "SELECT Estudiante.idCaracterizacion" +
+                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno";
+                                                
+                dt.Load(claseConexion.consulta(comando));
+                dtg_estudiantesFiltro.DataSource = dt;
+
+                txt_conteoFiltro.Text = "";
             }
             else
             {
@@ -157,7 +178,7 @@ namespace Interfaces
                          de la lista imprimire and al final.*/
                         if (i != (contadorcmb - 1))
                         {
-                            comandoconsulta += condicionselecy[i] + "and";
+                            comandoconsulta += condicionselecy[i] + " and ";
                         }
                         else
                         {
@@ -168,11 +189,24 @@ namespace Interfaces
                 }
 
                 /*modificar, en prueba aun.*/
-                string comandorelacion = "select * from Estudiante inner join Categoria on Estudiante.idCategoria = Categoria.idCategoria inner join Caracterizacion on Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion inner join Turno on Turno.idTurno = Estudiante.idturno where " + comandoconsulta;
-                string prueba = "select * from Estudiante, Turno, Categoria where Estudiante.idturno = Turno.idTurno and Estudiante.idCatgoria = Categoria.idCategoria";
-                dt.Load(claseConexion.consulta("SELECT * " +
-                                            "FROM (Turno INNER JOIN (TipoDeIngreso INNER JOIN (Parentezco INNER JOIN (((Nacionalidad INNER JOIN (Localidad INNER JOIN ((Docente INNER JOIN Ingreso ON Docente.idDocente = Ingreso.idDocente) INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Ingreso.idIngreso = Estudiante.idIngreso) ON Localidad.idLocalidad = Estudiante.idLocalidad) ON Nacionalidad.idNacionalidad = Estudiante.idnacionalidad) INNER JOIN Observacion ON (Estudiante.IdRegistro = Observacion.idEstudiante) AND (Docente.idDocente = Observacion.idDocente)) INNER JOIN Responsable ON (Responsable.idResponsable = Estudiante.idResponsable) AND (Nacionalidad.idNacionalidad = Responsable.idNacionalidad) AND (Localidad.idLocalidad = Responsable.idLocalidad)) ON Parentezco.idParentezco = Responsable.idParentezco) ON TipoDeIngreso.idTipo = Ingreso.idTipo) ON Turno.idTurno = Estudiante.idturno) INNER JOIN Usuario ON Docente.idDocente = Usuario.idDocente WHERE (((Caracterizacion.nombreCaracterizacion)='Discapacidad Auditiva') AND ((Estudiante.nombre)='masculino') AND ((Categoria.nombreCategoria)='lactante') AND ((Turno.turno)='mañana'));"));
+                string comandorelacion = "SELECT Estudiante.idCaracterizacion, Estudiante.idCategoria, Estudiante.idturno, Estudiante.genero" +
+                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno" +
+                                                " where (" + comandoconsulta+");";
+
+               
+                /*se mjuestra el resultado en la grilla.*/
+                dt.Load(claseConexion.consulta(comandorelacion));
                 dtg_estudiantesFiltro.DataSource = dt;
+
+                /*se hace el conteo aqui, fue necesacio otra consulta,
+                 determinar luego cual sera la tabla que se tomara como not null.*/
+                string conteo = "SELECT count(*) as conteo" +
+                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno" +
+                                                " where (" + comandoconsulta + ");";
+                DataTable dt2 = new DataTable();
+                dt2.Load(claseConexion.consulta(conteo));
+                /*le doy e lvalor de la tabla conteo al textbox.*/
+                txt_conteoFiltro.Text = dt2.Rows[0]["conteo"].ToString();
             }
         }
         
@@ -194,25 +228,25 @@ namespace Interfaces
 
         private void cbox_categoriaFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbseleccionarcondicion(0, cbox_categoriaFiltro, 0, "nombreCategoria", "Categoria");
+            cmbseleccionarcondicion(0, cbox_categoriaFiltro, 0, "idCategoria", "Estudiante", 0);
             consulta_general();
         }
 
         private void cbox_sexoFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbseleccionarcondicion(1, cbox_sexoFiltro, 1, "genero", "Estudiante");
+            cmbseleccionarcondicion(1, cbox_sexoFiltro, 1, "genero", "Estudiante",1);
             consulta_general();
         }
 
         private void cbox_caracterizacionFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbseleccionarcondicion(2, cbox_caracterizacionFiltro, 2, "nombreCaracterizacion", "Caracterizacion");
+            cmbseleccionarcondicion(2, cbox_caracterizacionFiltro, 2, "idCaracterizacion", "Estudiante", 0);
             consulta_general();
         }
 
         private void cbox_turnoFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbseleccionarcondicion(3, cbox_turnoFiltro, 3, "turno", "Turno");
+            cmbseleccionarcondicion(3, cbox_turnoFiltro, 3, "idturno", "Estudiante", 0);
             consulta_general();
         }
     }

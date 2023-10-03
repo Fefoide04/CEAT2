@@ -116,10 +116,11 @@
             // 
             // txt_conteoFiltro
             // 
-            this.txt_conteoFiltro.Enabled = false;
             this.txt_conteoFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_conteoFiltro.Location = new System.Drawing.Point(741, 492);
             this.txt_conteoFiltro.Name = "txt_conteoFiltro";
+            this.txt_conteoFiltro.ReadOnly = true;
+            this.txt_conteoFiltro.ShortcutsEnabled = false;
             this.txt_conteoFiltro.Size = new System.Drawing.Size(100, 26);
             this.txt_conteoFiltro.TabIndex = 2;
             // 
