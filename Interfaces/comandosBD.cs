@@ -26,6 +26,7 @@ namespace Interfaces
 
             //Instancio un nuevo comando usando la conexion y la consulta ingresada al metodo
             comando = new OleDbCommand(consulta, conexion);
+
         }
 
 

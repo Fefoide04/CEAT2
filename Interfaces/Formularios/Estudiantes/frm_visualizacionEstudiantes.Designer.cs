@@ -67,12 +67,14 @@
             this.txt_busqueda.Name = "txt_busqueda";
             this.txt_busqueda.Size = new System.Drawing.Size(682, 27);
             this.txt_busqueda.TabIndex = 2;
+            this.txt_busqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_busqueda_KeyPress);
             // 
             // cmb_filtros
             // 
             this.cmb_filtros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_filtros.FormattingEnabled = true;
             this.cmb_filtros.Items.AddRange(new object[] {
+            "-- seleccione filtro --",
             "Nombre",
             "Apellido",
             "Caracterización",
@@ -81,6 +83,7 @@
             this.cmb_filtros.Name = "cmb_filtros";
             this.cmb_filtros.Size = new System.Drawing.Size(132, 29);
             this.cmb_filtros.TabIndex = 3;
+            this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
             // 
             // btn_agregarEstudiantes
             // 
@@ -129,6 +132,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_visualizacionEstudiantes";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frm_visualizacionEstudiantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_vistaEstudiantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

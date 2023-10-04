@@ -222,8 +222,9 @@ namespace Interfaces
             cargarencombobox();
             /*cargar la grilla, en proceso.*/
             DataTable dt = new DataTable();
-            dt.Load(claseConexion.consulta("SELECT * "+
-                                            "FROM (Turno INNER JOIN (TipoDeIngreso INNER JOIN (Parentezco INNER JOIN (((Nacionalidad INNER JOIN (Localidad INNER JOIN ((Docente INNER JOIN Ingreso ON Docente.idDocente = Ingreso.idDocente) INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Ingreso.idIngreso = Estudiante.idIngreso) ON Localidad.idLocalidad = Estudiante.idLocalidad) ON Nacionalidad.idNacionalidad = Estudiante.idnacionalidad) INNER JOIN Observacion ON (Estudiante.IdRegistro = Observacion.idEstudiante) AND (Docente.idDocente = Observacion.idDocente)) INNER JOIN Responsable ON (Responsable.idResponsable = Estudiante.idResponsable) AND (Nacionalidad.idNacionalidad = Responsable.idNacionalidad) AND (Localidad.idLocalidad = Responsable.idLocalidad)) ON Parentezco.idParentezco = Responsable.idParentezco) ON TipoDeIngreso.idTipo = Ingreso.idTipo) ON Turno.idTurno = Estudiante.idturno) INNER JOIN Usuario ON Docente.idDocente = Usuario.idDocente WHERE (((Caracterizacion.nombreCaracterizacion)= 'Discapacidad Auditiva') AND ((Estudiante.nombre)='masculino'));"));
+            dt.Load(claseConexion.consulta("SELECT Estudiante.idCaracterizacion, Estudiante.idCategoria, Estudiante.idturno, Estudiante.genero" +
+                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno;"));
+            dtg_estudiantesFiltro.DataSource = dt;
         }
 
         private void cbox_categoriaFiltro_SelectedIndexChanged(object sender, EventArgs e)
