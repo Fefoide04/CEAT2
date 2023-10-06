@@ -121,10 +121,10 @@
     <Compile Include="Formularios\Usuarios\frm_listaUsuarios.Designer.cs">
       <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_modificarUsuario.cs">
+    <Compile Include="Formularios\Usuarios\frm_modificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_modificarUsuario.Designer.cs">
+    <Compile Include="Formularios\Usuarios\frm_modificarUsuario.Designer.cs">
       <DependentUpon>frm_modificarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -165,7 +165,7 @@
     <EmbeddedResource Include="Formularios\Usuarios\frm_listaUsuarios.resx">
       <DependentUpon>frm_listaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_modificarUsuario.resx">
+    <EmbeddedResource Include="Formularios\Usuarios\frm_modificarUsuario.resx">
       <DependentUpon>frm_modificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
