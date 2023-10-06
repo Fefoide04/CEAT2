@@ -15,12 +15,13 @@ namespace Interfaces
         {
             InitializeComponent();
             cmb_filtros.SelectedIndex = 0;
-            //Aca deberíamos cargar en una data table la tabla estudiantes y usar un doble for para recorrerlo y cargar la grilla
-            DataTable dt = new DataTable();
-            dt.Load(conexionbd.consulta("select * from Estudiante"));
-            dtg_vistaEstudiantes.DataSource = dt;
+ 
+            variables.estudiantes.Load(variables.BD.consulta("select * from Estudiante"));
+
+            variables.BD.desconectar();
+
+            dtg_vistaEstudiantes.DataSource = variables.estudiantes;
         }
-        comandosBD conexionbd = new comandosBD();
         private void btn_irConsultas_Click(object sender, EventArgs e)
         {
             metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_irConsultas.Tag.ToString()), variables.panelPrincipal);

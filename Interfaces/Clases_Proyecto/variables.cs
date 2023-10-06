@@ -5,6 +5,8 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 
+using System.Data;
+
 namespace Interfaces
 {
     class variables
@@ -25,5 +27,9 @@ namespace Interfaces
 
             public static Color backgroundColor = Color.White;
         }
+
+        /*Estudiantes*/
+
+        public static DataTable estudiantes = new DataTable(); 
     }
 }
