@@ -53,18 +53,18 @@ namespace Interfaces
                     txt_contraseniaUsuario.Text = metodos.CrearContraseña();
                 }
                 else
-                {    // falta traer el idDocente
+                {    
                     DialogResult result = MessageBox.Show("¿Está seguro que desea dar alta al usuario " + txt_nombreUsuario.Text + " perteneciente al docente " + txt_nombreDocente.Text + "?", "", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
                     {
                         string cuil = txt_cuilDocente1.Text + txt_cuilDocente2.Text + txt_cuilDocente3;
-                        string id;
                         bool AltaU = false;
                         bool AltaD = false;
                         AltaD = alta.ABM("INSERT INTO Docente (nombre, apellido, CUIL, telefono) VALUES ('" + txt_nombreDocente + "','" + txt_apellidoDocente + "','" + cuil + "','" + txt_telefonoDocente + "')");
-                        id= alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'").ToString();
-                        AltaU = alta.ABM("INSERT INTO Usuario (nombreUsuario, password, idDocente) VALUES ('" + txt_nombreUsuario.Text + "','" + txt_contraseniaUsuario.Text + "','" + id + ")");
+                        variables.id = alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'").ToString();
+                        variables.idDocente = Convert.ToInt32(variables.id);
+                        AltaU = alta.ABM("INSERT INTO Usuario (nombreUsuario, password, idDocente) VALUES ('" + txt_nombreUsuario.Text + "','" + txt_contraseniaUsuario.Text + "','" + variables.idDocente + ")");
                         
                         if (AltaU == true && AltaD == true)
                         {

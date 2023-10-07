@@ -17,6 +17,8 @@ namespace Interfaces
         public static string ContraseñaUsuario;
         public static int control = 0;
         public static DataTable Tabla = new DataTable();
+        public static string id;
+        public static int idDocente;
 
         /*Formulario Principal*/
         public static Panel panelPrincipal;
