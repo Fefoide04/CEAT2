@@ -29,25 +29,27 @@
         private void InitializeComponent()
         {
             this.gbox_docente = new System.Windows.Forms.GroupBox();
-            this.gbox_usuario = new System.Windows.Forms.GroupBox();
-            this.pnl_division = new System.Windows.Forms.Panel();
-            this.lbl_nombreDocente = new System.Windows.Forms.Label();
-            this.txt_nombreDocente = new System.Windows.Forms.TextBox();
-            this.txt_apellidoDocente = new System.Windows.Forms.TextBox();
-            this.lbl_apellidoDocente = new System.Windows.Forms.Label();
+            this.txt_telefonoDocente = new System.Windows.Forms.TextBox();
+            this.lbl_teléfonoDocente = new System.Windows.Forms.Label();
             this.lbl_cuilDocente = new System.Windows.Forms.Label();
             this.txt_cuilDocente3 = new System.Windows.Forms.TextBox();
             this.txt_cuilDocente2 = new System.Windows.Forms.TextBox();
             this.txt_cuilDocente1 = new System.Windows.Forms.TextBox();
-            this.lbl_teléfonoDocente = new System.Windows.Forms.Label();
-            this.txt_telefonoDocente = new System.Windows.Forms.TextBox();
-            this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
-            this.lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.txt_contraseniaUsuario = new System.Windows.Forms.TextBox();
-            this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
-            this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
+            this.txt_apellidoDocente = new System.Windows.Forms.TextBox();
+            this.lbl_apellidoDocente = new System.Windows.Forms.Label();
+            this.txt_nombreDocente = new System.Windows.Forms.TextBox();
+            this.lbl_nombreDocente = new System.Windows.Forms.Label();
+            this.gbox_usuario = new System.Windows.Forms.GroupBox();
             this.btn_agregarUsuario = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
+            this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
+            this.txt_contraseniaUsuario = new System.Windows.Forms.TextBox();
+            this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
+            this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
+            this.lbl_nombreUsuario = new System.Windows.Forms.Label();
+            this.pnl_division = new System.Windows.Forms.Panel();
+            this.lbl_permisoRol = new System.Windows.Forms.Label();
+            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
             this.gbox_docente.SuspendLayout();
             this.gbox_usuario.SuspendLayout();
             this.SuspendLayout();
@@ -72,62 +74,21 @@
             this.gbox_docente.TabStop = false;
             this.gbox_docente.Text = "Datos del Docente";
             // 
-            // gbox_usuario
+            // txt_telefonoDocente
             // 
-            this.gbox_usuario.Controls.Add(this.btn_agregarUsuario);
-            this.gbox_usuario.Controls.Add(this.btn_regresar);
-            this.gbox_usuario.Controls.Add(this.lbl_aclaracionContrasenia);
-            this.gbox_usuario.Controls.Add(this.txt_contraseniaUsuario);
-            this.gbox_usuario.Controls.Add(this.lbl_contraseniaUsuario);
-            this.gbox_usuario.Controls.Add(this.txt_nombreUsuario);
-            this.gbox_usuario.Controls.Add(this.lbl_nombreUsuario);
-            this.gbox_usuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbox_usuario.Location = new System.Drawing.Point(12, 283);
-            this.gbox_usuario.Name = "gbox_usuario";
-            this.gbox_usuario.Size = new System.Drawing.Size(856, 223);
-            this.gbox_usuario.TabIndex = 1;
-            this.gbox_usuario.TabStop = false;
-            this.gbox_usuario.Text = "Datos del Usuario";
+            this.txt_telefonoDocente.Location = new System.Drawing.Point(458, 50);
+            this.txt_telefonoDocente.Name = "txt_telefonoDocente";
+            this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
+            this.txt_telefonoDocente.TabIndex = 4;
             // 
-            // pnl_division
+            // lbl_teléfonoDocente
             // 
-            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_division.Location = new System.Drawing.Point(-30, 218);
-            this.pnl_division.Name = "pnl_division";
-            this.pnl_division.Size = new System.Drawing.Size(975, 55);
-            this.pnl_division.TabIndex = 2;
-            // 
-            // lbl_nombreDocente
-            // 
-            this.lbl_nombreDocente.AutoSize = true;
-            this.lbl_nombreDocente.Location = new System.Drawing.Point(26, 26);
-            this.lbl_nombreDocente.Name = "lbl_nombreDocente";
-            this.lbl_nombreDocente.Size = new System.Drawing.Size(68, 20);
-            this.lbl_nombreDocente.TabIndex = 0;
-            this.lbl_nombreDocente.Text = "Nombre";
-            // 
-            // txt_nombreDocente
-            // 
-            this.txt_nombreDocente.Location = new System.Drawing.Point(30, 50);
-            this.txt_nombreDocente.Name = "txt_nombreDocente";
-            this.txt_nombreDocente.Size = new System.Drawing.Size(160, 26);
-            this.txt_nombreDocente.TabIndex = 0;
-            // 
-            // txt_apellidoDocente
-            // 
-            this.txt_apellidoDocente.Location = new System.Drawing.Point(30, 114);
-            this.txt_apellidoDocente.Name = "txt_apellidoDocente";
-            this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
-            this.txt_apellidoDocente.TabIndex = 5;
-            // 
-            // lbl_apellidoDocente
-            // 
-            this.lbl_apellidoDocente.AutoSize = true;
-            this.lbl_apellidoDocente.Location = new System.Drawing.Point(26, 90);
-            this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
-            this.lbl_apellidoDocente.Size = new System.Drawing.Size(69, 20);
-            this.lbl_apellidoDocente.TabIndex = 2;
-            this.lbl_apellidoDocente.Text = "Apellido";
+            this.lbl_teléfonoDocente.AutoSize = true;
+            this.lbl_teléfonoDocente.Location = new System.Drawing.Point(454, 26);
+            this.lbl_teléfonoDocente.Name = "lbl_teléfonoDocente";
+            this.lbl_teléfonoDocente.Size = new System.Drawing.Size(71, 20);
+            this.lbl_teléfonoDocente.TabIndex = 10;
+            this.lbl_teléfonoDocente.Text = "Teléfono";
             // 
             // lbl_cuilDocente
             // 
@@ -163,63 +124,56 @@
             this.txt_cuilDocente1.Size = new System.Drawing.Size(43, 26);
             this.txt_cuilDocente1.TabIndex = 1;
             // 
-            // lbl_teléfonoDocente
+            // txt_apellidoDocente
             // 
-            this.lbl_teléfonoDocente.AutoSize = true;
-            this.lbl_teléfonoDocente.Location = new System.Drawing.Point(454, 26);
-            this.lbl_teléfonoDocente.Name = "lbl_teléfonoDocente";
-            this.lbl_teléfonoDocente.Size = new System.Drawing.Size(71, 20);
-            this.lbl_teléfonoDocente.TabIndex = 10;
-            this.lbl_teléfonoDocente.Text = "Teléfono";
+            this.txt_apellidoDocente.Location = new System.Drawing.Point(30, 114);
+            this.txt_apellidoDocente.Name = "txt_apellidoDocente";
+            this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
+            this.txt_apellidoDocente.TabIndex = 5;
             // 
-            // txt_telefonoDocente
+            // lbl_apellidoDocente
             // 
-            this.txt_telefonoDocente.Location = new System.Drawing.Point(458, 50);
-            this.txt_telefonoDocente.Name = "txt_telefonoDocente";
-            this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
-            this.txt_telefonoDocente.TabIndex = 4;
+            this.lbl_apellidoDocente.AutoSize = true;
+            this.lbl_apellidoDocente.Location = new System.Drawing.Point(26, 90);
+            this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
+            this.lbl_apellidoDocente.Size = new System.Drawing.Size(69, 20);
+            this.lbl_apellidoDocente.TabIndex = 2;
+            this.lbl_apellidoDocente.Text = "Apellido";
             // 
-            // txt_nombreUsuario
+            // txt_nombreDocente
             // 
-            this.txt_nombreUsuario.Location = new System.Drawing.Point(30, 56);
-            this.txt_nombreUsuario.Name = "txt_nombreUsuario";
-            this.txt_nombreUsuario.Size = new System.Drawing.Size(160, 26);
-            this.txt_nombreUsuario.TabIndex = 6;
+            this.txt_nombreDocente.Location = new System.Drawing.Point(30, 50);
+            this.txt_nombreDocente.Name = "txt_nombreDocente";
+            this.txt_nombreDocente.Size = new System.Drawing.Size(160, 26);
+            this.txt_nombreDocente.TabIndex = 0;
             // 
-            // lbl_nombreUsuario
+            // lbl_nombreDocente
             // 
-            this.lbl_nombreUsuario.AutoSize = true;
-            this.lbl_nombreUsuario.Location = new System.Drawing.Point(26, 32);
-            this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
-            this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
-            this.lbl_nombreUsuario.TabIndex = 2;
-            this.lbl_nombreUsuario.Text = "Nombre";
+            this.lbl_nombreDocente.AutoSize = true;
+            this.lbl_nombreDocente.Location = new System.Drawing.Point(26, 26);
+            this.lbl_nombreDocente.Name = "lbl_nombreDocente";
+            this.lbl_nombreDocente.Size = new System.Drawing.Size(68, 20);
+            this.lbl_nombreDocente.TabIndex = 0;
+            this.lbl_nombreDocente.Text = "Nombre";
             // 
-            // txt_contraseniaUsuario
+            // gbox_usuario
             // 
-            this.txt_contraseniaUsuario.Location = new System.Drawing.Point(209, 56);
-            this.txt_contraseniaUsuario.Name = "txt_contraseniaUsuario";
-            this.txt_contraseniaUsuario.Size = new System.Drawing.Size(160, 26);
-            this.txt_contraseniaUsuario.TabIndex = 7;
-            // 
-            // lbl_contraseniaUsuario
-            // 
-            this.lbl_contraseniaUsuario.AutoSize = true;
-            this.lbl_contraseniaUsuario.Location = new System.Drawing.Point(205, 32);
-            this.lbl_contraseniaUsuario.Name = "lbl_contraseniaUsuario";
-            this.lbl_contraseniaUsuario.Size = new System.Drawing.Size(95, 20);
-            this.lbl_contraseniaUsuario.TabIndex = 4;
-            this.lbl_contraseniaUsuario.Text = "Contraseña";
-            // 
-            // lbl_aclaracionContrasenia
-            // 
-            this.lbl_aclaracionContrasenia.AutoSize = true;
-            this.lbl_aclaracionContrasenia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(27, 102);
-            this.lbl_aclaracionContrasenia.Name = "lbl_aclaracionContrasenia";
-            this.lbl_aclaracionContrasenia.Size = new System.Drawing.Size(444, 18);
-            this.lbl_aclaracionContrasenia.TabIndex = 6;
-            this.lbl_aclaracionContrasenia.Text = "Si la contraseña permanece vacía, se creará una aleatoria";
+            this.gbox_usuario.Controls.Add(this.cmb_permisoRol);
+            this.gbox_usuario.Controls.Add(this.lbl_permisoRol);
+            this.gbox_usuario.Controls.Add(this.btn_agregarUsuario);
+            this.gbox_usuario.Controls.Add(this.btn_regresar);
+            this.gbox_usuario.Controls.Add(this.lbl_aclaracionContrasenia);
+            this.gbox_usuario.Controls.Add(this.txt_contraseniaUsuario);
+            this.gbox_usuario.Controls.Add(this.lbl_contraseniaUsuario);
+            this.gbox_usuario.Controls.Add(this.txt_nombreUsuario);
+            this.gbox_usuario.Controls.Add(this.lbl_nombreUsuario);
+            this.gbox_usuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbox_usuario.Location = new System.Drawing.Point(12, 283);
+            this.gbox_usuario.Name = "gbox_usuario";
+            this.gbox_usuario.Size = new System.Drawing.Size(856, 223);
+            this.gbox_usuario.TabIndex = 1;
+            this.gbox_usuario.TabStop = false;
+            this.gbox_usuario.Text = "Datos del Usuario";
             // 
             // btn_agregarUsuario
             // 
@@ -244,6 +198,76 @@
             this.btn_regresar.Text = "Regresar";
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
+            // lbl_aclaracionContrasenia
+            // 
+            this.lbl_aclaracionContrasenia.AutoSize = true;
+            this.lbl_aclaracionContrasenia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(27, 102);
+            this.lbl_aclaracionContrasenia.Name = "lbl_aclaracionContrasenia";
+            this.lbl_aclaracionContrasenia.Size = new System.Drawing.Size(444, 18);
+            this.lbl_aclaracionContrasenia.TabIndex = 6;
+            this.lbl_aclaracionContrasenia.Text = "Si la contraseña permanece vacía, se creará una aleatoria";
+            // 
+            // txt_contraseniaUsuario
+            // 
+            this.txt_contraseniaUsuario.Location = new System.Drawing.Point(209, 56);
+            this.txt_contraseniaUsuario.Name = "txt_contraseniaUsuario";
+            this.txt_contraseniaUsuario.Size = new System.Drawing.Size(160, 26);
+            this.txt_contraseniaUsuario.TabIndex = 7;
+            // 
+            // lbl_contraseniaUsuario
+            // 
+            this.lbl_contraseniaUsuario.AutoSize = true;
+            this.lbl_contraseniaUsuario.Location = new System.Drawing.Point(205, 32);
+            this.lbl_contraseniaUsuario.Name = "lbl_contraseniaUsuario";
+            this.lbl_contraseniaUsuario.Size = new System.Drawing.Size(95, 20);
+            this.lbl_contraseniaUsuario.TabIndex = 4;
+            this.lbl_contraseniaUsuario.Text = "Contraseña";
+            // 
+            // txt_nombreUsuario
+            // 
+            this.txt_nombreUsuario.Location = new System.Drawing.Point(30, 56);
+            this.txt_nombreUsuario.Name = "txt_nombreUsuario";
+            this.txt_nombreUsuario.Size = new System.Drawing.Size(160, 26);
+            this.txt_nombreUsuario.TabIndex = 6;
+            // 
+            // lbl_nombreUsuario
+            // 
+            this.lbl_nombreUsuario.AutoSize = true;
+            this.lbl_nombreUsuario.Location = new System.Drawing.Point(26, 32);
+            this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
+            this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
+            this.lbl_nombreUsuario.TabIndex = 2;
+            this.lbl_nombreUsuario.Text = "Nombre";
+            // 
+            // pnl_division
+            // 
+            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_division.Location = new System.Drawing.Point(-30, 218);
+            this.pnl_division.Name = "pnl_division";
+            this.pnl_division.Size = new System.Drawing.Size(975, 55);
+            this.pnl_division.TabIndex = 2;
+            // 
+            // lbl_permisoRol
+            // 
+            this.lbl_permisoRol.AutoSize = true;
+            this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
+            this.lbl_permisoRol.Name = "lbl_permisoRol";
+            this.lbl_permisoRol.Size = new System.Drawing.Size(31, 20);
+            this.lbl_permisoRol.TabIndex = 22;
+            this.lbl_permisoRol.Text = "Rol";
+            // 
+            // cmb_permisoRol
+            // 
+            this.cmb_permisoRol.FormattingEnabled = true;
+            this.cmb_permisoRol.Items.AddRange(new object[] {
+            "Docente",
+            "Director/a"});
+            this.cmb_permisoRol.Location = new System.Drawing.Point(380, 56);
+            this.cmb_permisoRol.Name = "cmb_permisoRol";
+            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
+            this.cmb_permisoRol.TabIndex = 23;
             // 
             // frm_agregarUsuarios
             // 
@@ -286,5 +310,7 @@
         private System.Windows.Forms.Label lbl_aclaracionContrasenia;
         private System.Windows.Forms.Button btn_agregarUsuario;
         private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.ComboBox cmb_permisoRol;
+        private System.Windows.Forms.Label lbl_permisoRol;
     }
 }
