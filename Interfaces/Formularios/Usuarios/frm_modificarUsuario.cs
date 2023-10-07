@@ -16,7 +16,7 @@ namespace Interfaces
             InitializeComponent();
         }
 
-        private void variables.estudiantesg_usuarios_DoubleClick(object sender, EventArgs e)
+        private void dtg_usuarios_DoubleClick(object sender, EventArgs e)
         {
             btn_cancelar.Visible = true;
         }

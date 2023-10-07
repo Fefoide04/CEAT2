@@ -14,13 +14,10 @@ namespace Interfaces
         public frm_visualizacionEstudiantes()
         {
             InitializeComponent();
+
+            cargar_grilla();
+
             cmb_filtros.SelectedIndex = 0;
- 
-            variables.estudiantes.Load(variables.BD.consulta("select * from Estudiante"));
-
-            variables.BD.desconectar();
-
-            dtg_vistaEstudiantes.DataSource = variables.estudiantes;
         }
         private void btn_irConsultas_Click(object sender, EventArgs e)
         {
@@ -42,23 +39,21 @@ namespace Interfaces
 
         }
 
-        string tab_campo = "";
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*menor o igual a 2 es temporal.*/
-            if (cmb_filtros.SelectedIndex >= 0 && cmb_filtros.SelectedIndex <= 2)
+            if (cmb_filtros.SelectedIndex != -1)
             {
                 switch (cmb_filtros.SelectedIndex)
                 {
-                    case 0:
-                        string comando = "select * from Estudiante";
-                        cargar_grilla(comando);
-                        break;
                     case 1:
-                        tab_campo = " Estudiante.nombre ";
+                        variables.filtro = " Estudiante.nombre ";
                         break;
                     case 2:
-                        tab_campo = " Estudiante.apellido ";
+                        variables.filtro = " Estudiante.apellido ";
+                        break;
+                    default:
+                        variables.filtro = null;
+                        buscar();
                         break;
                 }
             }
@@ -69,24 +64,25 @@ namespace Interfaces
 
         public void buscar()
         {
-            if (cmb_filtros.SelectedIndex == 0)
+            if (variables.filtro != null)
             {
-                txt_busqueda.Text = "";
-                MessageBox.Show("Elija un filtro", "Filtros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                string comando = "select * from estudiante where" + variables.filtro + "like '" + txt_busqueda.Text + "%'";
+                cargar_grilla(comando);
             }
             else
             {
-                string comando = "select * from estudiante where" + tab_campo + "like '" + txt_busqueda.Text + "%'";
-                cargar_grilla(comando);
+                cargar_grilla();
             }
-        }
+       }
 
-        /*metodo paracargar grilla al realizar consultas.*/
-        public void cargar_grilla( string comando)
+        /*metodo para cargar grilla al realizar consultas.*/
+        public void cargar_grilla(string comando = "select * from estudiante")
         {
-            DataTable dt = new DataTable();
-            dt.Load(conexionbd.consulta(comando));
-            dtg_vistaEstudiantes.DataSource = dt;
+            variables.estudiantes.Clear();
+            variables.estudiantes.Load(variables.BD.consulta(comando));
+            variables.BD.desconectar();
+
+            dtg_vistaEstudiantes.DataSource = variables.estudiantes;
         }
         //============================
 

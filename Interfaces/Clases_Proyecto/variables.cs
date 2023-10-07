@@ -30,6 +30,7 @@ namespace Interfaces
 
         /*Estudiantes*/
 
-        public static DataTable estudiantes = new DataTable(); 
+        public static DataTable estudiantes = new DataTable();
+        public static string filtro = null;
     }
 }

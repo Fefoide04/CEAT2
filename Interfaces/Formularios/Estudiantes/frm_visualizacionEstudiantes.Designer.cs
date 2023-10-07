@@ -75,7 +75,7 @@
             this.cmb_filtros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_filtros.FormattingEnabled = true;
             this.cmb_filtros.Items.AddRange(new object[] {
-            "-- seleccione filtro --",
+            "Mostrar Todo",
             "Nombre",
             "Apellido",
             "Caracterización",
