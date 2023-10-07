@@ -171,3 +171,5 @@ C:\Repositorio CEAT\Interfaces\obj\x86\Debug\Interfaces.Properties.Resources.res
 C:\Repositorio CEAT\Interfaces\obj\x86\Debug\Interfaces.csproj.GenerateResource.Cache
 C:\Repositorio CEAT\Interfaces\bin\Debug\Interfaces.exe
 C:\Repositorio CEAT\Interfaces\bin\Debug\Interfaces.pdb
+C:\CEAT Proyect8\Interfaces\obj\x86\Debug\Interfaces.exe
+C:\CEAT Proyect8\Interfaces\obj\x86\Debug\Interfaces.pdb

@@ -40,6 +40,8 @@
             this.txt_nombreDocente = new System.Windows.Forms.TextBox();
             this.lbl_nombreDocente = new System.Windows.Forms.Label();
             this.gbox_usuario = new System.Windows.Forms.GroupBox();
+            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
+            this.lbl_permisoRol = new System.Windows.Forms.Label();
             this.btn_agregarUsuario = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
@@ -48,10 +50,10 @@
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.pnl_division = new System.Windows.Forms.Panel();
-            this.lbl_permisoRol = new System.Windows.Forms.Label();
-            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
+            this.dtgvUsuarios = new System.Windows.Forms.DataGridView();
             this.gbox_docente.SuspendLayout();
             this.gbox_usuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // gbox_docente
@@ -158,6 +160,7 @@
             // 
             // gbox_usuario
             // 
+            this.gbox_usuario.Controls.Add(this.dtgvUsuarios);
             this.gbox_usuario.Controls.Add(this.cmb_permisoRol);
             this.gbox_usuario.Controls.Add(this.lbl_permisoRol);
             this.gbox_usuario.Controls.Add(this.btn_agregarUsuario);
@@ -174,6 +177,26 @@
             this.gbox_usuario.TabIndex = 1;
             this.gbox_usuario.TabStop = false;
             this.gbox_usuario.Text = "Datos del Usuario";
+            // 
+            // cmb_permisoRol
+            // 
+            this.cmb_permisoRol.FormattingEnabled = true;
+            this.cmb_permisoRol.Items.AddRange(new object[] {
+            "Docente",
+            "Director/a"});
+            this.cmb_permisoRol.Location = new System.Drawing.Point(380, 56);
+            this.cmb_permisoRol.Name = "cmb_permisoRol";
+            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
+            this.cmb_permisoRol.TabIndex = 23;
+            // 
+            // lbl_permisoRol
+            // 
+            this.lbl_permisoRol.AutoSize = true;
+            this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
+            this.lbl_permisoRol.Name = "lbl_permisoRol";
+            this.lbl_permisoRol.Size = new System.Drawing.Size(31, 20);
+            this.lbl_permisoRol.TabIndex = 22;
+            this.lbl_permisoRol.Text = "Rol";
             // 
             // btn_agregarUsuario
             // 
@@ -249,25 +272,15 @@
             this.pnl_division.Size = new System.Drawing.Size(975, 55);
             this.pnl_division.TabIndex = 2;
             // 
-            // lbl_permisoRol
+            // dtgvUsuarios
             // 
-            this.lbl_permisoRol.AutoSize = true;
-            this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
-            this.lbl_permisoRol.Name = "lbl_permisoRol";
-            this.lbl_permisoRol.Size = new System.Drawing.Size(31, 20);
-            this.lbl_permisoRol.TabIndex = 22;
-            this.lbl_permisoRol.Text = "Rol";
-            // 
-            // cmb_permisoRol
-            // 
-            this.cmb_permisoRol.FormattingEnabled = true;
-            this.cmb_permisoRol.Items.AddRange(new object[] {
-            "Docente",
-            "Director/a"});
-            this.cmb_permisoRol.Location = new System.Drawing.Point(380, 56);
-            this.cmb_permisoRol.Name = "cmb_permisoRol";
-            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
-            this.cmb_permisoRol.TabIndex = 23;
+            this.dtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvUsuarios.Location = new System.Drawing.Point(576, 32);
+            this.dtgvUsuarios.Name = "dtgvUsuarios";
+            this.dtgvUsuarios.ReadOnly = true;
+            this.dtgvUsuarios.Size = new System.Drawing.Size(240, 150);
+            this.dtgvUsuarios.TabIndex = 24;
+            this.dtgvUsuarios.Visible = false;
             // 
             // frm_agregarUsuarios
             // 
@@ -284,6 +297,7 @@
             this.gbox_docente.PerformLayout();
             this.gbox_usuario.ResumeLayout(false);
             this.gbox_usuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,5 +326,6 @@
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.ComboBox cmb_permisoRol;
         private System.Windows.Forms.Label lbl_permisoRol;
+        private System.Windows.Forms.DataGridView dtgvUsuarios;
     }
 }

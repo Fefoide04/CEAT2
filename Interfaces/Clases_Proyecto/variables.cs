@@ -14,6 +14,9 @@ namespace Interfaces
         /*Generales*/
 
         public static comandosBD BD = new comandosBD();
+        public static string ContraseñaUsuario;
+        public static int control = 0;
+        public static DataTable Tabla = new DataTable();
 
         /*Formulario Principal*/
         public static Panel panelPrincipal;
