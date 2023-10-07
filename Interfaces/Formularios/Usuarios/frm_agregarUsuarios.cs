@@ -47,7 +47,7 @@ namespace Interfaces
             }
             else
             {
-                // si está vicío el txt de la contraseña, la genera automáticamente
+                // si está vacío el txt de la contraseña, la genera automáticamente
                 if (txt_contraseniaUsuario.Text == "")
                 {
                     txt_contraseniaUsuario.Text = metodos.CrearContraseña();
@@ -59,11 +59,14 @@ namespace Interfaces
                     if (result == DialogResult.Yes)
                     {
                         string cuil = txt_cuilDocente1.Text + txt_cuilDocente2.Text + txt_cuilDocente3;
+                        string id;
                         bool AltaU = false;
                         bool AltaD = false;
-                        AltaU = alta.ABM("INSERT INTO Usuario (nombreUsuario, password, idDocente) VALUES ('" + txt_nombreUsuario.Text + "','" + txt_contraseniaUsuario.Text + "')");
                         AltaD = alta.ABM("INSERT INTO Docente (nombre, apellido, CUIL, telefono) VALUES ('" + txt_nombreDocente + "','" + txt_apellidoDocente + "','" + cuil + "','" + txt_telefonoDocente + "')");
-                        if (AltaU == true)
+                        id= alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'").ToString();
+                        AltaU = alta.ABM("INSERT INTO Usuario (nombreUsuario, password, idDocente) VALUES ('" + txt_nombreUsuario.Text + "','" + txt_contraseniaUsuario.Text + "','" + id + ")");
+                        
+                        if (AltaU == true && AltaD == true)
                         {
                             MessageBox.Show("Se creó correctamente el registro", "Proceso finalizado:");
                         }
