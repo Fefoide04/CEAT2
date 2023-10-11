@@ -40,6 +40,7 @@
             this.txt_nombreDocente = new System.Windows.Forms.TextBox();
             this.lbl_nombreDocente = new System.Windows.Forms.Label();
             this.gbox_usuario = new System.Windows.Forms.GroupBox();
+            this.dtgvUsuarios = new System.Windows.Forms.DataGridView();
             this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
             this.lbl_permisoRol = new System.Windows.Forms.Label();
             this.btn_agregarUsuario = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.pnl_division = new System.Windows.Forms.Panel();
-            this.dtgvUsuarios = new System.Windows.Forms.DataGridView();
             this.gbox_docente.SuspendLayout();
             this.gbox_usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuarios)).BeginInit();
@@ -82,6 +82,7 @@
             this.txt_telefonoDocente.Name = "txt_telefonoDocente";
             this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
             this.txt_telefonoDocente.TabIndex = 4;
+            this.txt_telefonoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoDocente_KeyPress);
             // 
             // lbl_teléfonoDocente
             // 
@@ -109,6 +110,7 @@
             this.txt_cuilDocente3.Name = "txt_cuilDocente3";
             this.txt_cuilDocente3.Size = new System.Drawing.Size(22, 26);
             this.txt_cuilDocente3.TabIndex = 3;
+            this.txt_cuilDocente3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente3_KeyPress);
             // 
             // txt_cuilDocente2
             // 
@@ -117,6 +119,7 @@
             this.txt_cuilDocente2.Name = "txt_cuilDocente2";
             this.txt_cuilDocente2.Size = new System.Drawing.Size(156, 26);
             this.txt_cuilDocente2.TabIndex = 2;
+            this.txt_cuilDocente2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente2_KeyPress);
             // 
             // txt_cuilDocente1
             // 
@@ -125,6 +128,7 @@
             this.txt_cuilDocente1.Name = "txt_cuilDocente1";
             this.txt_cuilDocente1.Size = new System.Drawing.Size(43, 26);
             this.txt_cuilDocente1.TabIndex = 1;
+            this.txt_cuilDocente1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente1_KeyPress);
             // 
             // txt_apellidoDocente
             // 
@@ -132,6 +136,7 @@
             this.txt_apellidoDocente.Name = "txt_apellidoDocente";
             this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
             this.txt_apellidoDocente.TabIndex = 5;
+            this.txt_apellidoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoDocente_KeyPress);
             // 
             // lbl_apellidoDocente
             // 
@@ -148,6 +153,7 @@
             this.txt_nombreDocente.Name = "txt_nombreDocente";
             this.txt_nombreDocente.Size = new System.Drawing.Size(160, 26);
             this.txt_nombreDocente.TabIndex = 0;
+            this.txt_nombreDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreDocente_KeyPress);
             // 
             // lbl_nombreDocente
             // 
@@ -178,8 +184,19 @@
             this.gbox_usuario.TabStop = false;
             this.gbox_usuario.Text = "Datos del Usuario";
             // 
+            // dtgvUsuarios
+            // 
+            this.dtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvUsuarios.Location = new System.Drawing.Point(576, 32);
+            this.dtgvUsuarios.Name = "dtgvUsuarios";
+            this.dtgvUsuarios.ReadOnly = true;
+            this.dtgvUsuarios.Size = new System.Drawing.Size(240, 150);
+            this.dtgvUsuarios.TabIndex = 24;
+            this.dtgvUsuarios.Visible = false;
+            // 
             // cmb_permisoRol
             // 
+            this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_permisoRol.FormattingEnabled = true;
             this.cmb_permisoRol.Items.AddRange(new object[] {
             "Docente",
@@ -238,6 +255,7 @@
             this.txt_contraseniaUsuario.Name = "txt_contraseniaUsuario";
             this.txt_contraseniaUsuario.Size = new System.Drawing.Size(160, 26);
             this.txt_contraseniaUsuario.TabIndex = 7;
+            this.txt_contraseniaUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseniaUsuario_KeyPress);
             // 
             // lbl_contraseniaUsuario
             // 
@@ -254,6 +272,7 @@
             this.txt_nombreUsuario.Name = "txt_nombreUsuario";
             this.txt_nombreUsuario.Size = new System.Drawing.Size(160, 26);
             this.txt_nombreUsuario.TabIndex = 6;
+            this.txt_nombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreUsuario_KeyPress);
             // 
             // lbl_nombreUsuario
             // 
@@ -271,16 +290,6 @@
             this.pnl_division.Name = "pnl_division";
             this.pnl_division.Size = new System.Drawing.Size(975, 55);
             this.pnl_division.TabIndex = 2;
-            // 
-            // dtgvUsuarios
-            // 
-            this.dtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvUsuarios.Location = new System.Drawing.Point(576, 32);
-            this.dtgvUsuarios.Name = "dtgvUsuarios";
-            this.dtgvUsuarios.ReadOnly = true;
-            this.dtgvUsuarios.Size = new System.Drawing.Size(240, 150);
-            this.dtgvUsuarios.TabIndex = 24;
-            this.dtgvUsuarios.Visible = false;
             // 
             // frm_agregarUsuarios
             // 

@@ -14,6 +14,8 @@ namespace Interfaces
         public frm_login()
         {
             InitializeComponent();
+            txtUsuario.MaxLength = 20;
+            txtContrasena.MaxLength = 20;
         }
 
         comandosBD claseConexion = new comandosBD();
@@ -65,6 +67,10 @@ namespace Interfaces
         //Si pulsa Enter dentro txtContrasena se presiona automaticamente el boton btnIniciarSesion
         private void txtContrasena_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
             if (e.KeyChar == Convert.ToChar(13))
             {
                 btnIniciarSesion.PerformClick();
@@ -104,6 +110,14 @@ namespace Interfaces
         }
 
         #endregion
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
 
     } 
 

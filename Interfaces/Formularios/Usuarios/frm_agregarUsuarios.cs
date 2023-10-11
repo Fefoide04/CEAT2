@@ -14,6 +14,16 @@ namespace Interfaces
         public frm_agregarUsuarios()
         {
             InitializeComponent();
+            // docente.
+            txt_nombreDocente.MaxLength = 12;
+            txt_apellidoDocente.MaxLength = 12;
+            txt_cuilDocente1.MaxLength = 2;
+            txt_cuilDocente2.MaxLength = 8;
+            txt_cuilDocente3.MaxLength = 1;
+            txt_telefonoDocente.MaxLength = 12;
+            // usuario.
+            txt_nombreUsuario.MaxLength = 20;
+            txt_contraseniaUsuario.MaxLength = 20;
         }
         comandosBD alta = new comandosBD();
 
@@ -78,6 +88,54 @@ namespace Interfaces
                     }
                 }
             } 
+        }
+
+        // validar docente.
+        private void txt_nombreDocente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_textos(e);
+        }
+
+        private void txt_apellidoDocente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_textos(e);
+        }
+
+        private void txt_cuilDocente1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_numeros(e);
+        }
+
+        private void txt_cuilDocente2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_numeros(e);
+        }
+
+        private void txt_cuilDocente3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_numeros(e);
+        }
+
+        private void txt_telefonoDocente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_numeros(e);
+        }
+
+        // validar usuario.
+        private void txt_nombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_contraseniaUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }           
         }
     }
 }
