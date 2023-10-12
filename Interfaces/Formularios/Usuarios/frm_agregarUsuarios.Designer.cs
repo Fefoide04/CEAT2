@@ -42,6 +42,8 @@
             this.gbox_usuario = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
+            this.lbl_permisoRol = new System.Windows.Forms.Label();
             this.btn_agregarUsuario = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.pnl_division = new System.Windows.Forms.Panel();
-            this.lbl_permisoRol = new System.Windows.Forms.Label();
-            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
             this.gbox_docente.SuspendLayout();
             this.gbox_usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuarios)).BeginInit();
@@ -59,6 +59,7 @@
             // 
             // gbox_docente
             // 
+            this.gbox_docente.BackColor = System.Drawing.Color.Transparent;
             this.gbox_docente.Controls.Add(this.txt_telefonoDocente);
             this.gbox_docente.Controls.Add(this.lbl_teléfonoDocente);
             this.gbox_docente.Controls.Add(this.lbl_cuilDocente);
@@ -88,6 +89,7 @@
             // lbl_teléfonoDocente
             // 
             this.lbl_teléfonoDocente.AutoSize = true;
+            this.lbl_teléfonoDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_teléfonoDocente.Location = new System.Drawing.Point(454, 26);
             this.lbl_teléfonoDocente.Name = "lbl_teléfonoDocente";
             this.lbl_teléfonoDocente.Size = new System.Drawing.Size(71, 20);
@@ -97,6 +99,7 @@
             // lbl_cuilDocente
             // 
             this.lbl_cuilDocente.AutoSize = true;
+            this.lbl_cuilDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_cuilDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cuilDocente.Location = new System.Drawing.Point(205, 23);
             this.lbl_cuilDocente.Name = "lbl_cuilDocente";
@@ -142,6 +145,7 @@
             // lbl_apellidoDocente
             // 
             this.lbl_apellidoDocente.AutoSize = true;
+            this.lbl_apellidoDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_apellidoDocente.Location = new System.Drawing.Point(26, 90);
             this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
             this.lbl_apellidoDocente.Size = new System.Drawing.Size(69, 20);
@@ -159,6 +163,7 @@
             // lbl_nombreDocente
             // 
             this.lbl_nombreDocente.AutoSize = true;
+            this.lbl_nombreDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_nombreDocente.Location = new System.Drawing.Point(26, 26);
             this.lbl_nombreDocente.Name = "lbl_nombreDocente";
             this.lbl_nombreDocente.Size = new System.Drawing.Size(68, 20);
@@ -167,6 +172,7 @@
             // 
             // gbox_usuario
             // 
+            this.gbox_usuario.BackColor = System.Drawing.Color.Transparent;
             this.gbox_usuario.Controls.Add(this.label1);
             this.gbox_usuario.Controls.Add(this.dtgvUsuarios);
             this.gbox_usuario.Controls.Add(this.cmb_permisoRol);
@@ -189,6 +195,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(527, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
@@ -198,6 +205,7 @@
             // dtgvUsuarios
             // 
             this.dtgvUsuarios.AllowUserToAddRows = false;
+            this.dtgvUsuarios.AllowUserToDeleteRows = false;
             this.dtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvUsuarios.Location = new System.Drawing.Point(531, 43);
             this.dtgvUsuarios.Name = "dtgvUsuarios";
@@ -205,6 +213,29 @@
             this.dtgvUsuarios.RowHeadersVisible = false;
             this.dtgvUsuarios.Size = new System.Drawing.Size(319, 174);
             this.dtgvUsuarios.TabIndex = 24;
+            // 
+            // cmb_permisoRol
+            // 
+            this.cmb_permisoRol.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_permisoRol.FormattingEnabled = true;
+            this.cmb_permisoRol.Items.AddRange(new object[] {
+            "Docente",
+            "Director/a"});
+            this.cmb_permisoRol.Location = new System.Drawing.Point(380, 56);
+            this.cmb_permisoRol.Name = "cmb_permisoRol";
+            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
+            this.cmb_permisoRol.TabIndex = 23;
+            // 
+            // lbl_permisoRol
+            // 
+            this.lbl_permisoRol.AutoSize = true;
+            this.lbl_permisoRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
+            this.lbl_permisoRol.Name = "lbl_permisoRol";
+            this.lbl_permisoRol.Size = new System.Drawing.Size(44, 20);
+            this.lbl_permisoRol.TabIndex = 22;
+            this.lbl_permisoRol.Text = "Perfil";
             // 
             // btn_agregarUsuario
             // 
@@ -233,6 +264,7 @@
             // lbl_aclaracionContrasenia
             // 
             this.lbl_aclaracionContrasenia.AutoSize = true;
+            this.lbl_aclaracionContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_aclaracionContrasenia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(27, 102);
             this.lbl_aclaracionContrasenia.Name = "lbl_aclaracionContrasenia";
@@ -251,6 +283,7 @@
             // lbl_contraseniaUsuario
             // 
             this.lbl_contraseniaUsuario.AutoSize = true;
+            this.lbl_contraseniaUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_contraseniaUsuario.Location = new System.Drawing.Point(205, 32);
             this.lbl_contraseniaUsuario.Name = "lbl_contraseniaUsuario";
             this.lbl_contraseniaUsuario.Size = new System.Drawing.Size(95, 20);
@@ -268,6 +301,7 @@
             // lbl_nombreUsuario
             // 
             this.lbl_nombreUsuario.AutoSize = true;
+            this.lbl_nombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lbl_nombreUsuario.Location = new System.Drawing.Point(26, 32);
             this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
@@ -276,41 +310,23 @@
             // 
             // pnl_division
             // 
-            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_division.BackColor = System.Drawing.Color.Transparent;
             this.pnl_division.Location = new System.Drawing.Point(-30, 218);
             this.pnl_division.Name = "pnl_division";
             this.pnl_division.Size = new System.Drawing.Size(975, 55);
             this.pnl_division.TabIndex = 2;
             // 
-            // lbl_permisoRol
-            // 
-            this.lbl_permisoRol.AutoSize = true;
-            this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
-            this.lbl_permisoRol.Name = "lbl_permisoRol";
-            this.lbl_permisoRol.Size = new System.Drawing.Size(44, 20);
-            this.lbl_permisoRol.TabIndex = 22;
-            this.lbl_permisoRol.Text = "Perfil";
-            // 
-            // cmb_permisoRol
-            // 
-            this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_permisoRol.FormattingEnabled = true;
-            this.cmb_permisoRol.Items.AddRange(new object[] {
-            "Docente",
-            "Director/a"});
-            this.cmb_permisoRol.Location = new System.Drawing.Point(380, 56);
-            this.cmb_permisoRol.Name = "cmb_permisoRol";
-            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
-            this.cmb_permisoRol.TabIndex = 23;
-            // 
             // frm_agregarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Interfaces.Properties.Resources.ceat_4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 530);
             this.Controls.Add(this.pnl_division);
             this.Controls.Add(this.gbox_usuario);
             this.Controls.Add(this.gbox_docente);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_agregarUsuarios";
             this.Text = "frm_agregarUsuarios";

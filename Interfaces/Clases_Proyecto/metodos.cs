@@ -64,10 +64,10 @@ namespace Interfaces
         public static string CrearContraseña()
         {
             Random rdn = new Random();
-            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
             int longitud = caracteres.Length;
             char letra;
-            int longitudContraseña = 8;
+            int longitudContraseña = 6;
             variables.ContraseñaUsuario = string.Empty;
             for (int i = 0; i < longitudContraseña; i++)
             {

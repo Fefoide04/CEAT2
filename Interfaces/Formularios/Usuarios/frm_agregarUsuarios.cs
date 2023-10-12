@@ -24,7 +24,8 @@ namespace Interfaces
             // usuario.
             txt_nombreUsuario.MaxLength = 20;
             txt_contraseniaUsuario.MaxLength = 20;
-
+            cmb_permisoRol.SelectedIndex = 0;
+            
         }
         comandosBD alta = new comandosBD();
 
@@ -35,7 +36,7 @@ namespace Interfaces
 
         private void btn_agregarUsuario_Click(object sender, EventArgs e)
         {
-            if (txt_nombreDocente.Text == "" || txt_apellidoDocente.Text == "" || txt_cuilDocente1.Text == "" || txt_cuilDocente2.Text == "" || txt_cuilDocente3.Text == "" || txt_telefonoDocente.Text == "" || txt_nombreUsuario.Text == "" || txt_contraseniaUsuario.Text == "")
+            if (txt_nombreDocente.Text == "" || txt_apellidoDocente.Text == "" || txt_cuilDocente1.Text == "" || txt_cuilDocente2.Text == "" || txt_cuilDocente3.Text == "" || txt_telefonoDocente.Text == "" || txt_nombreUsuario.Text == "")
             {
                 MessageBox.Show("Faltan datos en los campos", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -93,7 +94,10 @@ namespace Interfaces
                             {
                                 variables.perfil = true;
                             }
-
+                            if (cmb_permisoRol.Text == "Docente")
+                            {
+                                variables.perfil = false;
+                            }
                             AltaU = alta.ABM("insert into Usuario (nombreUsuario, cont, idDocente, perfil) VALUES ('" + txt_nombreUsuario.Text + "', '" + txt_contraseniaUsuario.Text + "', " + variables.id + ", " + variables.perfil + " )");
 
                             if (AltaU == true && AltaD == true)
@@ -104,7 +108,7 @@ namespace Interfaces
                             {
                                 MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
                             }
-                            metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregarUsuario.Tag.ToString()), variables.panelPrincipal);
+                           // metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregarUsuario.Tag.ToString()), variables.panelPrincipal);
                         }
                     }
                 } 

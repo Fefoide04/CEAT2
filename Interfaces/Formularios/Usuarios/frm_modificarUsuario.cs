@@ -21,6 +21,7 @@ namespace Interfaces
             txt_cuilDocente2.MaxLength = 8;
             txt_cuilDocente3.MaxLength = 1;
             txt_telefonoDocente.MaxLength = 12;
+            cmbEstado.SelectedIndex = 0;
         }
         comandosBD alta = new comandosBD();
 
@@ -37,22 +38,25 @@ namespace Interfaces
 
         private void dtg_usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_nombreUsuario.Text = dtg_usuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txt_contraseniaUsuario.Text = dtg_usuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
-            if ((dtg_usuarios.Rows[e.RowIndex].Cells[4].Value.ToString()) == "True") cmb_permisoRol.Text = "Director/a";
-            if ((dtg_usuarios.Rows[e.RowIndex].Cells[4].Value.ToString()) == "False") cmb_permisoRol.Text = "Docente";
-            txt_nombreDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txt_apellidoDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txt_telefonoDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txt_cuilDocente3.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(10, 1);
-            txt_cuilDocente2.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(2, 8);
-            txt_cuilDocente1.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(0, 2);
-            variables.c = e.RowIndex;
+            if (e.RowIndex != -1)
+            {
+                txt_nombreUsuario.Text = dtg_usuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txt_contraseniaUsuario.Text = dtg_usuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
+                if ((dtg_usuarios.Rows[e.RowIndex].Cells[4].Value.ToString()) == "True") cmb_permisoRol.Text = "Director/a";
+                if ((dtg_usuarios.Rows[e.RowIndex].Cells[4].Value.ToString()) == "False") cmb_permisoRol.Text = "Docente";
+                txt_nombreDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txt_apellidoDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txt_telefonoDocente.Text = dtgvDocente.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txt_cuilDocente3.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(10, 1);
+                txt_cuilDocente2.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(2, 8);
+                txt_cuilDocente1.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(0, 2);
+                variables.c = e.RowIndex;
+            }
         }
 
         private void dtg_usuarios_DoubleClick(object sender, EventArgs e)
-        {
-            btn_cancelar.Visible = true;
+        { // pincha !!!!! para que ???
+           // btn_cancelar.Visible = true;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -67,6 +71,33 @@ namespace Interfaces
             {
                 variables.control = -1;
             }
+            if (cmb_permisoRol.Text == "Docente")
+            {
+                variables.control = 0;
+            }
+            if (cmbEstado.Text == "Activo")
+            {
+               
+            }
+            if (cmbEstado.Text == "Inactivo")
+            {
+                bool Baja = false;
+
+                Baja = alta.ABM("DELETE from Usuario WHERE idDocente=" + Convert.ToInt32(dtgvDocente.Rows[variables.c].Cells[0].Value) + ";");
+                if (Baja == true)
+                {
+                    MessageBox.Show("Se modificó correctamente el registro", "Proceso finalizado:");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
+                }
+                
+            }
+            if (txt_contraseniaUsuario.Text == "")
+            {
+                txt_contraseniaUsuario.Text = metodos.CrearContraseña();
+            }
             bool Modif = false;
 
             Modif = alta.ABM("UPDATE Usuario SET nombreUsuario='" + txt_nombreUsuario.Text + "', cont='" + txt_contraseniaUsuario.Text + "', perfil='" + variables.control + "' WHERE idDocente=" + Convert.ToInt32(dtgvDocente.Rows[variables.c].Cells[0].Value) + ";");
@@ -78,6 +109,10 @@ namespace Interfaces
             {
                 MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
             }
+
+            variables.Tabla = new DataTable();
+            variables.Tabla.Load(alta.consulta("SELECT * FROM Usuario ORDER BY nombreUsuario"));
+            dtg_usuarios.DataSource = variables.Tabla;
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
