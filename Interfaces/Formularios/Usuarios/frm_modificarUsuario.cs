@@ -47,6 +47,7 @@ namespace Interfaces
             txt_cuilDocente3.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(10, 1);
             txt_cuilDocente2.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(2, 8);
             txt_cuilDocente1.Text = dtgvDocente.Rows[e.RowIndex].Cells[3].Value.ToString().Substring(0, 2);
+            variables.c = e.RowIndex;
         }
 
         private void dtg_usuarios_DoubleClick(object sender, EventArgs e)
@@ -62,6 +63,21 @@ namespace Interfaces
         private void btn_modificarUsuario_Click(object sender, EventArgs e)
         {
             btn_cancelar.Visible = false;
+            if (cmb_permisoRol.Text == "Director/a")
+            {
+                variables.control = -1;
+            }
+            bool Modif = false;
+
+            Modif = alta.ABM("UPDATE Usuario SET nombreUsuario='" + txt_nombreUsuario.Text + "', cont='" + txt_contraseniaUsuario.Text + "', perfil='" + variables.control + "' WHERE idDocente=" + Convert.ToInt32(dtgvDocente.Rows[variables.c].Cells[0].Value) + ";");
+            if (Modif == true) 
+            {
+                MessageBox.Show("Se modificó correctamente el registro", "Proceso finalizado:");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
+            }
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)

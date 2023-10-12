@@ -87,17 +87,12 @@ namespace Interfaces
                             // corregido.
                             variables.Tabla = new DataTable(); // instanciar para que siempre este limpia.
                             variables.Tabla.Load(alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'"));
-
-                            //variables.id = alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'").ToString();
-                            /*no se puede convertir una tabla a string, pero si el contenido de sus celda.*/
-
                             variables.id = variables.Tabla.Rows[0]["idDocente"].ToString();
                             /*tabla limpia.*/
                             if (cmb_permisoRol.Text == "Director/a")
                             {
                                 variables.perfil = true;
                             }
-                            //variables.idDocente = Convert.ToInt32(variables.id); no hace falta convertirlo a int.
 
                             AltaU = alta.ABM("insert into Usuario (nombreUsuario, cont, idDocente, perfil) VALUES ('" + txt_nombreUsuario.Text + "', '" + txt_contraseniaUsuario.Text + "', " + variables.id + ", " + variables.perfil + " )");
 

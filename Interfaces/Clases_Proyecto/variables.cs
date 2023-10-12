@@ -20,7 +20,7 @@ namespace Interfaces
                                         que sera usado.*/
         public static DataTable Tabla2;
         public static string id;
-        public static int idDocente;
+        public static int c;
         public static bool perfil = false;
 
         /*Formulario Principal*/
