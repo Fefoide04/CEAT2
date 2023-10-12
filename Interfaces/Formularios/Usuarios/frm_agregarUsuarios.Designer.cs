@@ -51,6 +51,7 @@
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.pnl_division = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbox_docente.SuspendLayout();
             this.gbox_usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvUsuarios)).BeginInit();
@@ -166,6 +167,7 @@
             // 
             // gbox_usuario
             // 
+            this.gbox_usuario.Controls.Add(this.label1);
             this.gbox_usuario.Controls.Add(this.dtgvUsuarios);
             this.gbox_usuario.Controls.Add(this.cmb_permisoRol);
             this.gbox_usuario.Controls.Add(this.lbl_permisoRol);
@@ -186,13 +188,14 @@
             // 
             // dtgvUsuarios
             // 
+            this.dtgvUsuarios.AllowUserToAddRows = false;
             this.dtgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvUsuarios.Location = new System.Drawing.Point(576, 32);
+            this.dtgvUsuarios.Location = new System.Drawing.Point(531, 43);
             this.dtgvUsuarios.Name = "dtgvUsuarios";
             this.dtgvUsuarios.ReadOnly = true;
-            this.dtgvUsuarios.Size = new System.Drawing.Size(240, 150);
+            this.dtgvUsuarios.RowHeadersVisible = false;
+            this.dtgvUsuarios.Size = new System.Drawing.Size(319, 174);
             this.dtgvUsuarios.TabIndex = 24;
-            this.dtgvUsuarios.Visible = false;
             // 
             // cmb_permisoRol
             // 
@@ -291,6 +294,15 @@
             this.pnl_division.Size = new System.Drawing.Size(975, 55);
             this.pnl_division.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(527, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Usuarios:";
+            // 
             // frm_agregarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +314,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_agregarUsuarios";
             this.Text = "frm_agregarUsuarios";
+            this.Load += new System.EventHandler(this.frm_agregarUsuarios_Load);
             this.gbox_docente.ResumeLayout(false);
             this.gbox_docente.PerformLayout();
             this.gbox_usuario.ResumeLayout(false);
@@ -336,5 +349,6 @@
         private System.Windows.Forms.ComboBox cmb_permisoRol;
         private System.Windows.Forms.Label lbl_permisoRol;
         private System.Windows.Forms.DataGridView dtgvUsuarios;
+        private System.Windows.Forms.Label label1;
     }
 }
