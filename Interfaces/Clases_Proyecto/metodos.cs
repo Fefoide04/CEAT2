@@ -76,5 +76,58 @@ namespace Interfaces
             }
             return variables.ContraseñaUsuario;
         }
+
+        /*validacion caracteres.*/
+        public static void validar_textos(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == false)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+        }
+
+        /*validar numeros.*/
+        public static void validar_numeros(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+        }
+
+        /*prueba, sin uso.*/
+        public static void validar_textos2(KeyPressEventArgs e, TextBox textb, int maximo)
+        {
+            textb.MaxLength = maximo;
+
+            if (char.IsLetter(e.KeyChar) == false)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+        }
     }
 }

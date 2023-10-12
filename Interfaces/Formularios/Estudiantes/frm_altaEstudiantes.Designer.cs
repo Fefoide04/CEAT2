@@ -50,6 +50,9 @@
             this.txt_cuilResponsable2 = new System.Windows.Forms.TextBox();
             this.txt_cuilResponsable1 = new System.Windows.Forms.TextBox();
             this.gbox_estudiante = new System.Windows.Forms.GroupBox();
+            this.cmb_caracterizacionEstudiante = new System.Windows.Forms.ComboBox();
+            this.lbl_caracterizacionEstudiante = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rbtn_primerIngreso = new System.Windows.Forms.RadioButton();
             this.rbtn_relevamiento = new System.Windows.Forms.RadioButton();
             this.btn_agregar = new System.Windows.Forms.Button();
@@ -81,9 +84,6 @@
             this.txt_cuilEstudiante3 = new System.Windows.Forms.TextBox();
             this.txt_cuilEstudiante2 = new System.Windows.Forms.TextBox();
             this.txt_cuilEstudiante1 = new System.Windows.Forms.TextBox();
-            this.cmb_caracterizacionEstudiante = new System.Windows.Forms.ComboBox();
-            this.lbl_caracterizacionEstudiante = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.gbox_responsable.SuspendLayout();
             this.gbox_estudiante.SuspendLayout();
             this.SuspendLayout();
@@ -170,6 +170,7 @@
             // 
             // cbox_nacionalidadResponsable
             // 
+            this.cbox_nacionalidadResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_nacionalidadResponsable.FormattingEnabled = true;
             this.cbox_nacionalidadResponsable.Items.AddRange(new object[] {
             "Argentino/a",
@@ -224,6 +225,7 @@
             // 
             // cbox_localidadResponsable
             // 
+            this.cbox_localidadResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_localidadResponsable.FormattingEnabled = true;
             this.cbox_localidadResponsable.Items.AddRange(new object[] {
             "Almirante Brown",
@@ -273,6 +275,7 @@
             // 
             // cbox_parentezcoResponsable
             // 
+            this.cbox_parentezcoResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_parentezcoResponsable.FormattingEnabled = true;
             this.cbox_parentezcoResponsable.Items.AddRange(new object[] {
             "Padre",
@@ -291,6 +294,7 @@
             this.txt_direccionResponsable.Name = "txt_direccionResponsable";
             this.txt_direccionResponsable.Size = new System.Drawing.Size(233, 27);
             this.txt_direccionResponsable.TabIndex = 8;
+            this.txt_direccionResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_direccionResponsable_KeyPress);
             // 
             // txt_telefonoResponsable
             // 
@@ -299,6 +303,7 @@
             this.txt_telefonoResponsable.Name = "txt_telefonoResponsable";
             this.txt_telefonoResponsable.Size = new System.Drawing.Size(233, 27);
             this.txt_telefonoResponsable.TabIndex = 6;
+            this.txt_telefonoResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoResponsable_KeyPress);
             // 
             // txt_emailResponsable
             // 
@@ -307,6 +312,7 @@
             this.txt_emailResponsable.Name = "txt_emailResponsable";
             this.txt_emailResponsable.Size = new System.Drawing.Size(233, 27);
             this.txt_emailResponsable.TabIndex = 5;
+            this.txt_emailResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_emailResponsable_KeyPress);
             // 
             // txt_apellidoResponsable
             // 
@@ -323,6 +329,7 @@
             this.txt_nombreResponsable.Name = "txt_nombreResponsable";
             this.txt_nombreResponsable.Size = new System.Drawing.Size(156, 27);
             this.txt_nombreResponsable.TabIndex = 3;
+            this.txt_nombreResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreResponsable_KeyPress);
             // 
             // txt_cuilResponsable3
             // 
@@ -331,6 +338,7 @@
             this.txt_cuilResponsable3.Name = "txt_cuilResponsable3";
             this.txt_cuilResponsable3.Size = new System.Drawing.Size(22, 27);
             this.txt_cuilResponsable3.TabIndex = 2;
+            this.txt_cuilResponsable3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable3_KeyPress);
             // 
             // txt_cuilResponsable2
             // 
@@ -339,6 +347,7 @@
             this.txt_cuilResponsable2.Name = "txt_cuilResponsable2";
             this.txt_cuilResponsable2.Size = new System.Drawing.Size(156, 27);
             this.txt_cuilResponsable2.TabIndex = 1;
+            this.txt_cuilResponsable2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable2_KeyPress);
             // 
             // txt_cuilResponsable1
             // 
@@ -347,6 +356,7 @@
             this.txt_cuilResponsable1.Name = "txt_cuilResponsable1";
             this.txt_cuilResponsable1.Size = new System.Drawing.Size(43, 27);
             this.txt_cuilResponsable1.TabIndex = 0;
+            this.txt_cuilResponsable1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable1_KeyPress);
             // 
             // gbox_estudiante
             // 
@@ -391,6 +401,47 @@
             this.gbox_estudiante.TabIndex = 1;
             this.gbox_estudiante.TabStop = false;
             this.gbox_estudiante.Text = "Estudiante";
+            // 
+            // cmb_caracterizacionEstudiante
+            // 
+            this.cmb_caracterizacionEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_caracterizacionEstudiante.FormattingEnabled = true;
+            this.cmb_caracterizacionEstudiante.Items.AddRange(new object[] {
+            "Discapacidad Auditiva",
+            "Discapacidad Visual",
+            "Sordo - Ceguera",
+            "Discapacidad Motora",
+            "Alteraciones en el desarrollo y la constitución subjetiva",
+            "Discapacidad Intelectual ",
+            "Trastronos específicos en el lenguaje",
+            "Discapacidad múltiple",
+            "Riesgo ambiental"});
+            this.cmb_caracterizacionEstudiante.Location = new System.Drawing.Point(519, 167);
+            this.cmb_caracterizacionEstudiante.Name = "cmb_caracterizacionEstudiante";
+            this.cmb_caracterizacionEstudiante.Size = new System.Drawing.Size(233, 29);
+            this.cmb_caracterizacionEstudiante.TabIndex = 15;
+            // 
+            // lbl_caracterizacionEstudiante
+            // 
+            this.lbl_caracterizacionEstudiante.AutoSize = true;
+            this.lbl_caracterizacionEstudiante.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_caracterizacionEstudiante.Location = new System.Drawing.Point(515, 142);
+            this.lbl_caracterizacionEstudiante.Name = "lbl_caracterizacionEstudiante";
+            this.lbl_caracterizacionEstudiante.Size = new System.Drawing.Size(127, 20);
+            this.lbl_caracterizacionEstudiante.TabIndex = 20;
+            this.lbl_caracterizacionEstudiante.Text = "Caracterizacion";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(662, 226);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(134, 25);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Primer ingreso";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rbtn_primerIngreso
             // 
@@ -441,6 +492,7 @@
             // 
             // cbox_categoriaEstudiante
             // 
+            this.cbox_categoriaEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_categoriaEstudiante.FormattingEnabled = true;
             this.cbox_categoriaEstudiante.Items.AddRange(new object[] {
             "Lactantes",
@@ -453,6 +505,7 @@
             // 
             // cbox_anioNacimientoEstudiante
             // 
+            this.cbox_anioNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_anioNacimientoEstudiante.FormattingEnabled = true;
             this.cbox_anioNacimientoEstudiante.Location = new System.Drawing.Point(651, 48);
             this.cbox_anioNacimientoEstudiante.Name = "cbox_anioNacimientoEstudiante";
@@ -461,6 +514,7 @@
             // 
             // cbox_mesNacimientoEstudiante
             // 
+            this.cbox_mesNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_mesNacimientoEstudiante.FormattingEnabled = true;
             this.cbox_mesNacimientoEstudiante.Items.AddRange(new object[] {
             "1",
@@ -482,6 +536,7 @@
             // 
             // cbox_diaNacimientoEstudiante
             // 
+            this.cbox_diaNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_diaNacimientoEstudiante.FormattingEnabled = true;
             this.cbox_diaNacimientoEstudiante.Items.AddRange(new object[] {
             "1",
@@ -557,6 +612,7 @@
             this.txt_entreCalle2Estudiante.Name = "txt_entreCalle2Estudiante";
             this.txt_entreCalle2Estudiante.Size = new System.Drawing.Size(184, 27);
             this.txt_entreCalle2Estudiante.TabIndex = 8;
+            this.txt_entreCalle2Estudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_entreCalle2Estudiante_KeyPress);
             // 
             // txt_entreCalle1Estudiante
             // 
@@ -565,6 +621,7 @@
             this.txt_entreCalle1Estudiante.Name = "txt_entreCalle1Estudiante";
             this.txt_entreCalle1Estudiante.Size = new System.Drawing.Size(184, 27);
             this.txt_entreCalle1Estudiante.TabIndex = 7;
+            this.txt_entreCalle1Estudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_entreCalle1Estudiante_KeyPress);
             // 
             // txt_direccionEstudiante
             // 
@@ -573,6 +630,7 @@
             this.txt_direccionEstudiante.Name = "txt_direccionEstudiante";
             this.txt_direccionEstudiante.Size = new System.Drawing.Size(233, 27);
             this.txt_direccionEstudiante.TabIndex = 6;
+            this.txt_direccionEstudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_direccionEstudiante_KeyPress);
             // 
             // label1
             // 
@@ -626,6 +684,7 @@
             // 
             // cbox_nacionalidadEstudiante
             // 
+            this.cbox_nacionalidadEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_nacionalidadEstudiante.FormattingEnabled = true;
             this.cbox_nacionalidadEstudiante.Items.AddRange(new object[] {
             "Argentino/a",
@@ -680,6 +739,7 @@
             // 
             // cbox_localidadEstudiante
             // 
+            this.cbox_localidadEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_localidadEstudiante.FormattingEnabled = true;
             this.cbox_localidadEstudiante.Items.AddRange(new object[] {
             "Almirante Brown",
@@ -729,6 +789,7 @@
             // 
             // cbox_generoEstudiante
             // 
+            this.cbox_generoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_generoEstudiante.FormattingEnabled = true;
             this.cbox_generoEstudiante.Items.AddRange(new object[] {
             "Masculino",
@@ -746,6 +807,7 @@
             this.txt_apellidoEstudiante.Name = "txt_apellidoEstudiante";
             this.txt_apellidoEstudiante.Size = new System.Drawing.Size(156, 27);
             this.txt_apellidoEstudiante.TabIndex = 4;
+            this.txt_apellidoEstudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoEstudiante_KeyPress);
             // 
             // txt_nombreEstudiante
             // 
@@ -754,6 +816,7 @@
             this.txt_nombreEstudiante.Name = "txt_nombreEstudiante";
             this.txt_nombreEstudiante.Size = new System.Drawing.Size(156, 27);
             this.txt_nombreEstudiante.TabIndex = 3;
+            this.txt_nombreEstudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreEstudiante_KeyPress);
             // 
             // txt_cuilEstudiante3
             // 
@@ -762,6 +825,7 @@
             this.txt_cuilEstudiante3.Name = "txt_cuilEstudiante3";
             this.txt_cuilEstudiante3.Size = new System.Drawing.Size(22, 27);
             this.txt_cuilEstudiante3.TabIndex = 2;
+            this.txt_cuilEstudiante3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante3_KeyPress);
             // 
             // txt_cuilEstudiante2
             // 
@@ -770,6 +834,7 @@
             this.txt_cuilEstudiante2.Name = "txt_cuilEstudiante2";
             this.txt_cuilEstudiante2.Size = new System.Drawing.Size(156, 27);
             this.txt_cuilEstudiante2.TabIndex = 1;
+            this.txt_cuilEstudiante2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante2_KeyPress);
             // 
             // txt_cuilEstudiante1
             // 
@@ -778,46 +843,7 @@
             this.txt_cuilEstudiante1.Name = "txt_cuilEstudiante1";
             this.txt_cuilEstudiante1.Size = new System.Drawing.Size(43, 27);
             this.txt_cuilEstudiante1.TabIndex = 0;
-            // 
-            // cmb_caracterizacionEstudiante
-            // 
-            this.cmb_caracterizacionEstudiante.FormattingEnabled = true;
-            this.cmb_caracterizacionEstudiante.Items.AddRange(new object[] {
-            "Discapacidad Auditiva",
-            "Discapacidad Visual",
-            "Sordo - Ceguera",
-            "Discapacidad Motora",
-            "Alteraciones en el desarrollo y la constitución subjetiva",
-            "Discapacidad Intelectual ",
-            "Trastronos específicos en el lenguaje",
-            "Discapacidad múltiple",
-            "Riesgo ambiental"});
-            this.cmb_caracterizacionEstudiante.Location = new System.Drawing.Point(519, 167);
-            this.cmb_caracterizacionEstudiante.Name = "cmb_caracterizacionEstudiante";
-            this.cmb_caracterizacionEstudiante.Size = new System.Drawing.Size(233, 29);
-            this.cmb_caracterizacionEstudiante.TabIndex = 15;
-            // 
-            // lbl_caracterizacionEstudiante
-            // 
-            this.lbl_caracterizacionEstudiante.AutoSize = true;
-            this.lbl_caracterizacionEstudiante.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_caracterizacionEstudiante.Location = new System.Drawing.Point(515, 142);
-            this.lbl_caracterizacionEstudiante.Name = "lbl_caracterizacionEstudiante";
-            this.lbl_caracterizacionEstudiante.Size = new System.Drawing.Size(127, 20);
-            this.lbl_caracterizacionEstudiante.TabIndex = 20;
-            this.lbl_caracterizacionEstudiante.Text = "Caracterizacion";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(662, 226);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(134, 25);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Primer ingreso";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.txt_cuilEstudiante1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante1_KeyPress);
             // 
             // frm_altaEstudiantes
             // 

@@ -15,6 +15,7 @@ namespace Interfaces
         {
             InitializeComponent();
             cmb_filtros.SelectedIndex = 0;
+            txt_busqueda.MaxLength = 20;
         }
         comandosBD conexionbd = new comandosBD();
 
@@ -80,6 +81,10 @@ namespace Interfaces
             if (e.KeyChar == 13)
             {
                 buscar();
+            }
+            if (char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                e.Handled = true;
             }
         }
     }

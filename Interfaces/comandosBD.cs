@@ -99,7 +99,7 @@ namespace Interfaces
 
                 comando.Connection = conexion;
 
-                comando.CommandText = "SELECT * FROM Usuario WHERE nombreUsuario=@nombreUsuario AND password=@contrasena";
+                comando.CommandText = "SELECT * FROM Usuario WHERE nombreUsuario=@nombreUsuario AND cont=@contrasena";
                 comando.CommandType = CommandType.Text;
                 OleDbDataReader lector = comando.ExecuteReader();
 

@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.gbox_datos = new System.Windows.Forms.GroupBox();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_modificarUsuario = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
+            this.txt_contraseniaUsuario = new System.Windows.Forms.TextBox();
+            this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
+            this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
+            this.lbl_nombreUsuario = new System.Windows.Forms.Label();
+            this.pnl_division = new System.Windows.Forms.Panel();
             this.txt_telefonoDocente = new System.Windows.Forms.TextBox();
             this.lbl_telefonoDocente = new System.Windows.Forms.Label();
             this.lbl_cuilDocente = new System.Windows.Forms.Label();
@@ -39,25 +48,23 @@
             this.lbl_apellidoDocente = new System.Windows.Forms.Label();
             this.txt_nombreDocente = new System.Windows.Forms.TextBox();
             this.lbl_nombreDocente = new System.Windows.Forms.Label();
-            this.pnl_division = new System.Windows.Forms.Panel();
-            this.btn_modificarUsuario = new System.Windows.Forms.Button();
-            this.btn_regresar = new System.Windows.Forms.Button();
-            this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
-            this.txt_contraseniaUsuario = new System.Windows.Forms.TextBox();
-            this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
-            this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
-            this.lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.pnl_encabezadoListaUsuarios = new System.Windows.Forms.Panel();
-            this.dtg_usuarios = new System.Windows.Forms.DataGridView();
             this.lbl_usuariosEncabezado = new System.Windows.Forms.Label();
+            this.dtg_usuarios = new System.Windows.Forms.DataGridView();
+            this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
+            this.lbl_permisoRol = new System.Windows.Forms.Label();
+            this.dtgvDocente = new System.Windows.Forms.DataGridView();
             this.gbox_datos.SuspendLayout();
+            this.pnl_division.SuspendLayout();
             this.pnl_encabezadoListaUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocente)).BeginInit();
             this.SuspendLayout();
             // 
             // gbox_datos
             // 
+            this.gbox_datos.Controls.Add(this.cmb_permisoRol);
+            this.gbox_datos.Controls.Add(this.lbl_permisoRol);
             this.gbox_datos.Controls.Add(this.btn_cancelar);
             this.gbox_datos.Controls.Add(this.btn_modificarUsuario);
             this.gbox_datos.Controls.Add(this.btn_regresar);
@@ -86,95 +93,18 @@
             this.gbox_datos.TabStop = false;
             this.gbox_datos.Text = "Datos del Usuario";
             // 
-            // txt_telefonoDocente
+            // btn_cancelar
             // 
-            this.txt_telefonoDocente.Location = new System.Drawing.Point(191, 124);
-            this.txt_telefonoDocente.Name = "txt_telefonoDocente";
-            this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
-            this.txt_telefonoDocente.TabIndex = 5;
-            // 
-            // lbl_telefonoDocente
-            // 
-            this.lbl_telefonoDocente.AutoSize = true;
-            this.lbl_telefonoDocente.Location = new System.Drawing.Point(187, 100);
-            this.lbl_telefonoDocente.Name = "lbl_telefonoDocente";
-            this.lbl_telefonoDocente.Size = new System.Drawing.Size(71, 20);
-            this.lbl_telefonoDocente.TabIndex = 20;
-            this.lbl_telefonoDocente.Text = "Teléfono";
-            // 
-            // lbl_cuilDocente
-            // 
-            this.lbl_cuilDocente.AutoSize = true;
-            this.lbl_cuilDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cuilDocente.Location = new System.Drawing.Point(187, 33);
-            this.lbl_cuilDocente.Name = "lbl_cuilDocente";
-            this.lbl_cuilDocente.Size = new System.Drawing.Size(36, 20);
-            this.lbl_cuilDocente.TabIndex = 19;
-            this.lbl_cuilDocente.Text = "Cuil";
-            // 
-            // txt_cuilDocente3
-            // 
-            this.txt_cuilDocente3.Location = new System.Drawing.Point(402, 60);
-            this.txt_cuilDocente3.MaxLength = 1;
-            this.txt_cuilDocente3.Name = "txt_cuilDocente3";
-            this.txt_cuilDocente3.Size = new System.Drawing.Size(22, 26);
-            this.txt_cuilDocente3.TabIndex = 3;
-            // 
-            // txt_cuilDocente2
-            // 
-            this.txt_cuilDocente2.Location = new System.Drawing.Point(240, 60);
-            this.txt_cuilDocente2.MaxLength = 8;
-            this.txt_cuilDocente2.Name = "txt_cuilDocente2";
-            this.txt_cuilDocente2.Size = new System.Drawing.Size(156, 26);
-            this.txt_cuilDocente2.TabIndex = 2;
-            // 
-            // txt_cuilDocente1
-            // 
-            this.txt_cuilDocente1.Location = new System.Drawing.Point(191, 60);
-            this.txt_cuilDocente1.MaxLength = 2;
-            this.txt_cuilDocente1.Name = "txt_cuilDocente1";
-            this.txt_cuilDocente1.Size = new System.Drawing.Size(43, 26);
-            this.txt_cuilDocente1.TabIndex = 1;
-            // 
-            // txt_apellidoDocente
-            // 
-            this.txt_apellidoDocente.Location = new System.Drawing.Point(12, 124);
-            this.txt_apellidoDocente.Name = "txt_apellidoDocente";
-            this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
-            this.txt_apellidoDocente.TabIndex = 4;
-            // 
-            // lbl_apellidoDocente
-            // 
-            this.lbl_apellidoDocente.AutoSize = true;
-            this.lbl_apellidoDocente.Location = new System.Drawing.Point(8, 100);
-            this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
-            this.lbl_apellidoDocente.Size = new System.Drawing.Size(138, 20);
-            this.lbl_apellidoDocente.TabIndex = 14;
-            this.lbl_apellidoDocente.Text = "Apellido Docente";
-            // 
-            // txt_nombreDocente
-            // 
-            this.txt_nombreDocente.Location = new System.Drawing.Point(12, 60);
-            this.txt_nombreDocente.Name = "txt_nombreDocente";
-            this.txt_nombreDocente.Size = new System.Drawing.Size(160, 26);
-            this.txt_nombreDocente.TabIndex = 0;
-            // 
-            // lbl_nombreDocente
-            // 
-            this.lbl_nombreDocente.AutoSize = true;
-            this.lbl_nombreDocente.Location = new System.Drawing.Point(8, 36);
-            this.lbl_nombreDocente.Name = "lbl_nombreDocente";
-            this.lbl_nombreDocente.Size = new System.Drawing.Size(137, 20);
-            this.lbl_nombreDocente.TabIndex = 12;
-            this.lbl_nombreDocente.Text = "Nombre Docente";
-            // 
-            // pnl_division
-            // 
-            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
-            this.pnl_division.Name = "pnl_division";
-            this.pnl_division.Size = new System.Drawing.Size(446, 55);
-            this.pnl_division.TabIndex = 21;
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_cancelar.Location = new System.Drawing.Point(147, 485);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(126, 35);
+            this.btn_cancelar.TabIndex = 10;
+            this.btn_cancelar.Tag = "administracionUsuarios";
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Visible = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_modificarUsuario
             // 
@@ -216,6 +146,7 @@
             this.txt_contraseniaUsuario.Name = "txt_contraseniaUsuario";
             this.txt_contraseniaUsuario.Size = new System.Drawing.Size(160, 26);
             this.txt_contraseniaUsuario.TabIndex = 7;
+            this.txt_contraseniaUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseniaUsuario_KeyPress);
             // 
             // lbl_contraseniaUsuario
             // 
@@ -232,6 +163,7 @@
             this.txt_nombreUsuario.Name = "txt_nombreUsuario";
             this.txt_nombreUsuario.Size = new System.Drawing.Size(160, 26);
             this.txt_nombreUsuario.TabIndex = 6;
+            this.txt_nombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreUsuario_KeyPress);
             // 
             // lbl_nombreUsuario
             // 
@@ -242,18 +174,102 @@
             this.lbl_nombreUsuario.TabIndex = 22;
             this.lbl_nombreUsuario.Text = "Nombre";
             // 
-            // btn_cancelar
+            // pnl_division
             // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_cancelar.Location = new System.Drawing.Point(147, 485);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(126, 35);
-            this.btn_cancelar.TabIndex = 10;
-            this.btn_cancelar.Tag = "administracionUsuarios";
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Visible = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_division.Controls.Add(this.dtgvDocente);
+            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
+            this.pnl_division.Name = "pnl_division";
+            this.pnl_division.Size = new System.Drawing.Size(446, 55);
+            this.pnl_division.TabIndex = 21;
+            // 
+            // txt_telefonoDocente
+            // 
+            this.txt_telefonoDocente.Location = new System.Drawing.Point(191, 124);
+            this.txt_telefonoDocente.Name = "txt_telefonoDocente";
+            this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
+            this.txt_telefonoDocente.TabIndex = 5;
+            this.txt_telefonoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoDocente_KeyPress);
+            // 
+            // lbl_telefonoDocente
+            // 
+            this.lbl_telefonoDocente.AutoSize = true;
+            this.lbl_telefonoDocente.Location = new System.Drawing.Point(187, 100);
+            this.lbl_telefonoDocente.Name = "lbl_telefonoDocente";
+            this.lbl_telefonoDocente.Size = new System.Drawing.Size(71, 20);
+            this.lbl_telefonoDocente.TabIndex = 20;
+            this.lbl_telefonoDocente.Text = "Teléfono";
+            // 
+            // lbl_cuilDocente
+            // 
+            this.lbl_cuilDocente.AutoSize = true;
+            this.lbl_cuilDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cuilDocente.Location = new System.Drawing.Point(187, 33);
+            this.lbl_cuilDocente.Name = "lbl_cuilDocente";
+            this.lbl_cuilDocente.Size = new System.Drawing.Size(36, 20);
+            this.lbl_cuilDocente.TabIndex = 19;
+            this.lbl_cuilDocente.Text = "Cuil";
+            // 
+            // txt_cuilDocente3
+            // 
+            this.txt_cuilDocente3.Location = new System.Drawing.Point(402, 60);
+            this.txt_cuilDocente3.MaxLength = 1;
+            this.txt_cuilDocente3.Name = "txt_cuilDocente3";
+            this.txt_cuilDocente3.Size = new System.Drawing.Size(22, 26);
+            this.txt_cuilDocente3.TabIndex = 3;
+            this.txt_cuilDocente3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente3_KeyPress);
+            // 
+            // txt_cuilDocente2
+            // 
+            this.txt_cuilDocente2.Location = new System.Drawing.Point(240, 60);
+            this.txt_cuilDocente2.MaxLength = 8;
+            this.txt_cuilDocente2.Name = "txt_cuilDocente2";
+            this.txt_cuilDocente2.Size = new System.Drawing.Size(156, 26);
+            this.txt_cuilDocente2.TabIndex = 2;
+            this.txt_cuilDocente2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente2_KeyPress);
+            // 
+            // txt_cuilDocente1
+            // 
+            this.txt_cuilDocente1.Location = new System.Drawing.Point(191, 60);
+            this.txt_cuilDocente1.MaxLength = 2;
+            this.txt_cuilDocente1.Name = "txt_cuilDocente1";
+            this.txt_cuilDocente1.Size = new System.Drawing.Size(43, 26);
+            this.txt_cuilDocente1.TabIndex = 1;
+            this.txt_cuilDocente1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente1_KeyPress);
+            // 
+            // txt_apellidoDocente
+            // 
+            this.txt_apellidoDocente.Location = new System.Drawing.Point(12, 124);
+            this.txt_apellidoDocente.Name = "txt_apellidoDocente";
+            this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
+            this.txt_apellidoDocente.TabIndex = 4;
+            this.txt_apellidoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoDocente_KeyPress);
+            // 
+            // lbl_apellidoDocente
+            // 
+            this.lbl_apellidoDocente.AutoSize = true;
+            this.lbl_apellidoDocente.Location = new System.Drawing.Point(8, 100);
+            this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
+            this.lbl_apellidoDocente.Size = new System.Drawing.Size(138, 20);
+            this.lbl_apellidoDocente.TabIndex = 14;
+            this.lbl_apellidoDocente.Text = "Apellido Docente";
+            // 
+            // txt_nombreDocente
+            // 
+            this.txt_nombreDocente.Location = new System.Drawing.Point(12, 60);
+            this.txt_nombreDocente.Name = "txt_nombreDocente";
+            this.txt_nombreDocente.Size = new System.Drawing.Size(160, 26);
+            this.txt_nombreDocente.TabIndex = 0;
+            this.txt_nombreDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreDocente_KeyPress);
+            // 
+            // lbl_nombreDocente
+            // 
+            this.lbl_nombreDocente.AutoSize = true;
+            this.lbl_nombreDocente.Location = new System.Drawing.Point(8, 36);
+            this.lbl_nombreDocente.Name = "lbl_nombreDocente";
+            this.lbl_nombreDocente.Size = new System.Drawing.Size(137, 20);
+            this.lbl_nombreDocente.TabIndex = 12;
+            this.lbl_nombreDocente.Text = "Nombre Docente";
             // 
             // pnl_encabezadoListaUsuarios
             // 
@@ -265,6 +281,16 @@
             this.pnl_encabezadoListaUsuarios.Size = new System.Drawing.Size(436, 70);
             this.pnl_encabezadoListaUsuarios.TabIndex = 2;
             // 
+            // lbl_usuariosEncabezado
+            // 
+            this.lbl_usuariosEncabezado.AutoSize = true;
+            this.lbl_usuariosEncabezado.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuariosEncabezado.Location = new System.Drawing.Point(157, 19);
+            this.lbl_usuariosEncabezado.Name = "lbl_usuariosEncabezado";
+            this.lbl_usuariosEncabezado.Size = new System.Drawing.Size(123, 32);
+            this.lbl_usuariosEncabezado.TabIndex = 0;
+            this.lbl_usuariosEncabezado.Text = "Usuarios";
+            // 
             // dtg_usuarios
             // 
             this.dtg_usuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -275,17 +301,38 @@
             this.dtg_usuarios.Name = "dtg_usuarios";
             this.dtg_usuarios.Size = new System.Drawing.Size(436, 460);
             this.dtg_usuarios.TabIndex = 3;
+            this.dtg_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_usuarios_CellClick);
             this.dtg_usuarios.DoubleClick += new System.EventHandler(this.dtg_usuarios_DoubleClick);
             // 
-            // lbl_usuariosEncabezado
+            // cmb_permisoRol
             // 
-            this.lbl_usuariosEncabezado.AutoSize = true;
-            this.lbl_usuariosEncabezado.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuariosEncabezado.Location = new System.Drawing.Point(157, 19);
-            this.lbl_usuariosEncabezado.Name = "lbl_usuariosEncabezado";
-            this.lbl_usuariosEncabezado.Size = new System.Drawing.Size(123, 32);
-            this.lbl_usuariosEncabezado.TabIndex = 0;
-            this.lbl_usuariosEncabezado.Text = "Usuarios";
+            this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_permisoRol.FormattingEnabled = true;
+            this.cmb_permisoRol.Items.AddRange(new object[] {
+            "Docente",
+            "Director/a"});
+            this.cmb_permisoRol.Location = new System.Drawing.Point(302, 406);
+            this.cmb_permisoRol.Name = "cmb_permisoRol";
+            this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
+            this.cmb_permisoRol.TabIndex = 27;
+            // 
+            // lbl_permisoRol
+            // 
+            this.lbl_permisoRol.AutoSize = true;
+            this.lbl_permisoRol.Location = new System.Drawing.Point(298, 382);
+            this.lbl_permisoRol.Name = "lbl_permisoRol";
+            this.lbl_permisoRol.Size = new System.Drawing.Size(44, 20);
+            this.lbl_permisoRol.TabIndex = 26;
+            this.lbl_permisoRol.Text = "Perfil";
+            // 
+            // dtgvDocente
+            // 
+            this.dtgvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDocente.Location = new System.Drawing.Point(114, 17);
+            this.dtgvDocente.Name = "dtgvDocente";
+            this.dtgvDocente.Size = new System.Drawing.Size(240, 150);
+            this.dtgvDocente.TabIndex = 0;
+            this.dtgvDocente.Visible = false;
             // 
             // frm_modificarUsuario
             // 
@@ -298,11 +345,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_modificarUsuario";
             this.Text = "frm_modificarUsuario";
+            this.Load += new System.EventHandler(this.frm_modificarUsuario_Load);
             this.gbox_datos.ResumeLayout(false);
             this.gbox_datos.PerformLayout();
+            this.pnl_division.ResumeLayout(false);
             this.pnl_encabezadoListaUsuarios.ResumeLayout(false);
             this.pnl_encabezadoListaUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,5 +382,8 @@
         private System.Windows.Forms.Panel pnl_encabezadoListaUsuarios;
         private System.Windows.Forms.DataGridView dtg_usuarios;
         private System.Windows.Forms.Label lbl_usuariosEncabezado;
+        private System.Windows.Forms.ComboBox cmb_permisoRol;
+        private System.Windows.Forms.Label lbl_permisoRol;
+        private System.Windows.Forms.DataGridView dtgvDocente;
     }
 }
