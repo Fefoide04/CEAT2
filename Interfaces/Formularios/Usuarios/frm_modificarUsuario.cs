@@ -26,17 +26,7 @@ namespace Interfaces
 
         private void frm_modificarUsuario_Load(object sender, EventArgs e)
         {
-            //Acá cambie todo por data tables, para no tener controles que el usuario no va a ver y para ser ordenado
-            metodos.cargarTabla(variables.tablaUsuarios, "SELECT * from Usuario");
-
-            metodos.cargarTabla(variables.tablaDocentes, "SELECT * from Docente");
-
-            metodos.cargarTabla(variables.docentesInactivos, "SELECT * from docente where activo = 0");
-
-            /*Quitar esto*/
-            dtg_usuarios.DataSource = variables.tablaUsuarios;
-
-            dtgvDocentesInactivos.DataSource = variables.docentesInactivos;
+            refrescarFormulario();
         }
 
         private void dtg_usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,7 +73,7 @@ namespace Interfaces
             }
         }
 
-        private void limpiarFormulario()
+        private void refrescarFormulario()
         {
             txt_nombreDocente.Text = "";
             txt_apellidoDocente.Text = "";
@@ -93,7 +83,23 @@ namespace Interfaces
             txt_telefonoDocente.Text = "";
             txt_nombreUsuario.Text = "";
 
+            cmb_permisoRol.SelectedIndex = -1;
+            cmbEstado.SelectedIndex = -1;
+
             btn_modificarUsuario.Enabled = false;
+
+            //Acá cambie todo por data tables, para no tener controles que el usuario no va a ver y para ser ordenado
+            metodos.cargarTabla(variables.tablaUsuarios, "SELECT * from Usuario");
+
+            metodos.cargarTabla(variables.tablaDocentes, "SELECT * from Docente");
+
+            metodos.cargarTabla(variables.docentesInactivos, "SELECT * from docente where activo = 0");
+
+            /*Quitar esto*/
+
+            dtg_usuarios.DataSource = variables.tablaUsuarios;
+
+            dtgvDocentesInactivos.DataSource = variables.docentesInactivos;
         }
 
         private void btn_modificarUsuario_Click(object sender, EventArgs e)
@@ -116,7 +122,7 @@ namespace Interfaces
                 && variables.BD.ABM("UPDATE Usuario SET nombreUsuario = '" + txt_nombreUsuario.Text + "', cont = '" + contra + "', perfil = " + cmb_permisoRol.SelectedIndex + " where idUsuario = " + variables.usuarioSeleccionado.Rows[0][0]))
                 {
                     MessageBox.Show("Modificación realizada con éxito!");
-                    limpiarFormulario();
+                    refrescarFormulario();
                 }
                 else
                 {
