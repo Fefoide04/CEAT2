@@ -104,7 +104,7 @@ namespace Interfaces
 
         private void btn_modificarUsuario_Click(object sender, EventArgs e)
         {
-            if (validar())
+            if (metodos.verificar_datos(gbox_datos))
             {
                 string contra = "";
 
@@ -128,6 +128,10 @@ namespace Interfaces
                 {
                     MessageBox.Show("ERROR: Ocurrió un error al actualizar la base de datos. Contacte a los desarrolladores para solicitar mantenimiento.");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -40,6 +40,7 @@
             this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
+            this.pnl_division = new System.Windows.Forms.Panel();
             this.txt_telefonoDocente = new System.Windows.Forms.TextBox();
             this.lbl_telefonoDocente = new System.Windows.Forms.Label();
             this.lbl_cuilDocente = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.dtgvDocentesInactivos = new System.Windows.Forms.DataGridView();
             this.lblDocente = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnl_division = new System.Windows.Forms.Panel();
             this.gbox_datos.SuspendLayout();
             this.pnl_encabezadoListaUsuarios.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,6 +106,7 @@
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
+            "Seleccionar",
             "Inactivo",
             "Activo"});
             this.cmbEstado.Location = new System.Drawing.Point(12, 189);
@@ -128,6 +129,7 @@
             this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_permisoRol.FormattingEnabled = true;
             this.cmb_permisoRol.Items.AddRange(new object[] {
+            "Seleccionar",
             "Docente",
             "Director/a"});
             this.cmb_permisoRol.Location = new System.Drawing.Point(12, 406);
@@ -212,6 +214,14 @@
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
             this.lbl_nombreUsuario.TabIndex = 22;
             this.lbl_nombreUsuario.Text = "Nombre";
+            // 
+            // pnl_division
+            // 
+            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
+            this.pnl_division.Name = "pnl_division";
+            this.pnl_division.Size = new System.Drawing.Size(446, 55);
+            this.pnl_division.TabIndex = 21;
             // 
             // txt_telefonoDocente
             // 
@@ -397,14 +407,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(433, 58);
             this.panel2.TabIndex = 30;
-            // 
-            // pnl_division
-            // 
-            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
-            this.pnl_division.Name = "pnl_division";
-            this.pnl_division.Size = new System.Drawing.Size(446, 55);
-            this.pnl_division.TabIndex = 21;
             // 
             // frm_modificarUsuario
             // 

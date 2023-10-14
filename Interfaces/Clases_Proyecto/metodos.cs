@@ -5,6 +5,7 @@ using System.Text;
 
 using System.Data;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Interfaces
 {
@@ -138,6 +139,116 @@ namespace Interfaces
             tabla.Load(variables.BD.consulta(consulta));
 
             variables.BD.desconectar();
+        }
+
+        /*verificar longitud cuil.,
+         esto se usara para los docentes, alumnos y padres.*/
+        public static bool cuils(string cuil1, string cuil2, string cuil3)
+        {
+            /*verdadero significa que el cuil esta completo.*/
+            bool confirmar = true;
+            /*si alguna de las variable no cumple con la longitud devuelvo false.*/
+            if (cuil1.Length != 2 || cuil2.Length != 8 || cuil3.Length != 1)
+            {
+                confirmar = false;
+            }
+
+            return confirmar;
+        }
+
+        /*verificar longitud telefono,
+         se utilizara para docente y alumnos.*/
+        public static bool telefonos(string tel)
+        {
+            /*true significa que cumple con la cantidad de numeros.*/
+            bool confirmar = true;
+
+            if (tel.Length < 6)
+            {
+                confirmar = false;
+            }
+
+            return confirmar;
+        }
+
+        // verificar email.
+        public static bool ComprobarFormatoEmail(string MailAComprobar)
+        {
+            String Formato;
+            Formato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(MailAComprobar, Formato))
+            {
+                if (Regex.Replace(MailAComprobar, Formato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /*verificar textos vacios y indices de combobox en groupbox.*/
+        public static bool verificar_datos(GroupBox grp)
+        {
+            bool confirmar = true;
+            /*se revisa cada control en este caso del groupbox.*/
+            foreach (var c in grp.Controls)
+            {
+                /*solo compruebo los controles que sean textbox.*/
+                if (c is TextBox)
+                {
+                    /*si en algun momento algun textbox esta vacion
+                     retorno false y salgo del bucle.*/
+                    if (((TextBox)c).Text == "")
+                    {
+                        confirmar = false;
+                        break;
+                    }
+                }
+                /*reviso tambien los combobox que tengan algun valor seleccionado.*/
+                if (c is ComboBox)
+                {
+                    /*si no lo tienen devuelvo false.*/
+                    if (((ComboBox)c).SelectedIndex == 0)
+                    {
+                        confirmar = false;
+                        break;
+                    }
+                }
+            }
+
+            return confirmar;
+        }
+
+        /*cargar combobox con datos de bd.*/
+        public static void dt_cmb(string comando,string displaynombre, string valueid,ComboBox cmbprincipal)
+        {
+            DataTable combobxdt = new DataTable();
+            combobxdt.Load(variables.BD.consulta(comando));
+            DataRow fila = combobxdt.NewRow();
+            fila[1] = "Seleccine item";
+            combobxdt.Rows.InsertAt(fila, 0);
+            cmbprincipal.DataSource = combobxdt;
+            cmbprincipal.DisplayMember = displaynombre;
+            cmbprincipal.ValueMember = valueid;
+        }
+
+        /*para los combobox que no cargan desde base de datos.*/
+        public static void seleccionar_indice0_cmb(GroupBox grp)
+        {
+            foreach (var c in grp.Controls)
+            {
+                if (c is ComboBox)
+                {
+                    ((ComboBox)c).SelectedIndex = 0;
+                }
+            }
         }
     }
 }

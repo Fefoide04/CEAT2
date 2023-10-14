@@ -22,7 +22,7 @@ namespace Interfaces
             txt_cuilResponsable3.MaxLength = 1;
             txt_emailResponsable.MaxLength = 40;
             txt_direccionResponsable.MaxLength = 30;
-            txt_telefonoResponsable.MaxLength = 12;
+            txt_telefonoResponsable.MaxLength = 14;
             // estudiantes.
             txt_cuilEstudiante1.MaxLength = 2;
             txt_cuilEstudiante2.MaxLength = 8;
@@ -32,6 +32,15 @@ namespace Interfaces
             txt_apellidoEstudiante.MaxLength = 12;
             txt_entreCalle1Estudiante.MaxLength = 30;
             txt_entreCalle2Estudiante.MaxLength = 30;
+
+            /*falta cargar desde base de datos los combobox localidad y nacionalidad.*/
+            metodos.dt_cmb("select * from Categoria", "nombreCategoria", "idCategoria", cbox_categoriaEstudiante);
+            metodos.dt_cmb("select * from Caracterizacion", "nombreCaracterizacion", "idCaracterizacion", cmb_caracterizacionEstudiante);
+            metodos.dt_cmb("select * from Parentezco", "parentezco", "idParentezco", cbox_parentezcoResponsable);
+
+            /*selecciono items de combobox que no cargan desde la base de datos.*/
+            metodos.seleccionar_indice0_cmb(gbox_estudiante);
+            metodos.seleccionar_indice0_cmb(gbox_responsable);
         }
 
         private void frm_altaEstudiantes_Load(object sender, EventArgs e)
@@ -48,20 +57,41 @@ namespace Interfaces
         {
             metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_regresar.Tag.ToString()), variables.panelPrincipal);
         }
+        
 
+        /*agregar estyudiante y responsabel en desarrollo.*/
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
+            bool textboxs = metodos.verificar_datos(gbox_responsable);
+            bool comboboxs = metodos.verificar_datos(gbox_estudiante);
 
-            if (result == DialogResult.Yes)
+            if (textboxs == false || comboboxs == false)
             {
-                Form form = new frm_observacionEstudiante();
-                form.ShowDialog();
+                MessageBox.Show("Faltan datos por completar", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                /*compruebo formato de email.*/
+                if (metodos.ComprobarFormatoEmail(txt_emailResponsable.Text) == false)
+                {
+                    MessageBox.Show("Formato erroneo de E.mail", "Error E-mail", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    // en desarrollo.
+                    DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
 
-            MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
+                    if (result == DialogResult.Yes)
+                    {
+                        Form form = new frm_observacionEstudiante();
+                        form.ShowDialog();
+                    }
 
-            metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregar.Tag.ToString()), variables.panelPrincipal);
+                    MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
+
+                    metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregar.Tag.ToString()), variables.panelPrincipal);
+                }
+            }
         }
 
         // validacion responsable.

@@ -173,6 +173,7 @@
             this.cbox_nacionalidadResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_nacionalidadResponsable.FormattingEnabled = true;
             this.cbox_nacionalidadResponsable.Items.AddRange(new object[] {
+            "Seleccione item",
             "Argentino/a",
             "Uruguayo/a",
             "Chileno/a",
@@ -228,6 +229,7 @@
             this.cbox_localidadResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_localidadResponsable.FormattingEnabled = true;
             this.cbox_localidadResponsable.Items.AddRange(new object[] {
+            "Seleccione item",
             "Almirante Brown",
             "Avellaneda",
             "Berazategui",
@@ -406,16 +408,6 @@
             // 
             this.cmb_caracterizacionEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_caracterizacionEstudiante.FormattingEnabled = true;
-            this.cmb_caracterizacionEstudiante.Items.AddRange(new object[] {
-            "Discapacidad Auditiva",
-            "Discapacidad Visual",
-            "Sordo - Ceguera",
-            "Discapacidad Motora",
-            "Alteraciones en el desarrollo y la constitución subjetiva",
-            "Discapacidad Intelectual ",
-            "Trastronos específicos en el lenguaje",
-            "Discapacidad múltiple",
-            "Riesgo ambiental"});
             this.cmb_caracterizacionEstudiante.Location = new System.Drawing.Point(519, 167);
             this.cmb_caracterizacionEstudiante.Name = "cmb_caracterizacionEstudiante";
             this.cmb_caracterizacionEstudiante.Size = new System.Drawing.Size(233, 29);
@@ -494,10 +486,6 @@
             // 
             this.cbox_categoriaEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_categoriaEstudiante.FormattingEnabled = true;
-            this.cbox_categoriaEstudiante.Items.AddRange(new object[] {
-            "Lactantes",
-            "Deambulantes",
-            "Dos años"});
             this.cbox_categoriaEstudiante.Location = new System.Drawing.Point(519, 111);
             this.cbox_categoriaEstudiante.Name = "cbox_categoriaEstudiante";
             this.cbox_categoriaEstudiante.Size = new System.Drawing.Size(233, 29);
@@ -507,6 +495,8 @@
             // 
             this.cbox_anioNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_anioNacimientoEstudiante.FormattingEnabled = true;
+            this.cbox_anioNacimientoEstudiante.Items.AddRange(new object[] {
+            "AA"});
             this.cbox_anioNacimientoEstudiante.Location = new System.Drawing.Point(651, 48);
             this.cbox_anioNacimientoEstudiante.Name = "cbox_anioNacimientoEstudiante";
             this.cbox_anioNacimientoEstudiante.Size = new System.Drawing.Size(101, 29);
@@ -517,6 +507,7 @@
             this.cbox_mesNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_mesNacimientoEstudiante.FormattingEnabled = true;
             this.cbox_mesNacimientoEstudiante.Items.AddRange(new object[] {
+            "MM",
             "1",
             "2",
             "3",
@@ -539,6 +530,7 @@
             this.cbox_diaNacimientoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_diaNacimientoEstudiante.FormattingEnabled = true;
             this.cbox_diaNacimientoEstudiante.Items.AddRange(new object[] {
+            "DD",
             "1",
             "2",
             "3",
@@ -687,6 +679,7 @@
             this.cbox_nacionalidadEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_nacionalidadEstudiante.FormattingEnabled = true;
             this.cbox_nacionalidadEstudiante.Items.AddRange(new object[] {
+            "Seleccione item",
             "Argentino/a",
             "Uruguayo/a",
             "Chileno/a",
@@ -742,6 +735,7 @@
             this.cbox_localidadEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_localidadEstudiante.FormattingEnabled = true;
             this.cbox_localidadEstudiante.Items.AddRange(new object[] {
+            "Seleccione item",
             "Almirante Brown",
             "Avellaneda",
             "Berazategui",
@@ -792,6 +786,7 @@
             this.cbox_generoEstudiante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_generoEstudiante.FormattingEnabled = true;
             this.cbox_generoEstudiante.Items.AddRange(new object[] {
+            "Seleccione",
             "Masculino",
             "Femenino",
             "X"});
