@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.gbox_datos = new System.Windows.Forms.GroupBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.cmb_permisoRol = new System.Windows.Forms.ComboBox();
             this.lbl_permisoRol = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_modificarUsuario = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.lbl_aclaracionContrasenia = new System.Windows.Forms.Label();
@@ -39,8 +40,6 @@
             this.lbl_contraseniaUsuario = new System.Windows.Forms.Label();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
-            this.pnl_division = new System.Windows.Forms.Panel();
-            this.dtgvDocente = new System.Windows.Forms.DataGridView();
             this.txt_telefonoDocente = new System.Windows.Forms.TextBox();
             this.lbl_telefonoDocente = new System.Windows.Forms.Label();
             this.lbl_cuilDocente = new System.Windows.Forms.Label();
@@ -52,23 +51,20 @@
             this.txt_nombreDocente = new System.Windows.Forms.TextBox();
             this.lbl_nombreDocente = new System.Windows.Forms.Label();
             this.pnl_encabezadoListaUsuarios = new System.Windows.Forms.Panel();
-            this.lbl_usuariosEncabezado = new System.Windows.Forms.Label();
-            this.dtg_usuarios = new System.Windows.Forms.DataGridView();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDocente = new System.Windows.Forms.Label();
+            this.lbl_usuariosEncabezado = new System.Windows.Forms.Label();
+            this.dtg_usuarios = new System.Windows.Forms.DataGridView();
             this.dtgvDocentesInactivos = new System.Windows.Forms.DataGridView();
+            this.lblDocente = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_division = new System.Windows.Forms.Panel();
             this.gbox_datos.SuspendLayout();
-            this.pnl_division.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocente)).BeginInit();
             this.pnl_encabezadoListaUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDocentesInactivos)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbox_datos
@@ -77,7 +73,6 @@
             this.gbox_datos.Controls.Add(this.lblEstado);
             this.gbox_datos.Controls.Add(this.cmb_permisoRol);
             this.gbox_datos.Controls.Add(this.lbl_permisoRol);
-            this.gbox_datos.Controls.Add(this.btn_cancelar);
             this.gbox_datos.Controls.Add(this.btn_modificarUsuario);
             this.gbox_datos.Controls.Add(this.btn_regresar);
             this.gbox_datos.Controls.Add(this.lbl_aclaracionContrasenia);
@@ -105,6 +100,29 @@
             this.gbox_datos.TabStop = false;
             this.gbox_datos.Text = "Datos del Usuario";
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Inactivo",
+            "Activo"});
+            this.cmbEstado.Location = new System.Drawing.Point(12, 189);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 28);
+            this.cmbEstado.TabIndex = 29;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstado.Location = new System.Drawing.Point(8, 166);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(58, 20);
+            this.lblEstado.TabIndex = 28;
+            this.lblEstado.Text = "Estado";
+            // 
             // cmb_permisoRol
             // 
             this.cmb_permisoRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -112,7 +130,7 @@
             this.cmb_permisoRol.Items.AddRange(new object[] {
             "Docente",
             "Director/a"});
-            this.cmb_permisoRol.Location = new System.Drawing.Point(302, 406);
+            this.cmb_permisoRol.Location = new System.Drawing.Point(12, 406);
             this.cmb_permisoRol.Name = "cmb_permisoRol";
             this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
             this.cmb_permisoRol.TabIndex = 27;
@@ -120,29 +138,17 @@
             // lbl_permisoRol
             // 
             this.lbl_permisoRol.AutoSize = true;
-            this.lbl_permisoRol.Location = new System.Drawing.Point(298, 382);
+            this.lbl_permisoRol.Location = new System.Drawing.Point(12, 383);
             this.lbl_permisoRol.Name = "lbl_permisoRol";
             this.lbl_permisoRol.Size = new System.Drawing.Size(44, 20);
             this.lbl_permisoRol.TabIndex = 26;
             this.lbl_permisoRol.Text = "Perfil";
             // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_cancelar.Location = new System.Drawing.Point(147, 485);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(126, 35);
-            this.btn_cancelar.TabIndex = 10;
-            this.btn_cancelar.Tag = "administracionUsuarios";
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Visible = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
             // btn_modificarUsuario
             // 
             this.btn_modificarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_modificarUsuario.Location = new System.Drawing.Point(15, 485);
+            this.btn_modificarUsuario.Enabled = false;
+            this.btn_modificarUsuario.Location = new System.Drawing.Point(12, 485);
             this.btn_modificarUsuario.Name = "btn_modificarUsuario";
             this.btn_modificarUsuario.Size = new System.Drawing.Size(126, 35);
             this.btn_modificarUsuario.TabIndex = 8;
@@ -167,7 +173,7 @@
             // 
             this.lbl_aclaracionContrasenia.AutoSize = true;
             this.lbl_aclaracionContrasenia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(12, 383);
+            this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(176, 367);
             this.lbl_aclaracionContrasenia.Name = "lbl_aclaracionContrasenia";
             this.lbl_aclaracionContrasenia.Size = new System.Drawing.Size(271, 36);
             this.lbl_aclaracionContrasenia.TabIndex = 25;
@@ -206,24 +212,6 @@
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
             this.lbl_nombreUsuario.TabIndex = 22;
             this.lbl_nombreUsuario.Text = "Nombre";
-            // 
-            // pnl_division
-            // 
-            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_division.Controls.Add(this.dtgvDocente);
-            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
-            this.pnl_division.Name = "pnl_division";
-            this.pnl_division.Size = new System.Drawing.Size(446, 55);
-            this.pnl_division.TabIndex = 21;
-            // 
-            // dtgvDocente
-            // 
-            this.dtgvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDocente.Location = new System.Drawing.Point(0, -29);
-            this.dtgvDocente.Name = "dtgvDocente";
-            this.dtgvDocente.Size = new System.Drawing.Size(443, 124);
-            this.dtgvDocente.TabIndex = 0;
-            this.dtgvDocente.Visible = false;
             // 
             // txt_telefonoDocente
             // 
@@ -324,54 +312,6 @@
             this.pnl_encabezadoListaUsuarios.Size = new System.Drawing.Size(433, 70);
             this.pnl_encabezadoListaUsuarios.TabIndex = 2;
             // 
-            // lbl_usuariosEncabezado
-            // 
-            this.lbl_usuariosEncabezado.AutoSize = true;
-            this.lbl_usuariosEncabezado.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuariosEncabezado.Location = new System.Drawing.Point(157, 19);
-            this.lbl_usuariosEncabezado.Name = "lbl_usuariosEncabezado";
-            this.lbl_usuariosEncabezado.Size = new System.Drawing.Size(123, 32);
-            this.lbl_usuariosEncabezado.TabIndex = 0;
-            this.lbl_usuariosEncabezado.Text = "Usuarios";
-            // 
-            // dtg_usuarios
-            // 
-            this.dtg_usuarios.AllowUserToAddRows = false;
-            this.dtg_usuarios.AllowUserToDeleteRows = false;
-            this.dtg_usuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dtg_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtg_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtg_usuarios.Location = new System.Drawing.Point(447, 70);
-            this.dtg_usuarios.Name = "dtg_usuarios";
-            this.dtg_usuarios.Size = new System.Drawing.Size(433, 460);
-            this.dtg_usuarios.TabIndex = 3;
-            this.dtg_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_usuarios_CellClick);
-            this.dtg_usuarios.DoubleClick += new System.EventHandler(this.dtg_usuarios_DoubleClick);
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(20, 190);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(121, 28);
-            this.cmbEstado.TabIndex = 29;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstado.Location = new System.Drawing.Point(16, 166);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(58, 20);
-            this.lblEstado.TabIndex = 28;
-            this.lblEstado.Text = "Estado";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -392,33 +332,79 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuarios";
             // 
-            // panel2
+            // lbl_usuariosEncabezado
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.lblDocente);
-            this.panel2.Location = new System.Drawing.Point(444, 382);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(436, 70);
-            this.panel2.TabIndex = 30;
+            this.lbl_usuariosEncabezado.AutoSize = true;
+            this.lbl_usuariosEncabezado.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuariosEncabezado.Location = new System.Drawing.Point(157, 19);
+            this.lbl_usuariosEncabezado.Name = "lbl_usuariosEncabezado";
+            this.lbl_usuariosEncabezado.Size = new System.Drawing.Size(123, 32);
+            this.lbl_usuariosEncabezado.TabIndex = 0;
+            this.lbl_usuariosEncabezado.Text = "Usuarios";
+            // 
+            // dtg_usuarios
+            // 
+            this.dtg_usuarios.AllowUserToAddRows = false;
+            this.dtg_usuarios.AllowUserToDeleteRows = false;
+            this.dtg_usuarios.AllowUserToResizeColumns = false;
+            this.dtg_usuarios.AllowUserToResizeRows = false;
+            this.dtg_usuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dtg_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtg_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtg_usuarios.Location = new System.Drawing.Point(447, 70);
+            this.dtg_usuarios.Name = "dtg_usuarios";
+            this.dtg_usuarios.ReadOnly = true;
+            this.dtg_usuarios.RowHeadersWidth = 20;
+            this.dtg_usuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtg_usuarios.Size = new System.Drawing.Size(433, 198);
+            this.dtg_usuarios.TabIndex = 3;
+            this.dtg_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_usuarios_CellClick);
+            // 
+            // dtgvDocentesInactivos
+            // 
+            this.dtgvDocentesInactivos.AllowUserToAddRows = false;
+            this.dtgvDocentesInactivos.AllowUserToResizeColumns = false;
+            this.dtgvDocentesInactivos.AllowUserToResizeRows = false;
+            this.dtgvDocentesInactivos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dtgvDocentesInactivos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvDocentesInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDocentesInactivos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtgvDocentesInactivos.Location = new System.Drawing.Point(447, 326);
+            this.dtgvDocentesInactivos.Name = "dtgvDocentesInactivos";
+            this.dtgvDocentesInactivos.RowHeadersWidth = 20;
+            this.dtgvDocentesInactivos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvDocentesInactivos.Size = new System.Drawing.Size(433, 198);
+            this.dtgvDocentesInactivos.TabIndex = 31;
+            this.dtgvDocentesInactivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_usuarios_CellClick);
             // 
             // lblDocente
             // 
             this.lblDocente.AutoSize = true;
-            this.lblDocente.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocente.Location = new System.Drawing.Point(96, 22);
+            this.lblDocente.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocente.Location = new System.Drawing.Point(114, 17);
             this.lblDocente.Name = "lblDocente";
-            this.lblDocente.Size = new System.Drawing.Size(263, 32);
+            this.lblDocente.Size = new System.Drawing.Size(204, 25);
             this.lblDocente.TabIndex = 0;
             this.lblDocente.Text = "Docentes Inactivos";
             // 
-            // dtgvDocentesInactivos
+            // panel2
             // 
-            this.dtgvDocentesInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDocentesInactivos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvDocentesInactivos.Location = new System.Drawing.Point(447, 449);
-            this.dtgvDocentesInactivos.Name = "dtgvDocentesInactivos";
-            this.dtgvDocentesInactivos.Size = new System.Drawing.Size(433, 81);
-            this.dtgvDocentesInactivos.TabIndex = 31;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(165)))), ((int)(((byte)(138)))));
+            this.panel2.Controls.Add(this.lblDocente);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(447, 268);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(433, 58);
+            this.panel2.TabIndex = 30;
+            // 
+            // pnl_division
+            // 
+            this.pnl_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnl_division.Location = new System.Drawing.Point(-1, 238);
+            this.pnl_division.Name = "pnl_division";
+            this.pnl_division.Size = new System.Drawing.Size(446, 55);
+            this.pnl_division.TabIndex = 21;
             // 
             // frm_modificarUsuario
             // 
@@ -436,16 +422,14 @@
             this.Load += new System.EventHandler(this.frm_modificarUsuario_Load);
             this.gbox_datos.ResumeLayout(false);
             this.gbox_datos.PerformLayout();
-            this.pnl_division.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocente)).EndInit();
             this.pnl_encabezadoListaUsuarios.ResumeLayout(false);
             this.pnl_encabezadoListaUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_usuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocentesInactivos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDocentesInactivos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +447,6 @@
         private System.Windows.Forms.Label lbl_apellidoDocente;
         private System.Windows.Forms.TextBox txt_nombreDocente;
         private System.Windows.Forms.Label lbl_nombreDocente;
-        private System.Windows.Forms.Panel pnl_division;
         private System.Windows.Forms.Button btn_modificarUsuario;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Label lbl_aclaracionContrasenia;
@@ -471,19 +454,18 @@
         private System.Windows.Forms.Label lbl_contraseniaUsuario;
         private System.Windows.Forms.TextBox txt_nombreUsuario;
         private System.Windows.Forms.Label lbl_nombreUsuario;
-        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Panel pnl_encabezadoListaUsuarios;
         private System.Windows.Forms.DataGridView dtg_usuarios;
         private System.Windows.Forms.Label lbl_usuariosEncabezado;
         private System.Windows.Forms.ComboBox cmb_permisoRol;
         private System.Windows.Forms.Label lbl_permisoRol;
-        private System.Windows.Forms.DataGridView dtgvDocente;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblDocente;
         private System.Windows.Forms.DataGridView dtgvDocentesInactivos;
+        private System.Windows.Forms.Label lblDocente;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_division;
     }
 }

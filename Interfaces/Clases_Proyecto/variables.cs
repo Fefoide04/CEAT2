@@ -16,11 +16,7 @@ namespace Interfaces
         public static comandosBD BD = new comandosBD();
         public static string ContraseñaUsuario;
         public static int control = 0;
-        public static DataTable Tabla; /* solo declarar, no instanciar aqui, solo cuando va a ser usada y en el formulario
-                                        que sera usado.*/
-        public static DataTable Tabla2;
-        public static string id;
-        public static int c;
+        //public static string id;
         public static bool perfil = false;
 
         /*Formulario Principal*/
@@ -40,5 +36,17 @@ namespace Interfaces
 
         public static DataTable estudiantes = new DataTable();
         public static string filtro = null;
+
+        /*Usuarios*/
+
+        public static DataTable tablaUsuarios = new DataTable();
+        public static DataTable tablaDocentes = new DataTable();
+
+        public static DataTable docenteSeleccionado = new DataTable();
+        public static DataTable usuarioSeleccionado = new DataTable();
+
+        public static int idUsuarioSeleccionado;
+
+        public static DataTable docentesInactivos = new DataTable();
     }
 }

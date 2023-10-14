@@ -89,6 +89,8 @@ namespace Interfaces
 
         public bool IniciarSesion(string nombreUsuario, string password)
         {
+            bool resultado = true;
+
             //Instancio una nueva conexion
             conexion = new OleDbConnection(strConexion);
             conexion.Open();
@@ -99,38 +101,29 @@ namespace Interfaces
 
                 comando.Connection = conexion;
 
-                comando.CommandText = "SELECT * FROM Usuario WHERE nombreUsuario=@nombreUsuario AND cont=@contrasena";
+                comando.CommandText = "SELECT * FROM Usuario inner join Docente on Usuario.idDocente = Docente.idDocente " +
+                "WHERE Usuario.nombreUsuario=@nombreUsuario AND Usuario.cont=@contrasena AND Docente.activo = -1";
                 comando.CommandType = CommandType.Text;
                 OleDbDataReader lector = comando.ExecuteReader();
 
-                if (lector.HasRows)
-                {
-                    lector.Close();
-                    conexion.Close();
-                    comando.Parameters.Clear();
-                    comando.Connection.Close();
+                resultado = lector.HasRows;
 
-                    return true;
-                }
-                else
+                if (resultado)
                 {
-                    lector.Close();
-                    conexion.Close();
-                    comando.Connection.Close();
+                    DataTable usuarioIniciado = new DataTable();
 
-                    return false;
+                    usuarioIniciado.Load(lector);
+
+                    variables.perfil = (bool)usuarioIniciado.Rows[0][4];
                 }
 
+                lector.Close();
+                conexion.Close();
+                comando.Parameters.Clear();
+                comando.Connection.Close();
 
+                return resultado;
             }
-
         }
-
-
-
-
-
-
-
     }
 }

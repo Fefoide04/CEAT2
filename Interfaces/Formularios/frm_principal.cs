@@ -22,6 +22,8 @@ namespace Interfaces
             btn_cerrarSesion.BackColor = variables.colores.primaryBaseColor;
 
             variables.BD.consulta("SELECT * from Estudiante");
+
+            btn_usuarios.Visible = variables.perfil;
         }
 
         private void botonesClick(object sender, EventArgs e)

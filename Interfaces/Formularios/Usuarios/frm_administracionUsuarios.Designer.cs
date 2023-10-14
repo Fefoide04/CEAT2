@@ -54,7 +54,7 @@
             this.btn_verUsuarios.Size = new System.Drawing.Size(880, 81);
             this.btn_verUsuarios.TabIndex = 14;
             this.btn_verUsuarios.Tag = "listaUsuarios";
-            this.btn_verUsuarios.Text = "Ver Lista Usuarios";
+            this.btn_verUsuarios.Text = "Ver Lista Docentes";
             this.btn_verUsuarios.UseVisualStyleBackColor = false;
             this.btn_verUsuarios.Click += new System.EventHandler(this.btn_click);
             // 
@@ -70,7 +70,7 @@
             this.btn_agregarUsuarios.Size = new System.Drawing.Size(880, 81);
             this.btn_agregarUsuarios.TabIndex = 13;
             this.btn_agregarUsuarios.Tag = "altaUsuarios";
-            this.btn_agregarUsuarios.Text = "Agregar Usuarios";
+            this.btn_agregarUsuarios.Text = "Agregar Docentes";
             this.btn_agregarUsuarios.UseVisualStyleBackColor = false;
             this.btn_agregarUsuarios.Click += new System.EventHandler(this.btn_click);
             // 
@@ -86,7 +86,7 @@
             this.btn_modificarUsuarios.Size = new System.Drawing.Size(880, 81);
             this.btn_modificarUsuarios.TabIndex = 12;
             this.btn_modificarUsuarios.Tag = "modificarUsuarios";
-            this.btn_modificarUsuarios.Text = "Modificar Usuarios";
+            this.btn_modificarUsuarios.Text = "Modificar Docentes";
             this.btn_modificarUsuarios.UseVisualStyleBackColor = false;
             this.btn_modificarUsuarios.Click += new System.EventHandler(this.btn_click);
             // 

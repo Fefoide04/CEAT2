@@ -133,6 +133,12 @@
   <data name="Loco escuela Placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\Generales\Loco escuela Placeholder.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="altaUsuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Fondos\altaUsuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo CEAT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo CEAT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ClaveIcono1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\Login\ClaveIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +148,19 @@
   <data name="UsuarioIcono1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\Login\UsuarioIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo CEAT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo CEAT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="autorizados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Iconos\autorizados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cerrarsesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Iconos\cerrarsesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estudiantesIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Iconos\estudiantesIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profesoresIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Iconos\profesoresIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reportesIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Iconos\reportesIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

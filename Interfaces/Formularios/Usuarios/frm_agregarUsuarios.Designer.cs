@@ -77,33 +77,35 @@
             this.gbox_docente.TabIndex = 0;
             this.gbox_docente.TabStop = false;
             this.gbox_docente.Text = "Datos del Docente";
+            this.gbox_docente.Enter += new System.EventHandler(this.gbox_docente_Enter);
             // 
             // txt_telefonoDocente
             // 
             this.txt_telefonoDocente.Location = new System.Drawing.Point(458, 50);
             this.txt_telefonoDocente.Name = "txt_telefonoDocente";
             this.txt_telefonoDocente.Size = new System.Drawing.Size(233, 26);
-            this.txt_telefonoDocente.TabIndex = 4;
+            this.txt_telefonoDocente.TabIndex = 5;
             this.txt_telefonoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefonoDocente_KeyPress);
             // 
             // lbl_teléfonoDocente
             // 
             this.lbl_teléfonoDocente.AutoSize = true;
-            this.lbl_teléfonoDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_teléfonoDocente.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_teléfonoDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_teléfonoDocente.Location = new System.Drawing.Point(454, 26);
             this.lbl_teléfonoDocente.Name = "lbl_teléfonoDocente";
-            this.lbl_teléfonoDocente.Size = new System.Drawing.Size(71, 20);
+            this.lbl_teléfonoDocente.Size = new System.Drawing.Size(71, 18);
             this.lbl_teléfonoDocente.TabIndex = 10;
             this.lbl_teléfonoDocente.Text = "Teléfono";
             // 
             // lbl_cuilDocente
             // 
             this.lbl_cuilDocente.AutoSize = true;
-            this.lbl_cuilDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbl_cuilDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cuilDocente.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_cuilDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cuilDocente.Location = new System.Drawing.Point(205, 23);
             this.lbl_cuilDocente.Name = "lbl_cuilDocente";
-            this.lbl_cuilDocente.Size = new System.Drawing.Size(36, 20);
+            this.lbl_cuilDocente.Size = new System.Drawing.Size(37, 18);
             this.lbl_cuilDocente.TabIndex = 9;
             this.lbl_cuilDocente.Text = "Cuil";
             // 
@@ -113,7 +115,7 @@
             this.txt_cuilDocente3.MaxLength = 1;
             this.txt_cuilDocente3.Name = "txt_cuilDocente3";
             this.txt_cuilDocente3.Size = new System.Drawing.Size(22, 26);
-            this.txt_cuilDocente3.TabIndex = 3;
+            this.txt_cuilDocente3.TabIndex = 4;
             this.txt_cuilDocente3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente3_KeyPress);
             // 
             // txt_cuilDocente2
@@ -122,7 +124,7 @@
             this.txt_cuilDocente2.MaxLength = 8;
             this.txt_cuilDocente2.Name = "txt_cuilDocente2";
             this.txt_cuilDocente2.Size = new System.Drawing.Size(156, 26);
-            this.txt_cuilDocente2.TabIndex = 2;
+            this.txt_cuilDocente2.TabIndex = 3;
             this.txt_cuilDocente2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente2_KeyPress);
             // 
             // txt_cuilDocente1
@@ -131,7 +133,7 @@
             this.txt_cuilDocente1.MaxLength = 2;
             this.txt_cuilDocente1.Name = "txt_cuilDocente1";
             this.txt_cuilDocente1.Size = new System.Drawing.Size(43, 26);
-            this.txt_cuilDocente1.TabIndex = 1;
+            this.txt_cuilDocente1.TabIndex = 2;
             this.txt_cuilDocente1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilDocente1_KeyPress);
             // 
             // txt_apellidoDocente
@@ -139,16 +141,17 @@
             this.txt_apellidoDocente.Location = new System.Drawing.Point(30, 114);
             this.txt_apellidoDocente.Name = "txt_apellidoDocente";
             this.txt_apellidoDocente.Size = new System.Drawing.Size(160, 26);
-            this.txt_apellidoDocente.TabIndex = 5;
+            this.txt_apellidoDocente.TabIndex = 1;
             this.txt_apellidoDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoDocente_KeyPress);
             // 
             // lbl_apellidoDocente
             // 
             this.lbl_apellidoDocente.AutoSize = true;
-            this.lbl_apellidoDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_apellidoDocente.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_apellidoDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_apellidoDocente.Location = new System.Drawing.Point(26, 90);
             this.lbl_apellidoDocente.Name = "lbl_apellidoDocente";
-            this.lbl_apellidoDocente.Size = new System.Drawing.Size(69, 20);
+            this.lbl_apellidoDocente.Size = new System.Drawing.Size(71, 18);
             this.lbl_apellidoDocente.TabIndex = 2;
             this.lbl_apellidoDocente.Text = "Apellido";
             // 
@@ -163,10 +166,11 @@
             // lbl_nombreDocente
             // 
             this.lbl_nombreDocente.AutoSize = true;
-            this.lbl_nombreDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_nombreDocente.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nombreDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombreDocente.Location = new System.Drawing.Point(26, 26);
             this.lbl_nombreDocente.Name = "lbl_nombreDocente";
-            this.lbl_nombreDocente.Size = new System.Drawing.Size(68, 20);
+            this.lbl_nombreDocente.Size = new System.Drawing.Size(68, 18);
             this.lbl_nombreDocente.TabIndex = 0;
             this.lbl_nombreDocente.Text = "Nombre";
             // 
@@ -195,12 +199,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(527, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 25;
             this.label1.Text = "Usuarios:";
+            this.label1.Visible = false;
             // 
             // dtgvUsuarios
             // 
@@ -213,6 +218,7 @@
             this.dtgvUsuarios.RowHeadersVisible = false;
             this.dtgvUsuarios.Size = new System.Drawing.Size(319, 174);
             this.dtgvUsuarios.TabIndex = 24;
+            this.dtgvUsuarios.Visible = false;
             // 
             // cmb_permisoRol
             // 
@@ -230,10 +236,11 @@
             // lbl_permisoRol
             // 
             this.lbl_permisoRol.AutoSize = true;
-            this.lbl_permisoRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_permisoRol.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_permisoRol.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_permisoRol.Location = new System.Drawing.Point(376, 32);
             this.lbl_permisoRol.Name = "lbl_permisoRol";
-            this.lbl_permisoRol.Size = new System.Drawing.Size(44, 20);
+            this.lbl_permisoRol.Size = new System.Drawing.Size(43, 18);
             this.lbl_permisoRol.TabIndex = 22;
             this.lbl_permisoRol.Text = "Perfil";
             // 
@@ -264,7 +271,7 @@
             // lbl_aclaracionContrasenia
             // 
             this.lbl_aclaracionContrasenia.AutoSize = true;
-            this.lbl_aclaracionContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_aclaracionContrasenia.BackColor = System.Drawing.Color.Transparent;
             this.lbl_aclaracionContrasenia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_aclaracionContrasenia.Location = new System.Drawing.Point(27, 102);
             this.lbl_aclaracionContrasenia.Name = "lbl_aclaracionContrasenia";
@@ -283,10 +290,11 @@
             // lbl_contraseniaUsuario
             // 
             this.lbl_contraseniaUsuario.AutoSize = true;
-            this.lbl_contraseniaUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_contraseniaUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_contraseniaUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_contraseniaUsuario.Location = new System.Drawing.Point(205, 32);
             this.lbl_contraseniaUsuario.Name = "lbl_contraseniaUsuario";
-            this.lbl_contraseniaUsuario.Size = new System.Drawing.Size(95, 20);
+            this.lbl_contraseniaUsuario.Size = new System.Drawing.Size(93, 18);
             this.lbl_contraseniaUsuario.TabIndex = 4;
             this.lbl_contraseniaUsuario.Text = "Contraseña";
             // 
@@ -301,10 +309,11 @@
             // lbl_nombreUsuario
             // 
             this.lbl_nombreUsuario.AutoSize = true;
-            this.lbl_nombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbl_nombreUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombreUsuario.Location = new System.Drawing.Point(26, 32);
             this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
-            this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 20);
+            this.lbl_nombreUsuario.Size = new System.Drawing.Size(68, 18);
             this.lbl_nombreUsuario.TabIndex = 2;
             this.lbl_nombreUsuario.Text = "Nombre";
             // 
@@ -320,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Interfaces.Properties.Resources.ceat_4;
+            this.BackgroundImage = global::Interfaces.Properties.Resources.altaUsuarios;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 530);
             this.Controls.Add(this.pnl_division);

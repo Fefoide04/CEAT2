@@ -206,6 +206,24 @@
   <ItemGroup>
     <None Include="Resources\Logo CEAT1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Fondos\altaUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Iconos\autorizados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Iconos\cerrarsesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Iconos\estudiantesIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Iconos\profesoresIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Iconos\reportesIcono.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

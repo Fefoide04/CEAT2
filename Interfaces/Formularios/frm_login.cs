@@ -18,7 +18,6 @@ namespace Interfaces
             txtContrasena.MaxLength = 20;
         }
 
-        comandosBD claseConexion = new comandosBD();
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -28,7 +27,8 @@ namespace Interfaces
         bool valida = false;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            valida = claseConexion.IniciarSesion(txtUsuario.Text, txtContrasena.Text);
+            valida = variables.BD.IniciarSesion(txtUsuario.Text, txtContrasena.Text);
+            variables.BD.desconectar();
 
             if (valida == true)
             {
@@ -39,7 +39,6 @@ namespace Interfaces
                 frmPrincipal.Show();
                 frmPrincipal.FormClosed += CerrarSesion;
                 this.Hide();
-
             }
             else
             {

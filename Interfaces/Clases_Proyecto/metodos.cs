@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Data;
 using System.Windows.Forms;
 
 namespace Interfaces
@@ -128,6 +129,15 @@ namespace Interfaces
             {
                 e.Handled = false;
             }
+        }
+
+        public static void cargarTabla(DataTable tabla, string consulta)
+        {
+            tabla.Clear();
+
+            tabla.Load(variables.BD.consulta(consulta));
+
+            variables.BD.desconectar();
         }
     }
 }
