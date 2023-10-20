@@ -32,13 +32,13 @@
             this.pnl_divisorVertical = new System.Windows.Forms.Panel();
             this.pnl_displayPrincipal = new System.Windows.Forms.Panel();
             this.pnl_botones = new System.Windows.Forms.Panel();
-            this.pnl_divisorHorizontal = new System.Windows.Forms.Panel();
-            this.pnl_encabezado = new System.Windows.Forms.Panel();
             this.btn_autorizados = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.btn_usuarios = new System.Windows.Forms.Button();
             this.btn_reportes = new System.Windows.Forms.Button();
             this.btn_estudiantes = new System.Windows.Forms.Button();
+            this.pnl_divisorHorizontal = new System.Windows.Forms.Panel();
+            this.pnl_encabezado = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_botones.SuspendLayout();
             this.pnl_encabezado.SuspendLayout();
@@ -79,28 +79,6 @@
             this.pnl_botones.Size = new System.Drawing.Size(183, 376);
             this.pnl_botones.TabIndex = 2;
             // 
-            // pnl_divisorHorizontal
-            // 
-            this.pnl_divisorHorizontal.BackColor = System.Drawing.Color.Gray;
-            this.pnl_divisorHorizontal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_divisorHorizontal.Location = new System.Drawing.Point(0, 152);
-            this.pnl_divisorHorizontal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pnl_divisorHorizontal.Name = "pnl_divisorHorizontal";
-            this.pnl_divisorHorizontal.Size = new System.Drawing.Size(183, 2);
-            this.pnl_divisorHorizontal.TabIndex = 0;
-            // 
-            // pnl_encabezado
-            // 
-            this.pnl_encabezado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_encabezado.Controls.Add(this.pictureBox1);
-            this.pnl_encabezado.Controls.Add(this.pnl_divisorHorizontal);
-            this.pnl_encabezado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_encabezado.Location = new System.Drawing.Point(0, 0);
-            this.pnl_encabezado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pnl_encabezado.Name = "pnl_encabezado";
-            this.pnl_encabezado.Size = new System.Drawing.Size(183, 154);
-            this.pnl_encabezado.TabIndex = 1;
-            // 
             // btn_autorizados
             // 
             this.btn_autorizados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -115,7 +93,7 @@
             this.btn_autorizados.Name = "btn_autorizados";
             this.btn_autorizados.Size = new System.Drawing.Size(183, 57);
             this.btn_autorizados.TabIndex = 14;
-            this.btn_autorizados.Tag = "adultosAutorizados";
+            this.btn_autorizados.Tag = "administracionUsuarios";
             this.btn_autorizados.Text = "Autorizaciones";
             this.btn_autorizados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_autorizados.UseVisualStyleBackColor = false;
@@ -199,6 +177,28 @@
             this.btn_estudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_estudiantes.UseVisualStyleBackColor = false;
             this.btn_estudiantes.Click += new System.EventHandler(this.botonesClick);
+            // 
+            // pnl_divisorHorizontal
+            // 
+            this.pnl_divisorHorizontal.BackColor = System.Drawing.Color.Gray;
+            this.pnl_divisorHorizontal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_divisorHorizontal.Location = new System.Drawing.Point(0, 152);
+            this.pnl_divisorHorizontal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pnl_divisorHorizontal.Name = "pnl_divisorHorizontal";
+            this.pnl_divisorHorizontal.Size = new System.Drawing.Size(183, 2);
+            this.pnl_divisorHorizontal.TabIndex = 0;
+            // 
+            // pnl_encabezado
+            // 
+            this.pnl_encabezado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_encabezado.Controls.Add(this.pictureBox1);
+            this.pnl_encabezado.Controls.Add(this.pnl_divisorHorizontal);
+            this.pnl_encabezado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_encabezado.Location = new System.Drawing.Point(0, 0);
+            this.pnl_encabezado.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pnl_encabezado.Name = "pnl_encabezado";
+            this.pnl_encabezado.Size = new System.Drawing.Size(183, 154);
+            this.pnl_encabezado.TabIndex = 1;
             // 
             // pictureBox1
             // 

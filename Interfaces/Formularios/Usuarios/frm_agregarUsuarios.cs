@@ -35,83 +35,75 @@ namespace Interfaces
 
         private void btn_agregarUsuario_Click(object sender, EventArgs e)
         {
-            //if (txt_nombreDocente.Text == "" || txt_apellidoDocente.Text == "" || txt_cuilDocente1.Text == "" || txt_cuilDocente2.Text == "" || txt_cuilDocente3.Text == "" || txt_telefonoDocente.Text == "" || txt_nombreUsuario.Text == "")
-            //{
-            //    MessageBox.Show("Faltan datos en los campos", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
-            //else
-            //{
-            //    /*revisar cantidad de numeros en el telefono?.*/
+            if (txt_nombreDocente.Text == "" || txt_apellidoDocente.Text == "" || txt_cuilDocente1.Text == "" || txt_cuilDocente2.Text == "" || txt_cuilDocente3.Text == "" || txt_telefonoDocente.Text == "" || txt_nombreUsuario.Text == "")
+            {
+                MessageBox.Show("Faltan datos en los campos", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                /*revisar cantidad de numeros en el telefono?.*/
 
-            //    //Contolo que no exista un nombreUsuario repetido
-            //    variables.control = 0;
-            //    variables.Tabla = new DataTable();
-            //    variables.Tabla.Load(alta.consulta("SELECT * FROM Usuario ORDER BY nombreUsuario"));
-            //    dtgvUsuarios.DataSource = variables.Tabla;
-            //    alta.desconectar();
+                //Contolo que no exista un nombreUsuario repetido
+                variables.control = 0;
+                
+                dtgvUsuarios.DataSource = metodos.CargaTablaU();
+                
 
-            //    for (int i = 0; i < dtgvUsuarios.Rows.Count; i++)
-            //    {
-            //        if (txt_nombreUsuario.Text == dtgvUsuarios[1, i].Value.ToString())
-            //        {
-            //            variables.control = 1;
-            //            break;
-            //        }
-            //    }
+                for (int i = 0; i < dtgvUsuarios.Rows.Count; i++)
+                {
+                    if (txt_nombreUsuario.Text == dtgvUsuarios[1, i].Value.ToString())
+                    {
+                        variables.control = 1;
+                        break;
+                    }
+                }
 
-            //    if (variables.control == 1)
-            //    {
-            //        MessageBox.Show("Ya existe el Usuario ingresado", "Usuario existente");
-            //        variables.control = 0;
-            //        txt_nombreUsuario.Select();
-            //    }
-            //    else
-            //    {
-            //        // si está vacío el txt de la contraseña, la genera automáticamente
-            //        // mostrar y avisar sobre contraseña generada automaticamente (en progreso)
-            //        if (txt_contraseniaUsuario.Text == "")
-            //        {
-            //            txt_contraseniaUsuario.Text = metodos.CrearContraseña();
-            //        }
-            //        else
-            //        {
-            //            DialogResult result = MessageBox.Show("¿Está seguro que desea dar alta al usuario " + txt_nombreUsuario.Text + " perteneciente al docente " + txt_nombreDocente.Text + "?", "", MessageBoxButtons.YesNo);
+                if (variables.control == 1)
+                {
+                    MessageBox.Show("Ya existe el Usuario ingresado", "Usuario existente");
+                    variables.control = 0;
+                    txt_nombreUsuario.Select();
+                }
+                else
+                {
+                    // si está vacío el txt de la contraseña, la genera automáticamente
+                    // mostrar y avisar sobre contraseña generada automaticamente (en progreso)
+                    if (txt_contraseniaUsuario.Text == "")
+                    {
+                        txt_contraseniaUsuario.Text = metodos.CrearContraseña();
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Está seguro que desea dar alta al usuario " + txt_nombreUsuario.Text + " perteneciente al docente " + txt_nombreDocente.Text + "?", "", MessageBoxButtons.YesNo);
 
-            //            if (result == DialogResult.Yes)
-            //            {
-            //                string cuil = txt_cuilDocente1.Text + txt_cuilDocente2.Text + txt_cuilDocente3.Text;
-            //                bool AltaU = false;
-            //                bool AltaD = false;
-            //                AltaD = alta.ABM("INSERT INTO Docente (nombre, apellido, CUIL, telefono) VALUES ('" + txt_nombreDocente.Text + "','" + txt_apellidoDocente.Text + "','" + cuil + "','" + txt_telefonoDocente.Text + "')");
+                        if (result == DialogResult.Yes)
+                        {
+                            string cuil = txt_cuilDocente1.Text + txt_cuilDocente2.Text + txt_cuilDocente3.Text;
+                            bool AltaU = false;
+                            bool AltaD = false;
 
-            //                // corregido.
-            //                variables.Tabla = new DataTable(); // instanciar para que siempre este limpia.
-            //                variables.Tabla.Load(alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'"));
-            //                variables.id = variables.Tabla.Rows[0]["idDocente"].ToString();
-            //                /*tabla limpia.*/
-            //                if (cmb_permisoRol.Text == "Director/a")
-            //                {
-            //                    variables.perfil = true;
-            //                }
-            //                if (cmb_permisoRol.Text == "Docente")
-            //                {
-            //                    variables.perfil = false;
-            //                }
-            //                AltaU = alta.ABM("insert into Usuario (nombreUsuario, cont, idDocente, perfil) VALUES ('" + txt_nombreUsuario.Text + "', '" + txt_contraseniaUsuario.Text + "', " + variables.id + ", " + variables.perfil + " )");
+                            AltaD = metodos.AltaDocente(txt_nombreDocente.Text, txt_apellidoDocente.Text, cuil, txt_telefonoDocente.Text);
 
-            //                if (AltaU == true && AltaD == true)
-            //                {
-            //                    MessageBox.Show("Se creó correctamente el registro", "Proceso finalizado:");
-            //                }
-            //                else
-            //                {
-            //                    MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
-            //                }
-            //               // metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregarUsuario.Tag.ToString()), variables.panelPrincipal);
-            //            }
-            //        }
-            //    } 
-            //}
+                            variables.id = metodos.TraeId(cuil);
+                            /*tabla limpia.*/
+                                                       
+                             variables.perfil = metodos.PerfilRol(cmb_permisoRol.Text);
+
+                             AltaU = metodos.AltaUsuario(txt_nombreUsuario.Text, txt_contraseniaUsuario.Text, variables.id, variables.perfil);
+
+                            if (AltaU == true && AltaD == true)
+                            {
+                                MessageBox.Show("Se creó correctamente el registro", "Proceso finalizado:");
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo completar la operación", "Error en el procedimiento:");
+                            }
+                            // metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregarUsuario.Tag.ToString()), variables.panelPrincipal);
+                        }
+                    }
+                }
+            }
         }
 
         // validar docente.

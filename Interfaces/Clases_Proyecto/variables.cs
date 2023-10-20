@@ -16,6 +16,8 @@ namespace Interfaces
         public static comandosBD BD = new comandosBD();
         public static string ContraseñaUsuario;
         public static int control = 0;
+        public static DataTable Tabla;
+        public static string id;
         //public static string id;
         public static bool perfil = false;
 

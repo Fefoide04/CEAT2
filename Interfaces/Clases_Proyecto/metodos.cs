@@ -250,5 +250,63 @@ namespace Interfaces
                 }
             }
         }
+
+
+
+        // metodos para Alta Usuario Docente-----------------------------
+        public static bool PerfilRol(string s)
+        {
+            if (s == "Director/a")
+            {
+                return true;
+            }
+            if (s == "Docente")
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        
+        }
+
+        public static bool AltaDocente(string nombre, string apellido, string cuil, string telefono)
+        {
+            comandosBD alta = new comandosBD();
+            bool AltaD = false;
+            AltaD = alta.ABM("INSERT INTO Docente (nombre, apellido, CUIL, telefono) VALUES ('" + nombre + "','" + apellido + "','" + cuil + "','" + telefono + "')");
+            alta.desconectar();
+            return AltaD;
+        }
+
+        public static bool AltaUsuario(string nombreUsuario, string cont, string id, bool perfil)
+        {
+            comandosBD alta = new comandosBD();
+            bool AltaU = false;
+            AltaU = alta.ABM("insert into Usuario (nombreUsuario, cont, idDocente, perfil) VALUES ('" + nombreUsuario + "', '" + cont + "', " + id + ", " + perfil + " )");
+            alta.desconectar();
+            return AltaU;
+        }
+
+        public static string TraeId(string cuil)
+        {
+            comandosBD alta = new comandosBD();
+            variables.Tabla = new DataTable(); // instanciar para que siempre este limpia.
+            variables.Tabla.Load(alta.consulta("Select idDocente from Docente where CUIL='" + cuil + "'"));
+            variables.id = variables.Tabla.Rows[0]["idDocente"].ToString();
+            alta.desconectar();
+            return variables.id;
+        }
+
+        public static Object CargaTablaU()
+        {
+            comandosBD alta = new comandosBD();
+            variables.Tabla = new DataTable();
+            variables.Tabla.Load(alta.consulta("SELECT * FROM Usuario ORDER BY nombreUsuario"));
+            alta.desconectar();
+            return variables.Tabla;
+        }
+        //----------------------------------------------------------------
     }
 }
