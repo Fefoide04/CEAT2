@@ -231,12 +231,14 @@ namespace Interfaces
         {
             DataTable combobxdt = new DataTable();
             combobxdt.Load(variables.BD.consulta(comando));
+            variables.BD.desconectar();
             DataRow fila = combobxdt.NewRow();
             fila[1] = "Seleccine item";
             combobxdt.Rows.InsertAt(fila, 0);
             cmbprincipal.DataSource = combobxdt;
             cmbprincipal.DisplayMember = displaynombre;
             cmbprincipal.ValueMember = valueid;
+            
         }
 
         /*para los combobox que no cargan desde base de datos.*/

@@ -32,12 +32,24 @@ namespace Interfaces
             txt_apellidoEstudiante.MaxLength = 12;
             txt_entreCalle1Estudiante.MaxLength = 30;
             txt_entreCalle2Estudiante.MaxLength = 30;
+            txt_altura.MaxLength = 8;
 
-            /*falta cargar desde base de datos los combobox localidad y nacionalidad.*/
+            /*nuevo*/
+            /*combobox responsable.*/
             metodos.dt_cmb("select * from Categoria", "nombreCategoria", "idCategoria", cbox_categoriaEstudiante);
             metodos.dt_cmb("select * from Caracterizacion", "nombreCaracterizacion", "idCaracterizacion", cmb_caracterizacionEstudiante);
             metodos.dt_cmb("select * from Parentezco", "parentezco", "idParentezco", cbox_parentezcoResponsable);
+            metodos.dt_cmb("select * from Localidad", "nombreLocalidad", "idLocalidad", cbox_localidadResponsable);
+            metodos.dt_cmb("select * from Nacionalidad", "nombrePaís", "idNacionalidad", cbox_nacionalidadResponsable);
 
+            /*combobox estudiantes.*/
+            metodos.dt_cmb("select * from Localidad", "nombreLocalidad", "idLocalidad", cbox_localidadEstudiante);
+            metodos.dt_cmb("select * from Nacionalidad", "nombrePaís", "idNacionalidad", cbox_nacionalidadEstudiante);
+            metodos.dt_cmb("select * from Localidad", "nombreLocalidad", "idLocalidad", cbox_localidadResponsable);
+            metodos.dt_cmb("select * from Categoria", "nombreCategoria", "idCategoria", cbox_categoriaEstudiante);
+            metodos.dt_cmb("select * from Caracterizacion", "nombreCaracterizacion", "idCaracterizacion", cmb_caracterizacionEstudiante);
+            metodos.dt_cmb("select * from Turno", "turno", "idTurno", cbox_turno);
+            //===========================
             /*selecciono items de combobox que no cargan desde la base de datos.*/
             metodos.seleccionar_indice0_cmb(gbox_estudiante);
             metodos.seleccionar_indice0_cmb(gbox_responsable);
@@ -65,7 +77,7 @@ namespace Interfaces
             bool textboxs = metodos.verificar_datos(gbox_responsable);
             bool comboboxs = metodos.verificar_datos(gbox_estudiante);
 
-            if (textboxs == false || comboboxs == false)
+            if (textboxs == false ||comboboxs == false)
             {
                 MessageBox.Show("Faltan datos por completar", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -79,20 +91,68 @@ namespace Interfaces
                 else
                 {
                     // en desarrollo.
-                    DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
+                    //DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
 
-                    if (result == DialogResult.Yes)
+                    //if (result == DialogResult.Yes)
+                    //{
+                    //    Form form = new frm_observacionEstudiante();
+                    //    form.ShowDialog();
+                    //}
+                    //========================
+
+                    /*antes de cualquier insercion reviso no tener cuils iguales
+                     para responsables y estudiantes nuevos.*/
+                    string cuil = txt_cuilResponsable1.Text + txt_cuilResponsable2.Text + txt_cuilResponsable3.Text;
+                    string cuiles = txt_cuilEstudiante1.Text + txt_cuilEstudiante2.Text + txt_cuilEstudiante3.Text;
+                    bool iddistintar = variables.BD.comprobarpkigual(cuil, "Responsable", "CUIL");
+                    bool iddistintaes = variables.BD.comprobarpkigual(cuiles, "Estudiante", "CUIL");
+
+                    /*compruebo si ya existen los cuils.*/
+                    if (iddistintar == false || iddistintaes == false)
                     {
-                        Form form = new frm_observacionEstudiante();
-                        form.ShowDialog();
+                        if (iddistintar == false)
+                        {
+                            MessageBox.Show("ya existe un responsable con este cuil: " + cuil, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        if (iddistintaes == false)
+                        {
+                            MessageBox.Show("ya existe un estudiante con este cuil: " + cuiles, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        /*agrego responsable completado.*/
+                        string comandor = "INSERT INTO Responsable (CUIL, nombre, apellido, idNacionalidad, e_mail, direccion, idLocalidad, telefono, idParentezco) VALUES ('" + cuil + "', '" + txt_nombreResponsable.Text + "', '"
+                            + txt_apellidoResponsable.Text + "', " + cbox_nacionalidadResponsable.SelectedValue.ToString() + ", '"
+                            + txt_emailResponsable.Text + "', '" + txt_direccionResponsable.Text + "', "
+                            + cbox_localidadResponsable.SelectedValue.ToString() + ", '" + txt_telefonoResponsable.Text + "', "
+                            + cbox_parentezcoResponsable.SelectedValue.ToString() + ")";
+
+                        variables.BD.ABM(comandor);
+                        /*saco id del padre para relacionar con estudiante.*/
+                        string idresponsable = variables.BD.obtener_id_tabla("select idResponsable from Responsable where CUIL = '" + cuil + "'", "idResponsable");
+                        //==============================
+
+                        /*agrego estudiante en proceso.*/
+                        string fecha = cbox_diaNacimientoEstudiante.Text + "/" + cbox_mesNacimientoEstudiante.Text + "/" + cbox_anioNacimientoEstudiante.Text;
+                        string comandoes = "insert into Estudiante (CUIL, nombre, apellido, genero, fechaNacimiento, idCategoria, idturno, idCaracterizacion, idLocalidad, direccion, altura, entreCalle1, entreCalle2, idnacionalidad, idResponsable) values('" 
+                            + cuiles + "', '" + txt_nombreEstudiante.Text + "', '" + txt_apellidoEstudiante.Text
+                            + "', '" + cbox_generoEstudiante.Text + "', '" + fecha + "'," + cbox_categoriaEstudiante.SelectedValue.ToString()
+                            + ", "+cbox_turno.SelectedValue.ToString()+", "+cmb_caracterizacionEstudiante.SelectedValue.ToString()
+                            +", "+cbox_localidadEstudiante.SelectedValue.ToString()+", '"+txt_direccionEstudiante.Text
+                            +"', "+txt_altura.Text+", '"+txt_entreCalle1Estudiante.Text+"', '"+txt_entreCalle2Estudiante.Text
+                            +"', "+cbox_nacionalidadEstudiante.SelectedValue.ToString()+", "+idresponsable+" )";
+
+                        variables.BD.ABM(comandoes);
+                        MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
                     }
 
-                    MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
+                    
 
-                    metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregar.Tag.ToString()), variables.panelPrincipal);
+                    //metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregar.Tag.ToString()), variables.panelPrincipal);
                 }
             }
-        }
+        }//
 
         // validacion responsable.
         private void txt_nombreResponsable_KeyPress(object sender, KeyPressEventArgs e)
@@ -188,6 +248,11 @@ namespace Interfaces
             {
                 e.Handled = true;
             }
+        }
+
+        private void txt_altura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            metodos.validar_numeros(e);
         }
 
         

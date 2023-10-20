@@ -84,6 +84,10 @@
             this.txt_cuilEstudiante3 = new System.Windows.Forms.TextBox();
             this.txt_cuilEstudiante2 = new System.Windows.Forms.TextBox();
             this.txt_cuilEstudiante1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbox_turno = new System.Windows.Forms.ComboBox();
+            this.txt_altura = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbox_responsable.SuspendLayout();
             this.gbox_estudiante.SuspendLayout();
             this.SuspendLayout();
@@ -362,6 +366,10 @@
             // 
             // gbox_estudiante
             // 
+            this.gbox_estudiante.Controls.Add(this.txt_altura);
+            this.gbox_estudiante.Controls.Add(this.label3);
+            this.gbox_estudiante.Controls.Add(this.label2);
+            this.gbox_estudiante.Controls.Add(this.cbox_turno);
             this.gbox_estudiante.Controls.Add(this.cmb_caracterizacionEstudiante);
             this.gbox_estudiante.Controls.Add(this.lbl_caracterizacionEstudiante);
             this.gbox_estudiante.Controls.Add(this.radioButton1);
@@ -620,7 +628,7 @@
             this.txt_direccionEstudiante.Location = new System.Drawing.Point(271, 48);
             this.txt_direccionEstudiante.MaxLength = 8;
             this.txt_direccionEstudiante.Name = "txt_direccionEstudiante";
-            this.txt_direccionEstudiante.Size = new System.Drawing.Size(233, 27);
+            this.txt_direccionEstudiante.Size = new System.Drawing.Size(115, 27);
             this.txt_direccionEstudiante.TabIndex = 6;
             this.txt_direccionEstudiante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_direccionEstudiante_KeyPress);
             // 
@@ -670,9 +678,9 @@
             this.lbl_direccionEstudiante.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_direccionEstudiante.Location = new System.Drawing.Point(267, 27);
             this.lbl_direccionEstudiante.Name = "lbl_direccionEstudiante";
-            this.lbl_direccionEstudiante.Size = new System.Drawing.Size(80, 20);
+            this.lbl_direccionEstudiante.Size = new System.Drawing.Size(47, 20);
             this.lbl_direccionEstudiante.TabIndex = 7;
-            this.lbl_direccionEstudiante.Text = "Direccion";
+            this.lbl_direccionEstudiante.Text = "Calle";
             // 
             // cbox_nacionalidadEstudiante
             // 
@@ -840,6 +848,49 @@
             this.txt_cuilEstudiante1.TabIndex = 0;
             this.txt_cuilEstudiante1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante1_KeyPress);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Turno";
+            // 
+            // cbox_turno
+            // 
+            this.cbox_turno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_turno.FormattingEnabled = true;
+            this.cbox_turno.Items.AddRange(new object[] {
+            "Seleccione",
+            "Masculino",
+            "Femenino",
+            "X"});
+            this.cbox_turno.Location = new System.Drawing.Point(70, 270);
+            this.cbox_turno.Name = "cbox_turno";
+            this.cbox_turno.Size = new System.Drawing.Size(156, 29);
+            this.cbox_turno.TabIndex = 23;
+            // 
+            // txt_altura
+            // 
+            this.txt_altura.Location = new System.Drawing.Point(420, 48);
+            this.txt_altura.MaxLength = 8;
+            this.txt_altura.Name = "txt_altura";
+            this.txt_altura.Size = new System.Drawing.Size(84, 27);
+            this.txt_altura.TabIndex = 25;
+            this.txt_altura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_altura_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(416, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Altura";
+            // 
             // frm_altaEstudiantes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -918,6 +969,10 @@
         private System.Windows.Forms.ComboBox cmb_caracterizacionEstudiante;
         private System.Windows.Forms.Label lbl_caracterizacionEstudiante;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbox_turno;
+        private System.Windows.Forms.TextBox txt_altura;
+        private System.Windows.Forms.Label label3;
 
     }
 }

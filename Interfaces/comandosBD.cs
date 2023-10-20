@@ -124,8 +124,53 @@ namespace Interfaces
 
                 return resultado;
             }
-
-
         }
-    }
+
+           /*comprobar campo igual,
+         nuevo.*/
+        public bool comprobarpkigual(string pk, string tabla, string campo)
+        {
+            string comandos = "select * from " + tabla;
+            //conectarce = new OleDbConnection(coneccion);
+            //orden = new OleDbCommand(comando, conectarce);
+            //conectarce.Open();
+            conectar(comandos);
+            conexion.Open();
+            OleDbDataReader lector;
+            lector = comando.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(lector);
+            bool seguir = true;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i][campo].ToString() == pk)
+                {
+                    seguir = false;
+                    break;
+                }
+                seguir = true;
+            }
+            /*true = no hay registro igual.*/
+            desconectar();
+            return seguir;
+        }
+
+        /*obtener id de una tabla usando una condicion, esto es mas que nada
+         para responsable.*/
+        public string obtener_id_tabla(string consultas,string columna)
+        {
+            conectar(consultas);
+            conexion.Open();
+            OleDbDataReader leer;
+            leer = comando.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(leer);
+            string id = dt.Rows[0][columna].ToString();
+            desconectar();
+            return id;
+        }
+
+        
+   }
 }
