@@ -60,9 +60,13 @@
             // 
             // dtg_estudiantesFiltro
             // 
+            this.dtg_estudiantesFiltro.AllowUserToAddRows = false;
+            this.dtg_estudiantesFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtg_estudiantesFiltro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_estudiantesFiltro.Location = new System.Drawing.Point(12, 94);
             this.dtg_estudiantesFiltro.Name = "dtg_estudiantesFiltro";
+            this.dtg_estudiantesFiltro.RowHeadersVisible = false;
             this.dtg_estudiantesFiltro.Size = new System.Drawing.Size(829, 369);
             this.dtg_estudiantesFiltro.TabIndex = 1;
             this.dtg_estudiantesFiltro.Tag = "perfilEstudiante";
@@ -116,6 +120,7 @@
             // 
             // txt_conteoFiltro
             // 
+            this.txt_conteoFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_conteoFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_conteoFiltro.Location = new System.Drawing.Point(741, 492);
             this.txt_conteoFiltro.Name = "txt_conteoFiltro";
@@ -166,6 +171,7 @@
             // 
             // lbl_conteo
             // 
+            this.lbl_conteo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_conteo.AutoSize = true;
             this.lbl_conteo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_conteo.Location = new System.Drawing.Point(726, 469);

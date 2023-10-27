@@ -43,5 +43,10 @@ namespace Interfaces
         {
             this.Close();
         }
+
+        private void frm_principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

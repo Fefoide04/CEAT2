@@ -40,12 +40,17 @@
             // 
             // dtg_vistaEstudiantes
             // 
+            this.dtg_vistaEstudiantes.AllowUserToAddRows = false;
+            this.dtg_vistaEstudiantes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtg_vistaEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_vistaEstudiantes.Location = new System.Drawing.Point(25, 90);
             this.dtg_vistaEstudiantes.Name = "dtg_vistaEstudiantes";
+            this.dtg_vistaEstudiantes.RowHeadersVisible = false;
             this.dtg_vistaEstudiantes.Size = new System.Drawing.Size(829, 369);
             this.dtg_vistaEstudiantes.TabIndex = 0;
             this.dtg_vistaEstudiantes.Tag = "perfilEstudiante";
+            this.dtg_vistaEstudiantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_vistaEstudiantes_CellDoubleClick);
             this.dtg_vistaEstudiantes.DoubleClick += new System.EventHandler(this.dtg_vistaEstudiantes_DoubleClick);
             // 
             // btn_irConsultas
@@ -62,6 +67,8 @@
             // 
             // txt_busqueda
             // 
+            this.txt_busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_busqueda.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_busqueda.Location = new System.Drawing.Point(25, 44);
             this.txt_busqueda.Name = "txt_busqueda";
@@ -71,6 +78,7 @@
             // 
             // cmb_filtros
             // 
+            this.cmb_filtros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_filtros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_filtros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_filtros.FormattingEnabled = true;
@@ -110,6 +118,7 @@
             // 
             // lbl_filtro
             // 
+            this.lbl_filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_filtro.AutoSize = true;
             this.lbl_filtro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_filtro.Location = new System.Drawing.Point(757, 21);

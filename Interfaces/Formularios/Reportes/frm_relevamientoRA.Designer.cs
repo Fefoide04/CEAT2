@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_relevamientoCaracterizacion = new System.Windows.Forms.DataGridView();
-            this.pnl_encabezadoRelevamientoRA = new System.Windows.Forms.Panel();
-            this.dtg_relevamientoTurno = new System.Windows.Forms.DataGridView();
-            this.lbl_encabezadoRA = new System.Windows.Forms.Label();
             this.caracterizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.femenino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.masculino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnl_encabezadoRelevamientoRA = new System.Windows.Forms.Panel();
+            this.lbl_encabezadoRA = new System.Windows.Forms.Label();
+            this.dtg_relevamientoTurno = new System.Windows.Forms.DataGridView();
             this.turnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_regresar = new System.Windows.Forms.Button();
@@ -52,14 +52,14 @@
             this.dtg_relevamientoCaracterizacion.AllowUserToResizeColumns = false;
             this.dtg_relevamientoCaracterizacion.AllowUserToResizeRows = false;
             this.dtg_relevamientoCaracterizacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_relevamientoCaracterizacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_relevamientoCaracterizacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtg_relevamientoCaracterizacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_relevamientoCaracterizacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.caracterizacion,
@@ -70,51 +70,6 @@
             this.dtg_relevamientoCaracterizacion.RowHeadersVisible = false;
             this.dtg_relevamientoCaracterizacion.Size = new System.Drawing.Size(383, 317);
             this.dtg_relevamientoCaracterizacion.TabIndex = 0;
-            // 
-            // pnl_encabezadoRelevamientoRA
-            // 
-            this.pnl_encabezadoRelevamientoRA.Controls.Add(this.lbl_encabezadoRA);
-            this.pnl_encabezadoRelevamientoRA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_encabezadoRelevamientoRA.Location = new System.Drawing.Point(0, 0);
-            this.pnl_encabezadoRelevamientoRA.Name = "pnl_encabezadoRelevamientoRA";
-            this.pnl_encabezadoRelevamientoRA.Size = new System.Drawing.Size(880, 73);
-            this.pnl_encabezadoRelevamientoRA.TabIndex = 1;
-            // 
-            // dtg_relevamientoTurno
-            // 
-            this.dtg_relevamientoTurno.AllowUserToAddRows = false;
-            this.dtg_relevamientoTurno.AllowUserToDeleteRows = false;
-            this.dtg_relevamientoTurno.AllowUserToResizeColumns = false;
-            this.dtg_relevamientoTurno.AllowUserToResizeRows = false;
-            this.dtg_relevamientoTurno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_relevamientoTurno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dtg_relevamientoTurno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_relevamientoTurno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.turnos,
-            this.nivel});
-            this.dtg_relevamientoTurno.Location = new System.Drawing.Point(530, 106);
-            this.dtg_relevamientoTurno.Name = "dtg_relevamientoTurno";
-            this.dtg_relevamientoTurno.RowHeadersVisible = false;
-            this.dtg_relevamientoTurno.Size = new System.Drawing.Size(203, 317);
-            this.dtg_relevamientoTurno.TabIndex = 2;
-            // 
-            // lbl_encabezadoRA
-            // 
-            this.lbl_encabezadoRA.AutoSize = true;
-            this.lbl_encabezadoRA.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_encabezadoRA.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_encabezadoRA.Location = new System.Drawing.Point(282, 19);
-            this.lbl_encabezadoRA.Name = "lbl_encabezadoRA";
-            this.lbl_encabezadoRA.Size = new System.Drawing.Size(306, 36);
-            this.lbl_encabezadoRA.TabIndex = 0;
-            this.lbl_encabezadoRA.Text = "Relevamiento Anual";
             // 
             // caracterizacion
             // 
@@ -136,6 +91,51 @@
             this.masculino.HeaderText = "Varón";
             this.masculino.Name = "masculino";
             this.masculino.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // pnl_encabezadoRelevamientoRA
+            // 
+            this.pnl_encabezadoRelevamientoRA.Controls.Add(this.lbl_encabezadoRA);
+            this.pnl_encabezadoRelevamientoRA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_encabezadoRelevamientoRA.Location = new System.Drawing.Point(0, 0);
+            this.pnl_encabezadoRelevamientoRA.Name = "pnl_encabezadoRelevamientoRA";
+            this.pnl_encabezadoRelevamientoRA.Size = new System.Drawing.Size(880, 73);
+            this.pnl_encabezadoRelevamientoRA.TabIndex = 1;
+            // 
+            // lbl_encabezadoRA
+            // 
+            this.lbl_encabezadoRA.AutoSize = true;
+            this.lbl_encabezadoRA.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_encabezadoRA.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_encabezadoRA.Location = new System.Drawing.Point(282, 19);
+            this.lbl_encabezadoRA.Name = "lbl_encabezadoRA";
+            this.lbl_encabezadoRA.Size = new System.Drawing.Size(306, 36);
+            this.lbl_encabezadoRA.TabIndex = 0;
+            this.lbl_encabezadoRA.Text = "Relevamiento Anual";
+            // 
+            // dtg_relevamientoTurno
+            // 
+            this.dtg_relevamientoTurno.AllowUserToAddRows = false;
+            this.dtg_relevamientoTurno.AllowUserToDeleteRows = false;
+            this.dtg_relevamientoTurno.AllowUserToResizeColumns = false;
+            this.dtg_relevamientoTurno.AllowUserToResizeRows = false;
+            this.dtg_relevamientoTurno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_relevamientoTurno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtg_relevamientoTurno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_relevamientoTurno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.turnos,
+            this.nivel});
+            this.dtg_relevamientoTurno.Location = new System.Drawing.Point(576, 106);
+            this.dtg_relevamientoTurno.Name = "dtg_relevamientoTurno";
+            this.dtg_relevamientoTurno.RowHeadersVisible = false;
+            this.dtg_relevamientoTurno.Size = new System.Drawing.Size(247, 317);
+            this.dtg_relevamientoTurno.TabIndex = 2;
             // 
             // turnos
             // 

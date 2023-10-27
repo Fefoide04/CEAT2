@@ -16,6 +16,7 @@ namespace Interfaces
             pan.Controls.Clear();
 
             formulario.TopLevel = false;
+            formulario.Dock = DockStyle.Fill;
 
             pan.Controls.Add(formulario);
 

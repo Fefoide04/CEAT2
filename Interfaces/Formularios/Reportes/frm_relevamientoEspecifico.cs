@@ -150,9 +150,8 @@ namespace Interfaces
                 //// hacer una consulta sin filtros.
                 /*si todos los combobox estan en el indice 0 entonces solo se hara una consulta general sin conteo,
                  establecer que campos se mostraran en las grillas.*/
-                string comando = "SELECT Estudiante.idCaracterizacion" +
-                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno";
-                                                
+                string comando = "SELECT Estudiante.CUIL, Estudiante.nombre, Estudiante.apellido, Estudiante.genero, Estudiante.fechaNacimiento, Estudiante.direccion, Estudiante.altura, Estudiante.entreCalle1, Estudiante.entreCalle2, Caracterizacion.nombreCaracterizacion, Categoria.nombreCategoria, Turno.turno, Localidad.nombreLocalidad, Nacionalidad.nombrePaís"
+                                            + " FROM Turno INNER JOIN (Nacionalidad INNER JOIN (Localidad INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Localidad.idLocalidad = Estudiante.idLocalidad) ON Nacionalidad.idNacionalidad = Estudiante.idnacionalidad) ON Turno.idTurno = Estudiante.idturno;";                                                                                             
                 dt.Load(claseConexion.consulta(comando));
                 dtg_estudiantesFiltro.DataSource = dt;
 
@@ -193,9 +192,13 @@ namespace Interfaces
                                                 " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno" +
                                                 " where (" + comandoconsulta+");";
 
+                string comandorelacion2 = "SELECT Estudiante.CUIL, Estudiante.nombre, Estudiante.apellido, Estudiante.genero, Estudiante.fechaNacimiento, Estudiante.direccion, Estudiante.altura, Estudiante.entreCalle1, Estudiante.entreCalle2, Caracterizacion.nombreCaracterizacion, Categoria.nombreCategoria, Turno.turno, Localidad.nombreLocalidad, Nacionalidad.nombrePaís"
+                                            +" FROM Turno INNER JOIN (Nacionalidad INNER JOIN (Localidad INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Localidad.idLocalidad = Estudiante.idLocalidad) ON Nacionalidad.idNacionalidad = Estudiante.idnacionalidad) ON Turno.idTurno = Estudiante.idturno"
+                                                +" WHERE ("+comandoconsulta+");";
+
                
                 /*se mjuestra el resultado en la grilla.*/
-                dt.Load(claseConexion.consulta(comandorelacion));
+                dt.Load(claseConexion.consulta(comandorelacion2));
                 dtg_estudiantesFiltro.DataSource = dt;
 
                 /*se hace el conteo aqui, fue necesacio otra consulta,
@@ -222,8 +225,8 @@ namespace Interfaces
             cargarencombobox();
             /*cargar la grilla, en proceso.*/
             DataTable dt = new DataTable();
-            dt.Load(claseConexion.consulta("SELECT Estudiante.idCaracterizacion, Estudiante.idCategoria, Estudiante.idturno, Estudiante.genero" +
-                                                " FROM Turno INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Turno.idTurno = Estudiante.idturno;"));
+            dt.Load(claseConexion.consulta("SELECT Estudiante.CUIL, Estudiante.nombre, Estudiante.apellido, Estudiante.genero, Estudiante.fechaNacimiento, Estudiante.direccion, Estudiante.altura, Estudiante.entreCalle1, Estudiante.entreCalle2, Caracterizacion.nombreCaracterizacion, Categoria.nombreCategoria, Turno.turno, Localidad.nombreLocalidad, Nacionalidad.nombrePaís"
+                                            +" FROM Turno INNER JOIN (Nacionalidad INNER JOIN (Localidad INNER JOIN (Categoria INNER JOIN (Caracterizacion INNER JOIN Estudiante ON Caracterizacion.idCaracterizacion = Estudiante.idCaracterizacion) ON Categoria.idCategoria = Estudiante.idCategoria) ON Localidad.idLocalidad = Estudiante.idLocalidad) ON Nacionalidad.idNacionalidad = Estudiante.idnacionalidad) ON Turno.idTurno = Estudiante.idturno;"));
             dtg_estudiantesFiltro.DataSource = dt;
         }
 
