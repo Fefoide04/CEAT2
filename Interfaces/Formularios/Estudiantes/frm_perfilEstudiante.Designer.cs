@@ -136,7 +136,7 @@
             this.btn_modificarDatos.Name = "btn_modificarDatos";
             this.btn_modificarDatos.Size = new System.Drawing.Size(880, 81);
             this.btn_modificarDatos.TabIndex = 5;
-            this.btn_modificarDatos.Tag = "altaEstudiantes";
+            this.btn_modificarDatos.Tag = "modificacionEstudiante";
             this.btn_modificarDatos.Text = "Modificar Datos";
             this.btn_modificarDatos.UseVisualStyleBackColor = false;
             this.btn_modificarDatos.Click += new System.EventHandler(this.btn_modificarDatos_Click);

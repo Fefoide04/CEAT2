@@ -123,6 +123,12 @@ namespace Interfaces
             else
             {
                 metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(dtg_vistaEstudiantes.Tag.ToString()), variables.panelPrincipal);
+                /*tomo los cuils del estudiante y del responsable.*/
+                variables.id_estudiante = dtg_vistaEstudiantes.Rows[e.RowIndex].Cells["CUIL"].Value.ToString();
+                string comandos = "select CUIL from Responsable where idResponsable = (select idResponsable from Estudiante where CUIL = '" + variables.id_estudiante + "')";
+                DataTable dt = new DataTable();
+                dt.Load(variables.BD.consulta(comandos));
+                variables.id_responsable = dt.Rows[0]["CUIL"].ToString();
             }
         }
     }

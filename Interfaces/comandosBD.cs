@@ -156,6 +156,34 @@ namespace Interfaces
             return seguir;
         }
 
+        public bool comprobarcampoigualmodificacion(string pkingresado, string tabla, string campo, string pkactual)
+        {
+            string comandos = "select * from " + tabla;
+            //conectarce = new OleDbConnection(coneccion);
+            //orden = new OleDbCommand(comando, conectarce);
+            //conectarce.Open();
+            conectar(comandos);
+            conexion.Open();
+            OleDbDataReader lector;
+            lector = comando.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(lector);
+            bool seguir = true;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i][campo].ToString() == pkingresado && pkactual != dt.Rows[i][campo].ToString())
+                {
+                    seguir = false;
+                    break;
+                }
+                seguir = true;
+            }
+            /*true = no hay registro igual.*/
+            desconectar();
+            return seguir;
+        }
+
         /*obtener id de una tabla usando una condicion, esto es mas que nada
          para responsable.*/
         public string obtener_id_tabla(string consultas,string columna)

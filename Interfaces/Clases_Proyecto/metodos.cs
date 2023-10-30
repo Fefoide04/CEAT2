@@ -36,7 +36,7 @@ namespace Interfaces
                     form = new frm_visualizacionEstudiantes();
                     break;
                 case "altaEstudiantes":
-                    form = new frm_altaEstudiantes();
+                    form = new frm_altaEstudiantes(0); // alta estudiante y responsable.
                     break;
                 case "perfilEstudiante":
                     form = new frm_perfilEstudiante();
@@ -58,6 +58,9 @@ namespace Interfaces
                     break;
                 case "listaUsuarios":
                     form = new frm_listaUsuarios();
+                    break;
+                case "modificacionEstudiante":
+                    form = new frm_altaEstudiantes(1); // modificacion estudiante y responsable.
                     break;
             }
 
