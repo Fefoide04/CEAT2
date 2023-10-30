@@ -230,6 +230,47 @@ namespace Interfaces
             return confirmar;
         }
 
+        // verifico la longitud de cuil estudiante y responsable.
+        public static bool verificar_cuils(GroupBox grp, string tags1, string tags2, string tags3)
+        {
+            bool cuil = true;
+            foreach (var c in grp.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (((TextBox)c).Tag == tags1)
+                    {
+                        if (((TextBox)c).Text.Length < 2)
+                        {
+                            cuil = false;
+                            break;
+                        }
+                        
+                    }
+                    if (((TextBox)c).Tag == tags2)
+                    {
+                        if (((TextBox)c).Text.Length < 8)
+                        {
+                            cuil = false;
+                            break;
+                        }
+                        
+                    }
+                    if (((TextBox)c).Tag == tags3)
+                    {
+                        if (((TextBox)c).Text.Length < 1)
+                        {
+                            cuil = false;
+                            break;
+                        }
+                        
+                    }
+                }
+            }
+
+            return cuil;
+        }
+
         /*cargar combobox con datos de bd.*/
         public static void dt_cmb(string comando,string displaynombre, string valueid,ComboBox cmbprincipal)
         {

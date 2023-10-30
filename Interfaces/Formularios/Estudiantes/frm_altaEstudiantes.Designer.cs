@@ -347,6 +347,7 @@
             this.txt_cuilResponsable3.Name = "txt_cuilResponsable3";
             this.txt_cuilResponsable3.Size = new System.Drawing.Size(22, 27);
             this.txt_cuilResponsable3.TabIndex = 2;
+            this.txt_cuilResponsable3.Tag = "cuil3";
             this.txt_cuilResponsable3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable3_KeyPress);
             // 
             // txt_cuilResponsable2
@@ -356,6 +357,7 @@
             this.txt_cuilResponsable2.Name = "txt_cuilResponsable2";
             this.txt_cuilResponsable2.Size = new System.Drawing.Size(156, 27);
             this.txt_cuilResponsable2.TabIndex = 1;
+            this.txt_cuilResponsable2.Tag = "cuil2";
             this.txt_cuilResponsable2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable2_KeyPress);
             // 
             // txt_cuilResponsable1
@@ -365,6 +367,7 @@
             this.txt_cuilResponsable1.Name = "txt_cuilResponsable1";
             this.txt_cuilResponsable1.Size = new System.Drawing.Size(43, 27);
             this.txt_cuilResponsable1.TabIndex = 0;
+            this.txt_cuilResponsable1.Tag = "cuil1";
             this.txt_cuilResponsable1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilResponsable1_KeyPress);
             // 
             // gbox_estudiante
@@ -877,6 +880,7 @@
             this.txt_cuilEstudiante3.Name = "txt_cuilEstudiante3";
             this.txt_cuilEstudiante3.Size = new System.Drawing.Size(22, 27);
             this.txt_cuilEstudiante3.TabIndex = 2;
+            this.txt_cuilEstudiante3.Tag = "cuil3";
             this.txt_cuilEstudiante3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante3_KeyPress);
             // 
             // txt_cuilEstudiante2
@@ -886,6 +890,7 @@
             this.txt_cuilEstudiante2.Name = "txt_cuilEstudiante2";
             this.txt_cuilEstudiante2.Size = new System.Drawing.Size(156, 27);
             this.txt_cuilEstudiante2.TabIndex = 1;
+            this.txt_cuilEstudiante2.Tag = "cuil2";
             this.txt_cuilEstudiante2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante2_KeyPress);
             // 
             // txt_cuilEstudiante1
@@ -895,6 +900,7 @@
             this.txt_cuilEstudiante1.Name = "txt_cuilEstudiante1";
             this.txt_cuilEstudiante1.Size = new System.Drawing.Size(43, 27);
             this.txt_cuilEstudiante1.TabIndex = 0;
+            this.txt_cuilEstudiante1.Tag = "cuil1";
             this.txt_cuilEstudiante1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuilEstudiante1_KeyPress);
             // 
             // frm_altaEstudiantes

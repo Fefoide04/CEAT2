@@ -71,7 +71,7 @@ namespace Interfaces
                     DataTable dtres = new DataTable();
                     dtres.Load(variables.BD.consulta("select * from Responsable where CUIL = '"+variables.id_responsable+"'"));
                     txt_cuilResponsable1.Text = dtres.Rows[0]["CUIL"].ToString().Substring(0, 2);
-                    txt_cuilResponsable2.Text = dtres.Rows[0]["CUIL"].ToString().Substring(2, 7);
+                    txt_cuilResponsable2.Text = dtres.Rows[0]["CUIL"].ToString().Substring(2, 8);
                     txt_cuilResponsable3.Text = dtres.Rows[0]["CUIL"].ToString().Substring(9, 1);
                     txt_nombreResponsable.Text = dtres.Rows[0]["nombre"].ToString();
                     txt_apellidoResponsable.Text = dtres.Rows[0]["apellido"].ToString();
@@ -88,7 +88,7 @@ namespace Interfaces
                     dtres = new DataTable();
                     dtres.Load(variables.BD.consulta("select * from Estudiante where CUIL = '" + variables.id_estudiante + "'"));
                     txt_cuilEstudiante1.Text = dtres.Rows[0]["CUIL"].ToString().Substring(0, 2);
-                    txt_cuilEstudiante2.Text = dtres.Rows[0]["CUIL"].ToString().Substring(2, 7);
+                    txt_cuilEstudiante2.Text = dtres.Rows[0]["CUIL"].ToString().Substring(2, 8);
                     txt_cuilEstudiante3.Text = dtres.Rows[0]["CUIL"].ToString().Substring(9, 1);
                     txt_nombreEstudiante.Text = dtres.Rows[0]["nombre"].ToString();
                     txt_apellidoEstudiante.Text = dtres.Rows[0]["apellido"].ToString();
@@ -198,133 +198,152 @@ namespace Interfaces
                 }
                 else
                 {
-                    switch(alta_mod)
+                    // compruebo longitud de los cuils.
+                    bool cuilres_ver = metodos.verificar_cuils(gbox_responsable,txt_cuilResponsable1.Tag.ToString(),txt_cuilResponsable2.Tag.ToString(),txt_cuilResponsable3.Tag.ToString());
+                    bool cuiles_ver = metodos.verificar_cuils(gbox_estudiante,txt_cuilEstudiante1.Tag.ToString(),txt_cuilEstudiante2.Tag.ToString(),txt_cuilEstudiante3.Tag.ToString());
+
+                    if (cuilres_ver == false || cuiles_ver == false)
                     {
-                        case 0:
-                            // alta.
-                        // en desarrollo.
-                        //DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
-
-                        //if (result == DialogResult.Yes)
-                        //{
-                        //    Form form = new frm_observacionEstudiante();
-                        //    form.ShowDialog();
-                        //}
-                        //========================
-
-                        /*antes de cualquier insercion reviso no tener cuils iguales
-                         para responsables y estudiantes nuevos.*/
-                        string cuil = txt_cuilResponsable1.Text + txt_cuilResponsable2.Text + txt_cuilResponsable3.Text;
-                        string cuiles = txt_cuilEstudiante1.Text + txt_cuilEstudiante2.Text + txt_cuilEstudiante3.Text;
-                        bool iddistintar = variables.BD.comprobarpkigual(cuil, "Responsable", "CUIL");
-                        bool iddistintaes = variables.BD.comprobarpkigual(cuiles, "Estudiante", "CUIL");
-
-                        /*compruebo si ya existen los cuils.*/
-                        if (iddistintar == false || iddistintaes == false)
+                        if (cuilres_ver == false)
                         {
-                            if (iddistintar == false)
-                            {
-                                MessageBox.Show("ya existe un responsable con este cuil: " + cuil, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                            if (iddistintaes == false)
-                            {
-                                MessageBox.Show("ya existe un estudiante con este cuil: " + cuiles, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
+                            MessageBox.Show("Faltan datos en el CUIL del responsable", "CUIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-                        else
+                        if (cuiles_ver == false)
                         {
-                            /*agrego responsable completado.*/
-                            string comandor = "INSERT INTO Responsable (CUIL, nombre, apellido, idNacionalidad, e_mail, direccion, idLocalidad, telefono, idParentezco) VALUES ('" + cuil + "', '" + txt_nombreResponsable.Text + "', '"
-                                + txt_apellidoResponsable.Text + "', " + cbox_nacionalidadResponsable.SelectedValue.ToString() + ", '"
-                                + txt_emailResponsable.Text + "', '" + txt_direccionResponsable.Text + "', "
-                                + cbox_localidadResponsable.SelectedValue.ToString() + ", '" + txt_telefonoResponsable.Text + "', "
-                                + cbox_parentezcoResponsable.SelectedValue.ToString() + ")";
-
-                            variables.BD.ABM(comandor);
-                            /*saco id del padre para relacionar con estudiante.*/
-                            string idresponsable = variables.BD.obtener_id_tabla("select idResponsable from Responsable where CUIL = '" + cuil + "'", "idResponsable");
-                            //==============================
-
-                            /*agrego estudiante en proceso.*/
-                            string fecha = cbox_diaNacimientoEstudiante.Text + "/" + cbox_mesNacimientoEstudiante.Text + "/" + cbox_anioNacimientoEstudiante.Text;
-                            string comandoes = "insert into Estudiante (CUIL, nombre, apellido, genero, fechaNacimiento, idCategoria, idturno, idCaracterizacion, idLocalidad, direccion, altura, entreCalle1, entreCalle2, idnacionalidad, idResponsable) values('" 
-                                + cuiles + "', '" + txt_nombreEstudiante.Text + "', '" + txt_apellidoEstudiante.Text
-                                + "', '" + cbox_generoEstudiante.Text + "', '" + fecha + "'," + cbox_categoriaEstudiante.SelectedValue.ToString()
-                                + ", "+cbox_turno.SelectedValue.ToString()+", "+cmb_caracterizacionEstudiante.SelectedValue.ToString()
-                                +", "+cbox_localidadEstudiante.SelectedValue.ToString()+", '"+txt_direccionEstudiante.Text
-                                +"', "+txt_altura.Text+", '"+txt_entreCalle1Estudiante.Text+"', '"+txt_entreCalle2Estudiante.Text
-                                +"', "+cbox_nacionalidadEstudiante.SelectedValue.ToString()+", "+idresponsable+" )";
-
-                            variables.BD.ABM(comandoes);
-                            MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
+                            MessageBox.Show("Faltan datos en el CUIL del estudiante", "CUIL", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-                    break;
+                    }
+                    else
+                    {
+                        switch (alta_mod)
+                        {
+                            case 0:
+                                // alta.
+                                // en desarrollo.
+                                //DialogResult result = MessageBox.Show("¿Desea realizar alguna observación sobre el estudiante?", "", MessageBoxButtons.YesNo);
 
-                        case 1:
-                            // modificacion.
-                            string cuilmod = txt_cuilResponsable1.Text + txt_cuilResponsable2.Text + txt_cuilResponsable3.Text;
-                            string cuilesmod = txt_cuilEstudiante1.Text + txt_cuilEstudiante2.Text + txt_cuilEstudiante3.Text;
-                            bool iddistintarmod = variables.BD.comprobarcampoigualmodificacion(cuilmod, "Responsable", "CUIL", variables.id_responsable);
-                            bool iddistintaesmod = variables.BD.comprobarcampoigualmodificacion(cuilesmod, "Estudiante", "CUIL", variables.id_estudiante);
+                                //if (result == DialogResult.Yes)
+                                //{
+                                //    Form form = new frm_observacionEstudiante();
+                                //    form.ShowDialog();
+                                //}
+                                //========================
 
-                            /*compruebo si ya existen los cuils.*/
-                            if (iddistintarmod == false || iddistintaesmod == false)
-                            {
-                                if (iddistintarmod == false)
+                                /*antes de cualquier insercion reviso no tener cuils iguales
+                                 para responsables y estudiantes nuevos.*/
+                                string cuil = txt_cuilResponsable1.Text + txt_cuilResponsable2.Text + txt_cuilResponsable3.Text;
+                                string cuiles = txt_cuilEstudiante1.Text + txt_cuilEstudiante2.Text + txt_cuilEstudiante3.Text;
+                                bool iddistintar = variables.BD.comprobarpkigual(cuil, "Responsable", "CUIL");
+                                bool iddistintaes = variables.BD.comprobarpkigual(cuiles, "Estudiante", "CUIL");
+
+                                /*compruebo si ya existen los cuils.*/
+                                if (iddistintar == false || iddistintaes == false)
                                 {
-                                    MessageBox.Show("ya existe un responsable con este cuil: " + cuilmod, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                }
-                                if (iddistintaesmod == false)
-                                {
-                                    MessageBox.Show("ya existe un estudiante con este cuil: " + cuilesmod, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                }
-                            }
-                            else
-                            {
-                                //==================
-                                // modifico responsable.
-                                string comandores ="update Responsable set CUIL = '"+cuilmod+"', nombre = '"+txt_nombreResponsable.Text
-                                    + "' , apellido = '" + txt_apellidoResponsable.Text + "', idNacionalidad = "
-                                    +cbox_nacionalidadResponsable.SelectedValue.ToString()+", e_mail = '"+txt_emailResponsable.Text+"', "
-                                    + "direccion = '" + txt_direccionResponsable.Text + "', idLocalidad = "+cbox_localidadEstudiante.SelectedValue.ToString()
-                                    + " , telefono = '" + txt_telefonoResponsable.Text + "', idParentezco = "+cbox_parentezcoResponsable.SelectedValue.ToString()
-                                    +" where CUIL = '"+variables.id_responsable+"'";
-                                bool responsable_finalizado = variables.BD.ABM(comandores);
-                                if (responsable_finalizado == true)
-                                {
-                                    MessageBox.Show("Se finalizo con exito la modificacion responsable.");
-                                    variables.id_responsable = cuilmod;
+                                    if (iddistintar == false)
+                                    {
+                                        MessageBox.Show("ya existe un responsable con este cuil: " + cuil, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
+                                    if (iddistintaes == false)
+                                    {
+                                        MessageBox.Show("ya existe un estudiante con este cuil: " + cuiles, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("error con responsable.");
-                                }
-                                //====================
-                                // modificar estudiante.
-                                string idresponsablemod = variables.BD.obtener_id_tabla("select idResponsable from Responsable where CUIL = '" + variables.id_responsable + "'", "idResponsable");
-                                string fechamod = cbox_diaNacimientoEstudiante.Text + "/" + cbox_mesNacimientoEstudiante.Text + "/" + cbox_anioNacimientoEstudiante.Text;
-                                string comandoest = "update Estudiante set nombre = '"+txt_nombreEstudiante.Text
-                                    +"', apellido = '"+txt_apellidoEstudiante.Text+"', CUIL = '"+cuilesmod
-                                    + "', genero = '" + cbox_generoEstudiante.Text + "', fechaNacimiento = '"+fechamod
-                                    + "', idCategoria = " + cbox_categoriaEstudiante.SelectedValue.ToString() + ", idturno = "
-                                    + cbox_turno.SelectedValue.ToString() + ", idCaracterizacion = "+cmb_caracterizacionEstudiante.SelectedValue.ToString()
-                                    + ", idLocalidad = "+cbox_localidadEstudiante.SelectedValue.ToString()+", direccion = '"+txt_direccionEstudiante.Text
-                                    +"', altura = "+txt_altura.Text+", entreCalle1 = '"+txt_entreCalle1Estudiante.Text
-                                    + "', entreCalle2 = '" + txt_entreCalle2Estudiante.Text + "', idnacionalidad = "+cbox_localidadEstudiante.SelectedValue.ToString()
-                                    + ", idResponsable = "+idresponsablemod+" where CUIL = '"+variables.id_estudiante+"'";
+                                    /*agrego responsable completado.*/
+                                    string comandor = "INSERT INTO Responsable (CUIL, nombre, apellido, idNacionalidad, e_mail, direccion, idLocalidad, telefono, idParentezco) VALUES ('" + cuil + "', '" + txt_nombreResponsable.Text + "', '"
+                                        + txt_apellidoResponsable.Text + "', " + cbox_nacionalidadResponsable.SelectedValue.ToString() + ", '"
+                                        + txt_emailResponsable.Text + "', '" + txt_direccionResponsable.Text + "', "
+                                        + cbox_localidadResponsable.SelectedValue.ToString() + ", '" + txt_telefonoResponsable.Text + "', "
+                                        + cbox_parentezcoResponsable.SelectedValue.ToString() + ")";
 
-                                if (variables.BD.ABM(comandoest))
+                                    variables.BD.ABM(comandor);
+                                    /*saco id del padre para relacionar con estudiante.*/
+                                    string idresponsable = variables.BD.obtener_id_tabla("select idResponsable from Responsable where CUIL = '" + cuil + "'", "idResponsable");
+                                    //==============================
+
+                                    /*agrego estudiante en proceso.*/
+                                    string fecha = cbox_diaNacimientoEstudiante.Text + "/" + cbox_mesNacimientoEstudiante.Text + "/" + cbox_anioNacimientoEstudiante.Text;
+                                    string comandoes = "insert into Estudiante (CUIL, nombre, apellido, genero, fechaNacimiento, idCategoria, idturno, idCaracterizacion, idLocalidad, direccion, altura, entreCalle1, entreCalle2, idnacionalidad, idResponsable) values('"
+                                        + cuiles + "', '" + txt_nombreEstudiante.Text + "', '" + txt_apellidoEstudiante.Text
+                                        + "', '" + cbox_generoEstudiante.Text + "', '" + fecha + "'," + cbox_categoriaEstudiante.SelectedValue.ToString()
+                                        + ", " + cbox_turno.SelectedValue.ToString() + ", " + cmb_caracterizacionEstudiante.SelectedValue.ToString()
+                                        + ", " + cbox_localidadEstudiante.SelectedValue.ToString() + ", '" + txt_direccionEstudiante.Text
+                                        + "', " + txt_altura.Text + ", '" + txt_entreCalle1Estudiante.Text + "', '" + txt_entreCalle2Estudiante.Text
+                                        + "', " + cbox_nacionalidadEstudiante.SelectedValue.ToString() + ", " + idresponsable + " )";
+
+                                    variables.BD.ABM(comandoes);
+                                    MessageBox.Show("Se ha agregado el estudiante con éxito.", "", MessageBoxButtons.OK);
+                                }
+                                break;
+
+                            case 1:
+                                // modificacion.
+                                string cuilmod = txt_cuilResponsable1.Text + txt_cuilResponsable2.Text + txt_cuilResponsable3.Text;
+                                string cuilesmod = txt_cuilEstudiante1.Text + txt_cuilEstudiante2.Text + txt_cuilEstudiante3.Text;
+                                bool iddistintarmod = variables.BD.comprobarcampoigualmodificacion(cuilmod, "Responsable", "CUIL", variables.id_responsable);
+                                bool iddistintaesmod = variables.BD.comprobarcampoigualmodificacion(cuilesmod, "Estudiante", "CUIL", variables.id_estudiante);
+
+                                /*compruebo si ya existen los cuils.*/
+                                if (iddistintarmod == false || iddistintaesmod == false)
                                 {
-                                    MessageBox.Show("Se agrego estudinate con exito");
-                                    variables.id_estudiante = cuilesmod;
+                                    if (iddistintarmod == false)
+                                    {
+                                        MessageBox.Show("ya existe un responsable con este cuil: " + cuilmod, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
+                                    if (iddistintaesmod == false)
+                                    {
+                                        MessageBox.Show("ya existe un estudiante con este cuil: " + cuilesmod, "Cuil igual", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("error");
+                                    //==================
+                                    // modifico responsable.
+                                    string comandores = "update Responsable set CUIL = '" + cuilmod + "', nombre = '" + txt_nombreResponsable.Text
+                                        + "' , apellido = '" + txt_apellidoResponsable.Text + "', idNacionalidad = "
+                                        + cbox_nacionalidadResponsable.SelectedValue.ToString() + ", e_mail = '" + txt_emailResponsable.Text + "', "
+                                        + "direccion = '" + txt_direccionResponsable.Text + "', idLocalidad = " + cbox_localidadEstudiante.SelectedValue.ToString()
+                                        + " , telefono = '" + txt_telefonoResponsable.Text + "', idParentezco = " + cbox_parentezcoResponsable.SelectedValue.ToString()
+                                        + " where CUIL = '" + variables.id_responsable + "'";
+                                    bool responsable_finalizado = variables.BD.ABM(comandores);
+                                    if (responsable_finalizado == true)
+                                    {
+                                        MessageBox.Show("Se finalizo con exito la modificacion responsable.");
+                                        variables.id_responsable = cuilmod;
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("error con responsable.");
+                                    }
+                                    //====================
+                                    // modificar estudiante.
+                                    string idresponsablemod = variables.BD.obtener_id_tabla("select idResponsable from Responsable where CUIL = '" + variables.id_responsable + "'", "idResponsable");
+                                    string fechamod = cbox_diaNacimientoEstudiante.Text + "/" + cbox_mesNacimientoEstudiante.Text + "/" + cbox_anioNacimientoEstudiante.Text;
+                                    string comandoest = "update Estudiante set nombre = '" + txt_nombreEstudiante.Text
+                                        + "', apellido = '" + txt_apellidoEstudiante.Text + "', CUIL = '" + cuilesmod
+                                        + "', genero = '" + cbox_generoEstudiante.Text + "', fechaNacimiento = '" + fechamod
+                                        + "', idCategoria = " + cbox_categoriaEstudiante.SelectedValue.ToString() + ", idturno = "
+                                        + cbox_turno.SelectedValue.ToString() + ", idCaracterizacion = " + cmb_caracterizacionEstudiante.SelectedValue.ToString()
+                                        + ", idLocalidad = " + cbox_localidadEstudiante.SelectedValue.ToString() + ", direccion = '" + txt_direccionEstudiante.Text
+                                        + "', altura = " + txt_altura.Text + ", entreCalle1 = '" + txt_entreCalle1Estudiante.Text
+                                        + "', entreCalle2 = '" + txt_entreCalle2Estudiante.Text + "', idnacionalidad = " + cbox_localidadEstudiante.SelectedValue.ToString()
+                                        + ", idResponsable = " + idresponsablemod + " where CUIL = '" + variables.id_estudiante + "'";
+
+                                    if (variables.BD.ABM(comandoest))
+                                    {
+                                        MessageBox.Show("Se agrego estudinate con exito");
+                                        variables.id_estudiante = cuilesmod;
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("error");
+                                    }
                                 }
-                            }
-                    break;
-                    } // switch
+                                break;
+                        } // switch
+                    }
+
                     //metodos.cambiarFormulario(metodos.devolverFormularioPorCadena(btn_agregar.Tag.ToString()), variables.panelPrincipal);
                 } // else
             }
