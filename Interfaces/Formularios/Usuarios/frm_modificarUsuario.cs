@@ -48,14 +48,14 @@ namespace Interfaces
                 txt_contraseniaUsuario.Text = variables.usuarioSeleccionado.Rows[0][2].ToString();
 
                 if (variables.usuarioSeleccionado.Rows[0][4].ToString() == "True")
-                    cmb_permisoRol.SelectedIndex = 1;
+                    cmb_permisoRol.SelectedIndex = 2;
                 else
-                    cmb_permisoRol.SelectedIndex = 0;
+                    cmb_permisoRol.SelectedIndex = 1;
 
                 if (variables.docenteSeleccionado.Rows[0][5].ToString() == "True")
-                    cmbEstado.SelectedIndex = 1;
+                    cmbEstado.SelectedIndex = 2;
                 else
-                    cmbEstado.SelectedIndex = 0;
+                    cmbEstado.SelectedIndex = 1;
 
 
                 txt_nombreDocente.Text = variables.docenteSeleccionado.Rows[0][1].ToString();
@@ -69,7 +69,7 @@ namespace Interfaces
 
                 txt_telefonoDocente.Text = variables.docenteSeleccionado.Rows[0][4].ToString();
 
-                variables.idUsuarioSeleccionado = Convert.ToInt32(variables.usuarioSeleccionado.Rows[0][0]);
+                variables.idUsuarioSeleccionado = Convert.ToInt32(dtg_usuarios[3, e.RowIndex].Value);
             }
         }
 
@@ -89,7 +89,7 @@ namespace Interfaces
             btn_modificarUsuario.Enabled = false;
 
             //Acá cambie todo por data tables, para no tener controles que el usuario no va a ver y para ser ordenado
-            metodos.cargarTabla(variables.tablaUsuarios, "SELECT * from Usuario");
+            metodos.cargarTabla(variables.tablaUsuarios, "SELECT * from Usuario where idDocente in (select idDocente from Docente where activo = true)");
 
             metodos.cargarTabla(variables.tablaDocentes, "SELECT * from Docente");
 
@@ -118,8 +118,8 @@ namespace Interfaces
                 }
 
                 if (variables.BD.ABM("UPDATE Docente SET nombre = '" + txt_nombreDocente.Text + "', apellido = '" + txt_apellidoDocente.Text
-                + "', CUIL = '" + txt_cuilDocente1.Text + "-" + txt_cuilDocente2.Text + "-" + txt_cuilDocente3.Text + "', telefono = '" + txt_telefonoDocente.Text + "', activo = " + cmbEstado.SelectedIndex + " where idDocente = " + variables.docenteSeleccionado.Rows[0][0])
-                && variables.BD.ABM("UPDATE Usuario SET nombreUsuario = '" + txt_nombreUsuario.Text + "', cont = '" + contra + "', perfil = " + cmb_permisoRol.SelectedIndex + " where idUsuario = " + variables.usuarioSeleccionado.Rows[0][0]))
+                + "', CUIL = '" + txt_cuilDocente1.Text + "-" + txt_cuilDocente2.Text + "-" + txt_cuilDocente3.Text + "', telefono = '" + txt_telefonoDocente.Text + "', activo = " + activo_rol + " where idDocente = " + variables.idUsuarioSeleccionado)
+                && variables.BD.ABM("UPDATE Usuario SET nombreUsuario = '" + txt_nombreUsuario.Text + "', cont = '" + contra + "', perfil = " + permiso_rol + " where idDocente = " + variables.idUsuarioSeleccionado))
                 {
                     MessageBox.Show("Modificación realizada con éxito!");
                     refrescarFormulario();
@@ -203,13 +203,73 @@ namespace Interfaces
             }
         }
 
-       
+        int permiso_rol = 0;
+        private void cmb_permisoRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_permisoRol.SelectedIndex == 1)
+            {
+                permiso_rol = 0;
+            }
+            else if (cmb_permisoRol.SelectedIndex == 2)
+            {
+                permiso_rol = 1;
+            }
+        }
+
+        int activo_rol = 0;
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbEstado.SelectedIndex == 1)
+            {
+                activo_rol = 0;
+            }
+            else if (cmbEstado.SelectedIndex == 2)
+            {
+                activo_rol = 1;
+            }
+        }
+
+        private void dtgvDocentesInactivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                btn_modificarUsuario.Enabled = true;
+
+                /*Meti usuario y docente en data tables en vez de interactuar directamente con el dtg
+                 * Es más ordenado, y nos deja mas libertad sobre que datos queremos mostrar en el dtg al no depender del formato del dtg para la lógica*/
+
+                metodos.cargarTabla(variables.docenteSeleccionado, "SELECT * from Docente where idDocente = " + dtgvDocentesInactivos[0, e.RowIndex].Value.ToString());
+                metodos.cargarTabla(variables.usuarioSeleccionado, "SELECT * from Usuario where idDocente = (select idDocente from Docente where idDocente = "+dtgvDocentesInactivos[0, e.RowIndex].Value.ToString()+")");
+                //Acá tambien se podria meter usuario y docente en una sola data table, usando fila 0 y 1 respectivamente, pero de momento lo hice así
+
+                txt_nombreUsuario.Text = variables.usuarioSeleccionado.Rows[0][1].ToString();
+                txt_contraseniaUsuario.Text = variables.usuarioSeleccionado.Rows[0][2].ToString();
+
+                if (variables.usuarioSeleccionado.Rows[0][4].ToString() == "True")
+                    cmb_permisoRol.SelectedIndex = 2;
+                else
+                    cmb_permisoRol.SelectedIndex = 1;
+
+                if (variables.docenteSeleccionado.Rows[0][5].ToString() == "True")
+                    cmbEstado.SelectedIndex = 2;
+                else
+                    cmbEstado.SelectedIndex = 1;
 
 
+                txt_nombreDocente.Text = variables.docenteSeleccionado.Rows[0][1].ToString();
+                txt_apellidoDocente.Text = variables.docenteSeleccionado.Rows[0][2].ToString();
 
-   
+                string[] cuilDividido = variables.docenteSeleccionado.Rows[0][3].ToString().Split('-');
 
+                txt_cuilDocente1.Text = cuilDividido[0];
+                txt_cuilDocente2.Text = cuilDividido[1];
+                txt_cuilDocente3.Text = cuilDividido[2];
 
+                txt_telefonoDocente.Text = variables.docenteSeleccionado.Rows[0][4].ToString();
+
+                variables.idUsuarioSeleccionado = Convert.ToInt32(dtgvDocentesInactivos[0, e.RowIndex].Value);
+            }
+        }
         
 
     }

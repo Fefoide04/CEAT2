@@ -238,7 +238,7 @@ namespace Interfaces
             {
                 if (c is TextBox)
                 {
-                    if (((TextBox)c).Tag == tags1)
+                    if (((TextBox)c).Tag.ToString() == tags1)
                     {
                         if (((TextBox)c).Text.Length < 2)
                         {
@@ -247,7 +247,7 @@ namespace Interfaces
                         }
                         
                     }
-                    if (((TextBox)c).Tag == tags2)
+                    if (((TextBox)c).Tag.ToString() == tags2)
                     {
                         if (((TextBox)c).Text.Length < 8)
                         {
@@ -256,7 +256,7 @@ namespace Interfaces
                         }
                         
                     }
-                    if (((TextBox)c).Tag == tags3)
+                    if (((TextBox)c).Tag.ToString() == tags3)
                     {
                         if (((TextBox)c).Text.Length < 1)
                         {

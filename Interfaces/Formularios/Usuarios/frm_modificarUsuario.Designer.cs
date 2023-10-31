@@ -113,6 +113,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 28);
             this.cmbEstado.TabIndex = 29;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // lblEstado
             // 
@@ -136,6 +137,7 @@
             this.cmb_permisoRol.Name = "cmb_permisoRol";
             this.cmb_permisoRol.Size = new System.Drawing.Size(121, 28);
             this.cmb_permisoRol.TabIndex = 27;
+            this.cmb_permisoRol.SelectedIndexChanged += new System.EventHandler(this.cmb_permisoRol_SelectedIndexChanged);
             // 
             // lbl_permisoRol
             // 
@@ -389,11 +391,12 @@
             this.dtgvDocentesInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDocentesInactivos.Location = new System.Drawing.Point(471, 340);
             this.dtgvDocentesInactivos.Name = "dtgvDocentesInactivos";
+            this.dtgvDocentesInactivos.ReadOnly = true;
             this.dtgvDocentesInactivos.RowHeadersWidth = 20;
             this.dtgvDocentesInactivos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dtgvDocentesInactivos.Size = new System.Drawing.Size(409, 198);
+            this.dtgvDocentesInactivos.Size = new System.Drawing.Size(409, 190);
             this.dtgvDocentesInactivos.TabIndex = 31;
-            this.dtgvDocentesInactivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_usuarios_CellClick);
+            this.dtgvDocentesInactivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDocentesInactivos_CellClick);
             // 
             // lblDocente
             // 

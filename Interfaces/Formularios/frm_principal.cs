@@ -24,6 +24,7 @@ namespace Interfaces
             variables.BD.consulta("SELECT * from Estudiante");
 
             btn_usuarios.Visible = variables.perfil;
+            btn_autorizados.Visible = variables.perfil;
         }
 
         private void botonesClick(object sender, EventArgs e)

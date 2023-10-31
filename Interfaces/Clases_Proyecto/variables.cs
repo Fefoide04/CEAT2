@@ -15,6 +15,7 @@ namespace Interfaces
         // guardo id de estudiante y responsable.
         public static string id_estudiante;
         public static string id_responsable;
+        public int iddocente = 0;
 
         public static comandosBD BD = new comandosBD();
         public static string ContraseñaUsuario;

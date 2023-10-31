@@ -19,6 +19,7 @@ namespace Interfaces
             //cargar_grilla(comando2);
 
             cmb_filtros.SelectedIndex = 0;
+            btn_agregarEstudiantes.Visible = variables.perfil;
         }
         private void btn_irConsultas_Click(object sender, EventArgs e)
         {
